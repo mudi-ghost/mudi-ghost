@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Mudi Ghost | Napisz do Nas przez Proton Mail</title>
+  <meta name="description" content="Skontaktuj się z Mudi Ghost. Pytania o router, zamówienia, współpracę — odpowiadamy w ciągu 24 godzin przez szyfrowaną pocztę Proton Mail.">
+  <meta name="keywords" content="kontakt, zamówienie, prywatny router, Proton Mail, pytania techniczne">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mudighost.com/kontakt.html">
+  <meta property="og:title" content="Kontakt — Mudi Ghost">
+  <meta property="og:description" content="Napisz do nas przez szyfrowaną pocztę Proton Mail. Odpowiadamy w ciągu 24 godzin.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mudighost.com/kontakt.html">
+  <meta property="og:locale" content="pl_PL">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .contact-section { padding: 70px 0; position: relative; z-index: 1; }
+    .contact-main { background: var(--dark2); border: 2px solid var(--cyan); padding: 40px; text-align: center; margin-bottom: 24px; box-shadow: 0 0 40px rgba(0,242,255,0.06); position: relative; overflow: hidden; }
+    .contact-main::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--cyan); box-shadow: 0 0 16px var(--cyan-glow); }
+    .contact-main h2 { font-family: var(--font-head); font-size: 22px; color: var(--white); margin-bottom: 20px; letter-spacing: 1px; }
+    .email-link { display: inline-block; font-family: var(--font-mono); font-size: 20px; color: var(--cyan); text-decoration: none; padding: 14px 32px; border: 1px solid var(--cyan); transition: all var(--transition); letter-spacing: 1px; cursor: pointer; }
+    .email-link:hover { background: var(--cyan); color: var(--dark); box-shadow: 0 0 24px var(--cyan-glow); }
+    .response-note { margin-top: 16px; font-size: 13px; color: var(--muted); font-family: var(--font-mono); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+    .info-box { background: var(--dark2); border: 1px solid var(--border); border-left: 3px solid var(--cyan); padding: 24px; }
+    .info-box h3 { font-family: var(--font-head); font-size: 18px; color: var(--white); margin-bottom: 14px; letter-spacing: 0.5px; }
+    .info-box p { font-size: 14.5px; margin-bottom: 8px; line-height: 1.6; }
+    .info-box p:last-child { margin-bottom: 0; }
+    .faq-section { padding: 70px 0; background: var(--dark2); position: relative; z-index: 1; }
+    .faq-grid { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--dark3); border: 1px solid var(--border); overflow: hidden; }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: none; border: none; cursor: pointer; text-align: left; gap: 16px; transition: background var(--transition); }
+    .faq-question:hover { background: rgba(0,242,255,0.04); }
+    .faq-question h4 { font-family: var(--font-head); font-size: 17px; color: var(--cyan); font-weight: 700; }
+    .faq-arrow { font-family: var(--font-mono); font-size: 18px; color: var(--cyan); flex-shrink: 0; transition: transform 0.3s; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1); padding: 0 24px; }
+    .faq-item.open .faq-answer { max-height: 200px; padding: 0 24px 18px; }
+    .faq-answer p { font-size: 15px; line-height: 1.65; }
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-main { padding: 28px 20px; }
+      .email-link { font-size: 15px; padding: 12px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">MUDI <span class="accent">GHOST</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="siteNav" role="navigation" aria-label="Główna nawigacja">
+    <a href="/">Strona Główna</a>
+    <a href="/#funkcje">Funkcje</a>
+    <a href="/o-nas.html">O Nas</a>
+    <a href="/cennik.html">Cennik</a>
+    <a href="/kontakt.html" class="nav-cta active">Kontakt</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <p class="section-label" style="display:inline-block;margin-bottom:10px;">Secure channel</p>
+  <h1>Kontakt</h1>
+  <p class="subtitle">Masz pytania? Chcesz złożyć zamówienie? Odpiszemy przez szyfrowany kanał — w ciągu 24 godzin.</p>
+</div>
+
+<section class="contact-section">
+  <div class="content-wrap">
+
+    <div class="contact-main">
+      <h2>Napisz Do Nas</h2>
+      <a href="#" class="email-link" id="contactEmail" aria-label="Wyślij email na mudi.ghost@proton.me">mudi.ghost&#64;proton.me</a>
+      <p class="response-note">// Odpowiadamy zazwyczaj w ciągu 24 godzin</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="info-box">
+        <h3>O Czym Możesz Pisać?</h3>
+        <p>📦 <strong>Zamówienia</strong> — dostępność, konfiguracja, dostawa</p>
+        <p>❓ <strong>Pytania techniczne</strong> — jak działa zmiana IMEI, VPN, randomizacja MAC</p>
+        <p>🤝 <strong>Współpraca</strong> — partnerstwo i dystrybucja</p>
+        <p>💡 <strong>Feedback</strong> — uwagi i pomysły na rozwój</p>
+      </div>
+      <div class="info-box">
+        <h3>Bezpieczeństwo Komunikacji</h3>
+        <p>Kontaktujemy się wyłącznie przez <strong>Proton Mail</strong> — szyfrowaną pocztę end-to-end. Twoja wiadomość jest bezpieczna od momentu wysłania.</p>
+        <p>Potrzebujesz komunikacji przez PGP? Napisz o tym w wiadomości — wyślemy klucz publiczny w odpowiedzi.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="faq-section" aria-labelledby="faq-title">
+  <div class="content-wrap">
+    <p class="section-label">Baza wiedzy</p>
+    <h2 class="section-title" id="faq-title">Najczęstsze <span class="accent">Pytania</span></h2>
+
+    <div class="faq-grid" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <h4>Jak długo trwa realizacja zamówienia?</h4>
+          <span class="faq-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>Realizujemy zamówienia w ciągu 3–5 dni roboczych. Każdy router konfigurujemy indywidualnie i testujemy przed wysyłką — nie wysyłamy urządzeń „z półki".</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <h4>Czy wysyłacie za granicę?</h4>
+          <span class="faq-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>Tak, wysyłamy do większości krajów UE. Koszt i czas dostawy ustalamy indywidualnie przy składaniu zamówienia.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <h4>Czy mogę otrzymać fakturę VAT?</h4>
+          <span class="faq-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>Tak, wystawiamy faktury VAT. Podaj dane do faktury — nazwę firmy, NIP i adres — przy składaniu zamówienia.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <h4>Co jeśli coś nie będzie działać po odbiorze?</h4>
+          <span class="faq-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>Każdy egzemplarz przechodzi dokładne testy przed wysyłką. Jeśli mimo to coś nie działa — napisz do nas. Diagnozujemy i rozwiązujemy problem zdalnie lub wymieniamy urządzenie.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <h4>Jak wygląda płatność kryptowalutami?</h4>
+          <span class="faq-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>Płatności obsługujemy przez Trocador — bezpieczny portal wymiany krypto. Akceptujemy BTC, USDT, ETH, XMR i inne. Nie potrzebujesz konkretnej waluty — Trocador wymienia w locie. Szczegóły na stronie <a href="/cennik.html" style="color:var(--cyan);">Cennik</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">MUDI <span class="accent">GHOST</span></div>
+      <div class="footer-tagline">Advanced Privacy Firmware — Hardened Security Edition</div>
+    </div>
+    <nav class="footer-links" aria-label="Linki w stopce">
+      <a href="/">Strona Główna</a>
+      <a href="/cennik.html">Cennik</a>
+      <a href="/o-nas.html">O Nas</a>
+      <a href="/kontakt.html">Kontakt</a>
+      <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Mudi Ghost. Wszelkie prawa zastrzeżone.</span>
+    <span>Produkt przeznaczony wyłącznie do legalnego użytku.</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  const emailEl = document.getElementById('contactEmail');
+  if (emailEl) {
+    emailEl.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = 'mailto:' + 'mudi.ghost' + '@' + 'proton.me';
+    });
+  }
+</script>
+</body>
+</html>
