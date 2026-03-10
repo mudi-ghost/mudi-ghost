@@ -99,9 +99,9 @@ strong { color:var(--white); }
 
 @media (max-width:768px) {
   .nav-toggle { display:flex; }
-  .site-nav { position:fixed; top:64px; left:0; right:0; bottom:0; background:rgba(5,10,20,0.98); flex-direction:column; z-index:200; align-items:center; justify-content:center; gap:24px; transform:translateX(100%); transition:transform 0.35s cubic-bezier(0.77,0,0.175,1); border-top:1px solid var(--cyan); }
+  .site-nav { position:fixed; top:64px; left:0; right:0; bottom:0; background:#050a14; border-top:1px solid rgba(0,242,255,0.2); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:40px 24px; transform:translateX(100%); transition:transform 0.3s ease; z-index:999; }
   .site-nav.open { transform:translateX(0); }
-  .site-nav a { font-size:18px; padding:10px 20px; }
+  .site-nav a { font-size:22px; padding:12px 24px; width:100%; text-align:center; }
   .site-nav .nav-cta { margin-left:0; }
   .page-hero h1 { font-size:28px; letter-spacing:2px; }
   .btn { padding:12px 28px; font-size:15px; }
