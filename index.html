@@ -81,8 +81,12 @@
     @keyframes fadein { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
 
     .features-section { padding: 90px 0; position: relative; z-index: 1; }
-    .intro-section { padding: 80px 0 60px; position: relative; z-index: 1; background: linear-gradient(180deg, var(--dark1) 0%, var(--dark2) 100%); }
+    .intro-section { padding: 90px 0; position: relative; z-index: 1; background: linear-gradient(180deg, var(--dark1) 0%, var(--dark2) 100%); }
     .intro-section .container { max-width: 900px; margin: 0 auto; }
+    .intro-text { max-width: 720px; }
+    .intro-text p { font-size: 15px; line-height: 1.8; color: var(--text); margin-bottom: 20px; }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-text strong { color: var(--cyan); }
     .features-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
     .feature-card { grid-column: span 2; background: var(--dark2); border: 1px solid var(--border); border-top: 3px solid var(--cyan); padding: 28px; transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition); }
     .feature-card:hover { border-color: var(--cyan); box-shadow: 0 0 24px rgba(0,242,255,0.08); transform: translateY(-4px); }
@@ -170,16 +174,10 @@
     <p class="section-label">Czym Jest Mudi Ghost?</p>
     <h2 class="section-title" id="intro-title">Twój Prywatny Router <span class="accent">Ze Zmiennym IMEI</span></h2>
     
-    <div style="max-width: 720px; margin-bottom: 40px;">
-      <p style="font-size: 15px; line-height: 1.8; color: var(--text); margin-bottom: 20px;">
-        W erze powszechnej inwigilacji cyfrowej, Twój router to <strong style="color: var(--cyan);">brama do internetu</strong> — i jednocześnie najsłabsze ogniwo. Tradycyjny VPN ukrywa ruch, ale <strong style="color: var(--cyan);">nie zmienia Twojego cyfrowego odcisku palca</strong>.
-      </p>
-      <p style="font-size: 15px; line-height: 1.8; color: var(--text); margin-bottom: 20px;">
-        <strong>Mudi Ghost</strong> to coś więcej. To <strong style="color: var(--cyan);">router operacyjny</strong>, który daje Ci kontrolę nad Twoją tożsamością cyfrową. Jeden ruch fizycznego przełącznika — i masz nowy IMEI. Nowy MAC. Nowy BSSID. Służby i algorytmy śledzące tracą trop.
-      </p>
-      <p style="font-size: 15px; line-height: 1.8; color: var(--text);">
-        Jeśli rozumiesz, że <strong style="color: var(--cyan);">prywatność to nie funkcja — to stan umysłu</strong> — Mudi Ghost jest dla Ciebie.
-      </p>
+    <div class="intro-text">
+      <p>W erze powszechnej inwigilacji cyfrowej, Twój router to <strong>brama do internetu</strong> — i jednocześnie najsłabsze ogniwo. Tradycyjny VPN ukrywa ruch, ale <strong>nie zmienia Twojego cyfrowego odcisku palca</strong>.</p>
+      <p><strong>Mudi Ghost</strong> to coś więcej. To <strong>router operacyjny</strong>, który daje Ci kontrolę nad Twoją tożsamością cyfrową. Jeden ruch fizycznego przełącznika — i masz nowy IMEI. Nowy MAC. Nowy BSSID. Służby i algorytmy śledzące tracą trop.</p>
+      <p>Jeśli rozumiesz, że <strong>prywatność to nie funkcja — to stan umysłu</strong> — Mudi Ghost jest dla Ciebie.</p>
     </div>
   </div>
 </section>
