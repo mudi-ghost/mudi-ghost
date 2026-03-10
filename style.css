@@ -98,6 +98,7 @@ strong { color:var(--white); }
 }
 
 @media (max-width:768px) {
+  body { padding-top: 64px; }
   .site-header { position:fixed; top:0; left:0; right:0; backdrop-filter:none; -webkit-backdrop-filter:none; background:#050a14; }
   .nav-toggle { display:flex; }
   .site-nav { position:fixed; top:64px; left:0; right:0; bottom:0; background:#050a14; border-top:1px solid rgba(0,242,255,0.2); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:40px 24px; transform:translateX(100%); transition:transform 0.3s ease; z-index:9999; isolation:isolate; }
