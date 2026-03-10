@@ -38,6 +38,7 @@ strong { color:var(--white); }
 .logo { font-family:var(--font-head); font-size:26px; font-weight:700; color:var(--white); letter-spacing:4px; text-decoration:none; text-transform:uppercase; flex-shrink:0; }
 .logo:hover { opacity:0.8; }
 .logo .accent { color:var(--cyan); text-shadow:0 0 12px var(--cyan-glow); }
+.accent { color:var(--cyan); }
 .nav-toggle { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:8px; z-index:210; }
 .nav-toggle span { display:block; width:24px; height:2px; background:var(--cyan); transition:all 0.3s; }
 .nav-toggle.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
@@ -111,3 +112,4 @@ strong { color:var(--white); }
   .page-hero h1 { font-size:24px; }
   .footer-bottom { flex-direction:column; text-align:center; gap:6px; }
 }
+
