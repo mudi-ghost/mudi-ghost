@@ -163,3 +163,25 @@ strong { color:var(--white); }
  text-decoration: underline;
  text-underline-offset: 3px;
 }
+
+.tech-list li {
+ font-size: 15px;
+ color: var(--text);
+ display: flex;
+ flex-direction: column;
+ gap: 2px;
+ padding: 8px 0;
+}
+
+.tech-list li strong {
+ color: var(--cyan);
+ font-size: 14px;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+}
+
+.tech-list li span {
+ font-size: 14px;
+ color: var(--text);
+ line-height: 1.5;
+}
