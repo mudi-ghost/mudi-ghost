@@ -126,3 +126,39 @@ strong { color:var(--white); }
 }
 
 
+
+.trocador-box {
+ text-align: left;
+}
+
+.trocador-box ol {
+ padding-left: 20px;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+.trocador-box ol li {
+ line-height: 1.6;
+ color: var(--text);
+}
+
+.trocador-box code {
+ display: inline-block;
+ background: rgba(0, 242, 255, 0.08);
+ color: var(--cyan);
+ padding: 2px 6px;
+ border-radius: 4px;
+ font-size: 12px;
+ word-break: break-all;
+}
+
+.trocador-box a {
+ color: var(--cyan);
+ text-decoration: underline;
+ text-underline-offset: 3px;
+}
+
+.trocador-box a:hover {
+ opacity: 0.8;
+}
