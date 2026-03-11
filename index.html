@@ -10,7 +10,7 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://mudighost.com/">
   <meta property="og:title" content="Mudi Ghost — Router VPN ze Zmiennym IMEI">
-  <meta property="og:description" content="Hardened router ze zmiennym IMEI. WireGuard VPN z kill switch, randomizacja MAC i BSSID. Idealny dla dziennikarzy i aktywistów.">
+  <meta property="og:description" content="Hardened router VPN ze zmiennym IMEI. WireGuard VPN z kill switch, randomizacja MAC i BSSID. 350 EUR — dla dziennikarzy, aktywistów i profesjonalistów.">
   <meta property="og:type" content="product">
   <meta property="og:url" content="https://mudighost.com/">
   <meta property="og:locale" content="pl_PL">
@@ -44,27 +44,17 @@
   <link rel="stylesheet" href="/style.css">
   <style>
     .hero {
-      min-height: calc(100vh - 64px);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 80px 40px;
+      padding: 60px 40px 50px;
       position: relative;
       z-index: 1;
       overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='60' viewBox='0 0 70 60'%3E%3Cpolygon points='35,2 68,20 68,40 35,58 2,40 2,20' fill='none' stroke='%2300f2ff' stroke-width='0.5' opacity='0.07'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      pointer-events: none;
-      animation: hexdrift 30s linear infinite;
-    }
-    @keyframes hexdrift { 0% { background-position: 0 0; } 100% { background-position: 70px 60px; } }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -126,7 +116,7 @@
     .cta-section p { color: var(--muted); font-size: 18px; margin-bottom: 32px; }
 
     @media (max-width: 900px) {
-      .hero { min-height: auto; padding: 60px 24px; }
+      .hero { padding: 60px 24px; }
       .hero-title { font-size: 52px; letter-spacing: 4px; }
       .features-grid { grid-template-columns: 1fr 1fr !important; gap: 14px; }
       .feature-card { grid-column: span 1 !important; }
