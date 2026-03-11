@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Nas — Mudi Ghost | Anonimowość w Internecie i Ochrona Źródeł</title>
+  <meta name="description" content="Mudi Ghost — tworzymy hardened router VPN ze zmiennym IMEI dla dziennikarzy śledczych, aktywistów i profesjonalistów wysokiego ryzyka. Bezpieczeństwo w sieci zaczyna się od sprzętu.">
+  <meta name="keywords" content="o nas, Mudi Ghost, hardened router VPN ze zmiennym IMEI, anonimowość w internecie, ochrona źródeł dziennikarzy, bezpieczeństwo w sieci sprzęt, router dla dziennikarzy śledczych">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mudighost.com/o-nas.html">
+  <meta property="og:title" content="O Nas — Mudi Ghost | Hardened Router VPN ze Zmiennym IMEI">
+  <meta property="og:description" content="Tworzymy hardened router VPN ze zmiennym IMEI dla dziennikarzy śledczych i aktywistów. Ochrona źródeł i anonimowość w internecie — zaczyna się od sprzętu.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mudighost.com/o-nas.html">
+  <meta property="og:locale" content="pl_PL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="O Nas — Mudi Ghost | Anonimowość w Internecie">
+  <meta name="twitter:description" content="Kim jesteśmy i nasza misja. Tworzymy narzędzia dla anonimowości w internecie i bezpieczeństwa w sieci.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mudi Ghost",
+    "url": "https://mudighost.com",
+    "description": "Tworzymy hardened privacy routery dla anonimowości w internecie i bezpieczeństwa w sieci.",
+    "sameAs": ["https://mudi-ghost.vercel.app"]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .about-section { padding: 70px 0; position: relative; z-index: 1; }
+    .intro-statement { font-size: 20px; line-height: 1.85; color: var(--text); margin-bottom: 50px; padding: 28px 32px; background: var(--dark2); border-left: 4px solid var(--cyan); box-shadow: inset 0 0 24px rgba(0,242,255,0.03); }
+    .about-body { margin-bottom: 50px; }
+    .about-body p { font-size: 17px; margin-bottom: 20px; line-height: 1.8; }
+    .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; }
+    .value-card { background: var(--dark2); border: 1px solid var(--border); border-top: 3px solid var(--cyan); padding: 24px; transition: transform var(--transition), box-shadow var(--transition); }
+    .value-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,242,255,0.07); }
+    .value-card h3 { font-family: var(--font-head); font-size: 18px; color: var(--white); margin-bottom: 10px; letter-spacing: 0.5px; }
+    .value-card p { font-size: 14.5px; line-height: 1.65; }
+    .tech-section { padding: 70px 0; background: var(--dark2); position: relative; z-index: 1; }
+    .tech-box { background: var(--dark3); border: 1px solid var(--border); border-left: 3px solid var(--cyan); padding: 28px 32px; }
+    .tech-box p { font-size: 16px; line-height: 1.75; margin-bottom: 20px; }
+    .tech-list { list-style: none; display: flex; flex-direction: column; }
+    .tech-list li { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
+    .tech-list li:last-child { border-bottom: none; }
+    
+    .serve-section { padding: 70px 0; position: relative; z-index: 1; }
+    .serve-list { display: flex; flex-direction: column; gap: 12px; }
+    .serve-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px 24px; background: var(--dark2); border: 1px solid var(--border); border-left: 3px solid var(--cyan); }
+    .serve-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+    .serve-item h3 { font-family: var(--font-head); font-size: 17px; color: var(--white); margin-bottom: 6px; }
+    .serve-item p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+    .cta-box { margin-top: 50px; padding: 32px; text-align: center; background: var(--dark2); border: 1px solid var(--border); }
+    .cta-box p { font-size: 17px; color: var(--text); margin-bottom: 20px; line-height: 1.7; }
+    @media (max-width: 700px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .intro-statement { font-size: 17px; padding: 20px; }
+      .about-body p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">MUDI <span class="accent">GHOST</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="siteNav" role="navigation" aria-label="Główna nawigacja">
+    <a href="/">Strona Główna</a>
+    <a href="/#funkcje">Funkcje</a>
+    <a href="/o-nas.html">O Nas</a>
+    <a href="/cennik.html">Cennik</a>
+    <a href="/kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <p class="section-label" style="display:inline-block;margin-bottom:10px;">Kim jesteśmy</p>
+  <h1>O Nas — <span class="accent">Mudi Ghost</span></h1>
+  <p class="hero-tagline">Inwigilacja jest faktem. Bezpieczeństwo w sieci zaczyna się od sprzętu, nie od aplikacji. Tworzymy narzędzia dla anonimowości w internecie — dla tych, którzy nie mogą sobie pozwolić na błąd: dziennikarze śledczy, aktywiści, profesjonaliści wysokiego ryzyka.</p>
+</div>
+
+<section class="about-section">
+  <div class="content-wrap">
+
+    <div class="intro-statement">
+      <strong><span class="accent">Mudi Ghost</span></strong> powstał z przekonania, że <strong>rzeczywista ochrona prywatności</strong> powinna być dostępna dla każdego — bez konieczności bycia ekspertem od bezpieczeństwa. Wierzymy, że prywatność to fundamentalne prawo człowieka. Nie luksus. Nie powód do podejrzeń.
+    </div>
+
+    <div class="about-body">
+      <h2 class="section-title">Nasza Misja — <span class="accent">Anonimowość w Internecie jako Prawo Fundamentalne</span></h2>
+      <p>Budujemy rozwiązania z głębokiego doświadczenia w dziedzinie bezpieczeństwa IT, sieci i ochrony danych. Nie tworzymy marketingowych haseł — dostarczamy działające technologie, przetestowane w warunkach rzeczywistych zagrożeń. Każde urządzenie, które opuszcza nasze ręce, przeszło pełny proces hardeningu i weryfikacji.</p>
+      <p>Wiemy, czego potrzebuje dziennikarz pracujący pod presją reżimu. Aktywista w nieprzyjaznym środowisku. Menedżer chroniący tajemnice handlowe firmy. Dla każdego z nich <strong><span class="accent">Mudi Ghost</span></strong> zapewnia <strong>ochronę źródeł</strong> i anonimowość w internecie — znika w cyfrowym szumie i ciągnie cały ruch ze sobą.</p>
+    </div>
+
+    <h2 class="section-title">Nasze Wartości — <span class="accent">Na Czym Budujemy</span></h2>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>🛡️ Prywatność Bez Kompromisów</h3>
+        <p>Każda decyzja projektowa podporządkowana jest jednemu celowi — żebyś miał pełną kontrolę nad swoją tożsamością cyfrową. Bez półśrodków, bez tylnych drzwi.</p>
+      </div>
+      <div class="value-card">
+        <h3>🔒 Sprawdzona Technologia</h3>
+        <p>WireGuard, hardened OpenWrt, Advanced IMEI Rotation Protocol — budujemy na solidnych fundamentach open source. Żadnych autorskich „rozwiązań" bez audytu. Tylko to, co działa i zostało sprawdzone.</p>
+      </div>
+      <div class="value-card">
+        <h3>⚡ Prostota w Działaniu</h3>
+        <p>Zaawansowana ochrona nie musi oznaczać skomplikowanej obsługi. Jeden przełącznik — nowy IMEI, nowa tożsamość. Gotowe do użycia od razu po wyjęciu z pudełka.</p>
+      </div>
+      <div class="value-card">
+        <h3>💎 Niezawodność w Terenie</h3>
+        <p>Tworzymy sprzęt, na którym możesz polegać w sytuacjach bez drugiej szansy. Każdy egzemplarz testujemy, weryfikujemy i konfigurujemy ręcznie przed wysyłką.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="tech-section" aria-labelledby="tech-title">
+  <div class="content-wrap">
+    <p class="section-label">Stack technologiczny</p>
+    <h2 class="section-title" id="tech-title">Technologia i Bezpieczeństwo — <span class="accent">Hardened Router VPN ze Zmiennym IMEI</span></h2>
+    <div class="tech-box">
+      <p>Podstawą jest <strong>GL.iNet Mudi V2 (GL-E750V2)</strong> — kompaktowy, przenośny router z modemem LTE/4G, zaprojektowany z myślą o mobilności i solidności. Na tym fundamencie stosujemy wielowarstwowy proces hardeningu, który przekształca standardowy router w narzędzie operacyjne:</p>
+      <ul class="tech-list">
+ <li><strong>Zmiana IMEI jednym fizycznym przełącznikiem</strong><span>Advanced IMEI Rotation Protocol — nowy numer bez matematycznego powiązania z poprzednim</span></li>
+ <li><strong>Automatyczna randomizacja BSSID</strong><span>przy każdym starcie systemu</span></li>
+ <li><strong>Trwałe czyszczenie logów adresów MAC</strong><span>anti-forensics, zero śladów po wyłączeniu</span></li>
+ <li><strong>Randomizacja MAC WAN</strong><span>nowa tożsamość w każdej sieci zewnętrznej</span></li>
+ <li><strong>VPN WireGuard z kill switch</strong><span>szyfrowanie od pierwszego pakietu, automatyczny start</span></li>
+ <li><strong>Hardening systemu operacyjnego OpenWrt</strong><span>usuwanie zbędnych usług, zamknięte wektory ataku</span></li>
+</ul>
+    </div>
+  </div>
+</section>
+
+<section class="serve-section" aria-labelledby="serve-title">
+  <div class="content-wrap">
+    <p class="section-label">Misja</p>
+    <h2 class="section-title" id="serve-title">Dla Kogo <span class="accent">Pracujemy?</span></h2>
+
+    <div class="serve-list">
+      <div class="serve-item">
+        <span class="serve-icon" aria-hidden="true">🎙️</span>
+        <div>
+          <h3>Dziennikarze Śledczy</h3>
+          <p>Gdy stawką jest życie informatora — ochrona tożsamości i lokalizacji przestaje być opcją. <strong><span class="accent">Mudi Ghost</span></strong> nie zostawia śladów, które mogłyby doprowadzić do źródła.</p>
+        </div>
+      </div>
+      <div class="serve-item">
+        <span class="serve-icon" aria-hidden="true">✊</span>
+        <div>
+          <h3>Aktywiści i Działacze</h3>
+          <p>Praca w środowiskach nieprzyjaznych wobec wolności słowa wymaga narzędzi, które są równie hermetyczne jak ich właściciel. <strong><span class="accent">Mudi Ghost</span></strong> jest jednym z nich.</p>
+        </div>
+      </div>
+      <div class="serve-item">
+        <span class="serve-icon" aria-hidden="true">💼</span>
+        <div>
+          <h3>Profesjonaliści i Korporacje</h3>
+          <p>Tajemnica handlowa, dane klientów, negocjacje — informacje zbyt cenne, żeby ryzykować je na hotelowej sieci WiFi czy lotnisku.</p>
+        </div>
+      </div>
+      <div class="serve-item">
+        <span class="serve-icon" aria-hidden="true">🔐</span>
+        <div>
+          <h3>Każdy, Kto Ceni Prywatność</h3>
+          <p>Nie trzeba być dziennikarzem ani aktywistą, żeby mieć prawo do prywatności. W erze cyfrowej każdy zostawia ślady — <strong><span class="accent">Mudi Ghost</span></strong> pomaga je kontrolować.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <p>Masz pytania o produkt, konfigurację lub chcesz złożyć zamówienie? Napisz do nas — odpiszemy przez szyfrowany kanał.</p>
+      <a href="/kontakt.html" class="btn">Napisz Do Nas →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">MUDI <span class="accent">GHOST</span></div>
+      <div class="footer-tagline">Advanced Privacy Firmware — Hardened Security Edition</div>
+      <div class="footer-email">mudi.ghost@proton.me</div>
+    </div>
+    <nav class="footer-links" aria-label="Linki w stopce">
+      <a href="/">Strona Główna</a>
+      <a href="/cennik.html">Cennik</a>
+      <a href="/o-nas.html">O Nas</a>
+      <a href="/kontakt.html">Kontakt</a>
+      <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 <strong><span class="accent">Mudi Ghost</span></strong>. Wszelkie prawa zastrzeżone.</span>
+    <span>Produkt przeznaczony wyłącznie do legalnego użytku.</span>
+  </div>
+</footer>
+
+<script>
+  const path = window.location.pathname;
+  document.querySelectorAll('.site-nav a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href === path || (path === '/' && href === '/')) {
+      a.classList.add('active');
+    }
+  });
+
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+</body>
+</html>
+
