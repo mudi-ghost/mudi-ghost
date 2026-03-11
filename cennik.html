@@ -68,6 +68,19 @@
   line-height: 1.5;
 }
   .features-list li::before { content: '✓'; color: var(--cyan); font-weight: bold; flex-shrink: 0; margin-top: 1px; }
+
+.features-list li strong {
+  color: var(--cyan);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.features-list li span {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
   
   .extension-card { background: var(--dark2); border: 1px solid var(--border); border-left: 3px solid var(--cyan); padding: 28px 32px; margin-bottom: 24px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px; }
   .extension-card h3 { font-family: var(--font-head); font-size: 20px; color: var(--white); margin-bottom: 8px; }
