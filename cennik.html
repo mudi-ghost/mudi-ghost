@@ -271,7 +271,7 @@
  const path = window.location.pathname;
  document.querySelectorAll('.site-nav a').forEach(a => {
   const href = a.getAttribute('href');
-  if (href === path || (path === '/' && href === '/')) {
+  if (href === path || href.replace('.html', '') === path || (path === '/' && href === '/')) {
    a.classList.add('active');
   }
  });
