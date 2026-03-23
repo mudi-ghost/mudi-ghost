@@ -89,4 +89,27 @@
     <span>© 2026 <strong><span class="accent">Mudi Ghost</span></strong>. Wszelkie prawa zastrzeżone.</span>
     <span>Produkt przeznaczony wyłącznie do legalnego użytku.</span>
   </div>
-</footer>
+</footer></body>
+<script>
+const path = window.location.pathname;
+document.querySelectorAll('.site-nav a').forEach(a => {
+  const href = a.getAttribute('href');
+  if (href === path || href === path + '/') a.classList.add('active');
+});
+const toggle = document.getElementById('navToggle');
+const nav = document.getElementById('siteNav');
+toggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+  toggle.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+nav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
+</script>
