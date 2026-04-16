@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jak Policja Namierza Twój Telefon | Mudi Ghost</title>
+
+  <meta name="description" content="Jak policja namierza telefon? Poznaj IMSI, Stingray, triangulację i SORM. Technologie śledzenia których większość nie zna.">
+
+  <meta name="keywords" content="jak policja namierza telefon, IMSI, Stingray, triangulacja, śledzenie telefonu, przechwytywanie rozmów, SORM, IMSI catcher, lokalizacja przez stacje bazowe, ochrona przed śledzeniem">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Mudi Ghost">
+  <link rel="canonical" href="https://mudighost.com/blog/jak-policja-namierza-telefon">
+
+  <meta property="og:title" content="Jak Policja Namierza Twój Telefon — IMSI, Stingray, Triangulacja | Mudi Ghost">
+  <meta property="og:description" content="Jak policja namierza telefon? Poznaj technologie śledzenia których większość osób nie zna. IMSI, Stingray, triangulacja, SORM — przystępna analiza.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mudighost.com/blog/jak-policja-namierza-telefon">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="Mudi Ghost">
+  <meta property="article:published_time" content="2026-04-16T00:00:00+00:00">
+  <meta property="article:tag" content="jak policja namierza telefon">
+  <meta property="article:tag" content="IMSI">
+  <meta property="article:tag" content="Stingray">
+  <meta property="article:tag" content="triangulacja">
+  <meta property="article:tag" content="śledzenie telefonu">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jak Policja Namierza Twój Telefon — IMSI, Stingray, Triangulacja">
+  <meta name="twitter:description" content="Technologie śledzenia telefonów których większość osób nie zna. Poznaj jak naprawdę działają służby.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jak Policja Namierza Twój Telefon — IMSI, Stingray, Triangulacja",
+    "description": "Technologie śledzenia telefonów komórkowych — IMSI, Stingray, triangulacja, SORM. Przystępna analiza dla osób dbających o prywatność.",
+    "url": "https://mudighost.com/blog/jak-policja-namierza-telefon",
+    "datePublished": "2026-04-16",
+    "dateModified": "2026-04-16",
+    "author": { "@type": "Organization", "name": "Mudi Ghost", "url": "https://mudighost.com" },
+    "publisher": { "@type": "Organization", "name": "Mudi Ghost", "url": "https://mudighost.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mudighost.com/blog/jak-policja-namierza-telefon" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Strona Główna", "item": "https://mudighost.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Jak Policja Namierza Twój Telefon — IMSI, Stingray, Triangulacja", "item": "https://mudighost.com/blog/jak-policja-namierza-telefon" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .breadcrumb { max-width: var(--content-w); margin: 0 auto; padding: 16px 40px 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; position: relative; z-index: 1; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--cyan); }
+    .breadcrumb span { color: var(--border); }
+    .post-wrap { max-width: var(--content-w); margin: 0 auto; padding: 48px 40px 80px; position: relative; z-index: 1; }
+    .post-wrap h1 { font-family: var(--font-head); font-size: 40px; font-weight: 700; color: var(--white); letter-spacing: 2px; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
+    .post-wrap h1 .accent { color: var(--cyan); }
+    .post-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+    .post-meta span::before { content: '// '; color: var(--cyan); }
+    .post-intro { font-size: 17px; line-height: 1.8; color: var(--text); margin-bottom: 36px; padding: 22px 26px; background: var(--dark2); border-left: 4px solid var(--cyan); }
+    .post-intro strong { color: var(--white); }
+    .post-toc { background: var(--dark2); border: 1px solid var(--border); border-left: 3px solid var(--cyan); padding: 20px 24px; margin-bottom: 40px; }
+    .post-toc h4 { font-family: var(--font-mono); font-size: 11px; color: var(--cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .post-toc h4::before { content: '// '; }
+    .post-toc ol { list-style: none; display: flex; flex-direction: column; gap: 6px; counter-reset: toc-counter; padding: 0; margin: 0; }
+    .post-toc ol li { counter-increment: toc-counter; }
+    .post-toc ol li a { font-size: 14px; color: var(--muted); text-decoration: none; display: flex; gap: 10px; align-items: flex-start; line-height: 1.4; transition: color 0.2s; }
+    .post-toc ol li a::before { content: counter(toc-counter, decimal-leading-zero); color: var(--cyan); font-family: var(--font-mono); font-size: 11px; flex-shrink: 0; padding-top: 1px; }
+    .post-toc ol li a:hover { color: var(--cyan); }
+    .post-body h2 { font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--white); letter-spacing: 1px; text-transform: uppercase; margin: 44px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .post-body h2 .accent { color: var(--cyan); }
+    .post-body h3 { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--cyan); margin: 24px 0 10px; }
+    .post-body p { font-size: 16px; line-height: 1.85; margin-bottom: 18px; color: var(--text); }
+    .post-body strong { color: var(--white); }
+    .post-body a { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.2s; }
+    .post-body a:hover { opacity: 0.75; }
+    .post-body ul, .post-body ol { list-style: none; padding: 0; margin: 0 0 18px 0; display: flex; flex-direction: column; gap: 8px; }
+    .post-body ul li, .post-body ol li { font-size: 16px; line-height: 1.65; color: var(--text); display: flex; align-items: flex-start; gap: 10px; }
+    .post-body ul li::before { content: '›'; color: var(--cyan); font-family: var(--font-mono); font-size: 18px; flex-shrink: 0; margin-top: -1px; }
+    .post-body ol { counter-reset: ol-counter; }
+    .post-body ol li::before { content: counter(ol-counter, decimal-leading-zero); counter-increment: ol-counter; color: var(--cyan); font-family: var(--font-mono); font-size: 12px; flex-shrink: 0; padding-top: 3px; }
+    .post-highlight { background: var(--dark3); border: 1px solid var(--cyan); padding: 18px 22px; margin: 24px 0; box-shadow: inset 0 0 20px rgba(0,242,255,0.03); }
+    .post-highlight p { margin-bottom: 0; }
+    .post-warn { background: rgba(255,160,0,0.04); border-left: 3px solid #ffa000; padding: 14px 18px; margin: 24px 0; font-size: 15px; line-height: 1.65; color: var(--text); }
+    .post-cta { background: var(--dark2); border: 2px solid var(--cyan); padding: 28px 32px; margin: 48px 0 36px; text-align: center; position: relative; overflow: hidden; }
+    .post-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--cyan); box-shadow: 0 0 16px var(--cyan-glow); }
+    .post-cta h3 { font-family: var(--font-head); font-size: 22px; color: var(--white); margin-bottom: 10px; }
+    .post-cta p { font-size: 15px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+    .post-cta .btn { display: inline-block; font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--dark); background: var(--cyan); padding: 14px 28px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: all 0.2s; }
+    .post-cta .btn:hover { background: var(--white); box-shadow: 0 0 20px rgba(0,242,255,0.4); }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .tag { font-family: var(--font-mono); font-size: 11px; padding: 4px 12px; border: 1px solid var(--border); color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .related-section { background: var(--dark2); padding: 50px 0; position: relative; z-index: 1; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    .related-card { background: var(--dark3); border: 1px solid var(--border); border-top: 2px solid var(--cyan); padding: 20px; text-decoration: none; display: block; transition: transform 0.2s, box-shadow 0.2s; }
+    .related-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,242,255,0.07); }
+    .related-card .rc-date { font-family: var(--font-mono); font-size: 10px; color: var(--muted); margin-bottom: 8px; }
+    .related-card .rc-date::before { content: '// '; color: var(--cyan); }
+    .related-card h4 { font-family: var(--font-head); font-size: 16px; color: var(--white); line-height: 1.3; }
+    @media (max-width: 768px) { .post-wrap { padding: 32px 24px 60px; } .post-wrap h1 { font-size: 26px; letter-spacing: 1px; } .breadcrumb { padding: 16px 24px 0; } .post-intro { font-size: 16px; padding: 16px 18px; } .post-body h2 { font-size: 20px; } .related-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">MUDI <span class="accent">GHOST</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="siteNav" role="navigation" aria-label="Główna nawigacja">
+    <a href="/">Strona Główna</a>
+    <a href="/#funkcje">Funkcje</a>
+    <a href="/o-nas.html">O Nas</a>
+    <a href="/cennik.html">Cennik</a>
+    <a href="/blog/">Blog</a>
+    <a href="/kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Strona Główna</a>
+  <span>›</span>
+  <a href="/blog/">Blog</a>
+  <span>›</span>
+  <span style="color:var(--text)">Jak Policja Namierza Twój Telefon</span>
+</nav>
+
+<div class="post-wrap">
+  <article itemscope itemtype="https://schema.org/Article">
+
+    <p class="section-label">Blog — Prywatność w Sieci</p>
+
+    <h1>Jak Policja Namierza Twój <span class="accent">Telefon</span> — IMSI, Stingray, Triangulacja</h1>
+
+    <div class="post-meta">
+      <span>16 Kwiecień 2026</span>
+      <span>Czas czytania: 10 min</span>
+    </div>
+
+    <div class="post-intro">
+      <strong>Twój telefon to nadajnik</strong> — nieustannie wysyłający sygnały do najbliższych stacji bazowych, identyfikujący się unikalnym numerem w sieci, informujący operatora o lokalizacji. Ta komunikacja — której większość użytkowników nie jest świadoma — jest fundamentem współczesnej inwigilacji. Służby wykorzystują <strong>IMSI</strong>, <strong>Stingray</strong>, <strong>triangulację</strong> i protokół <strong>SS7</strong> do precyzyjnego śledzenia osób. Ten artykuł wyjaśnia jak te mechanizmy działają — nie po to żeby wykorzystać je w zły sposób, ale żeby zrozumieć zagrożenie i skutecznie się przed nim chronić. Wiedza o tym jak policja namierza telefon to pierwszy krok do prawdziwej prywatności w sieci komórkowej.
+    </div>
+
+    <nav class="post-toc" aria-label="Spis treści">
+      <h4>Spis Treści</h4>
+      <ol>
+        <li><a href="#imsi">IMSI — Twój niezmienny identyfikator w sieci komórkowej</a></li>
+        <li><a href="#stingray">Stingray — pułapka na telefony, którą można postawić w dowolnym miejscu</a></li>
+        <li><a href="#triangulacja">Triangulacja — jak dokładnie lokalizują Cię na podstawie stacji bazowych</a></li>
+        <li><a href="#ss7">SS7 — luka w protokole, która pozwala na zdalne przechwytywanie rozmów</a></li>
+        <li><a href="#sorm">SORM i prawne przechwytywanie — jak działają służby w Polsce i UE</a></li>
+        <li><a href="#ochrona">Jak utrudnić śledzenie — praktyczne kroki</a></li>
+        <li><a href="#podsumowanie">Podsumowanie</a></li>
+      </ol>
+    </nav>
+
+    <div class="post-body">
+
+      <h2 id="imsi"><span class="accent">IMSI</span> — Twój niezmienny identyfikator w sieci komórkowej</h2>
+
+      <p>Wiesz że Twój telefon ma <strong>IMEI</strong> — 15-cyfrowy numer identyfikacyjny wbudowany w modem. Ale mniej osób zna <strong>IMSI (International Mobile Subscriber Identity)</strong> — tożsamość subskrybenta zapisaną na karcie SIM. IMSI to Twój prawdziwy klucz do sieci komórkowej: podczas gdy IMEI identyfikuje urządzenie, <strong>IMSI identyfikuje Ciebie jako abonenta</strong>. Składa się z kodu kraju (MCC), kodu sieci (MNC) i unikalnego numeru MSIN przypisanego przez operatora.</p>
+
+      <p>Kiedy telefon łączy się z siecią, wysyła swoje IMSI do najbliższej stacji bazowej. Operator na tej podstawie wie: kto się łączy, w jakiej sieci, z jakimi uprawnieniami. Ten proces jest nieunikniony i odbywa się przy każdym połączeniu — nawet jeśli nie wykonujesz żadnego połączenia, modem periodycznie komunikuje się z siecią żeby utrzymać rejestrację.</p>
+
+      <p><strong>Dlaczego IMSI jest kluczowy dla służb?</strong> Ponieważ — w przeciwieństwie do numeru telefonu — nie zmieniasz go przez zmianę karty SIM. Jeśli służby raz pozyskają Twoje IMSI, mogą śledzić Cię niezależnie od tego jak często zmieniasz numery. Wystarczy że włożysz kartę SIM do dowolnego telefonu — IMSI pozostaje to samo.</p>
+
+      <div class="post-highlight">
+        <p><strong>Co to jest IMSI?</strong> To 15-cyfrowy numer zapisany na karcie SIM, jednoznacznie identyfikujący użytkownika w sieci komórkowej. Składa się z: kodu kraju (MCC, 3 cyfry), kodu operatora (MNC, 2-3 cyfry) i numeru subskrybenta (MSIN, do 10 cyfr). Przykład: <strong>260 01 1234567890</strong> — Polska, operator Play, numer abonenta.</p>
+      </div>
+
+      <p>Problem jest fundamentalny: <strong>IMSI jest wysyłany w czystej formie przy każdym połączeniu</strong>. W przeciwieństwie do zaszyfrowanej treści rozmowy, sam identyfikator podróżuje otwartym tekstem. To oznacza że każdy kto może nasłuchiwać na poziomie stacji bazowej — a takich urządzeń jest na rynku wiele — może poznać Twoje IMSI.</p>
+
+      <h2 id="stingray"><span class="accent">Stingray</span> — pułapka na telefony, którą można postawić w dowolnym miejscu</h2>
+
+      <p><strong>Stingray</strong> to potoczna nazwa urządzeń klasy <strong>IMSI Catcher</strong> (przechwytujących IMSI). Są to przenośne stacje bazowe, które działają jak prawdziwy maszt operatora — z tą różnicą że nie należą do żadnego legalnego dostawcy usług. Telefony w zasięgu Stingray automatycznie się do niego podłączają, myśląc że to normalna stacja bazowa.</p>
+
+      <p>Mechanizm jest prosty i przerażający zarazem: Twój telefon nieustannie skanuje dostępne stacje bazowe i łączy się z tą o najsilniejszym sygnale. Stingray emituje silniejszy sygnał niż legalne stacje w okolicy. W efekcie wszystkie telefony w promieniu działania urządzenia zaczynają komunikować się z pułapką zamiast z prawdziwą siecią.</p>
+
+      <p><strong>Co Stingray może zrobić kiedy przejmie kontrolę?</strong></p>
+
+      <ul>
+        <li><strong>Przechwycić IMSI każdego telefonu w zasięgu</strong> — służby budują listę osób obecnych na danym terenie</li>
+        <li><strong>Lokalizować urządzenia z dokładnością do kilkudziesięciu metrów</strong> — znając siłę sygnału i czas</li>
+        <li><strong>Przeprowadzać ataki man-in-the-middle</strong> — przechwytywać i modyfikować komunikację</li>
+        <li><strong>Wymuszać degradację połączenia do 2G</strong> — starszy standard jest znacznie słabiej szyfrowany</li>
+        <li><strong>Wysyłać wiadomości SMS bez wiedzy użytkownika</strong> — na przykład treść którą właśnie przeczytałeś</li>
+      </ul>
+
+      <p>Te urządzenia są legalnie używane przez służby w większości krajów europejskich — w tym w Polsce. <strong>Koszt jednego Stingray to od kilkunastu do kilkudziesięciu tysięcy euro</strong>, więc nie są to narzędzia szpiegowskie tylko dla agencji typu CIA czy NSA. Policja, ABW, CBA mają do nich dostęp. Polskie służby używały ich co najmniej od 2016 roku — wynika z informacji ujawnionych przez dziennikarzy śledczych.</p>
+
+      <div class="post-warn">
+        ⚠️ <strong>Zagrożenie dla dziennikarzy:</strong> Stingray jest szczególnie niebezpieczny dla osób pracujących w terenie. Podczas demonstracji, spotkań, wydarzeń — służby mogą ustawić pułapkę i sprawdzić kto był obecny, z dokładnością do minut. To dlatego źródła odmawiają spotkań w miejscach gdzie mogliby zostać zidentyfikowani przez swój telefon.
+      </div>
+
+      <p>Problem ze Stingray jest nie tylko techniczny ale prawny: <strong>tego typu przechwytywanie danych wymaga autoryzacji sądowej</strong>, ale faktyczne wykorzystanie urządzenia jest trudne do udowodnienia bo nie zostawia widocznych śladów na telefonie. Ofiara nie wie że była podsłuchiwana.</p>
+
+      <h2 id="triangulacja"><span class="accent">Triangulacja</span> — jak dokładnie lokalizują Cię na podstawie stacji bazowych</h2>
+
+      <p>Triangulacja to metoda lokalizacji wykorzystująca <strong>co najmniej trzy stacje bazowe</strong> jednocześnie. Twój telefon nie komunikuje się z jedną stacją — jest w zasięgu wielu. Każda stacja mierzy czas (lub siłę) sygnału. Na podstawie różnic w tych pomiarach można wyliczyć pozycję z dokładnością do <strong>50-200 metrów w mieście</strong>.</p>
+
+      <p>Jak to działa w praktyce? Załóżmy że w okolicy są trzy stacje bazowe. Stacja A widzi Twój telefon z siłą sygnału X, stacja B z siłą Y, stacja C z siłą Z. Na podstawie tabel kalibracyjnych (które operator posiada i udostępnia służbom) można przeliczyć te wartości na odległości. Trzy odległości wyznaczają punkt przecięcia — Twoją lokalizację.</p>
+
+      <p><strong>To nie wymaga aktywnego połączenia.</strong> Twój modem w trybie jałowym (standby) co kilka sekund wysyła sygnał do najbliższej stacji żeby utrzymać rejestrację w sieci. Te sygnały są wystarczające do triangulacji. Nie musisz nic robić — telefon nieustannie informuje sieć gdzie jest.</p>
+
+      <p><strong>Co ofiara widzi:</strong> Nic. Telefon zachowuje się normalnie. Brak oznak że trwa lokalizacja. To jedna z najgroźniejszych form inwigilacji bo ofiara nie może się bronić — nie wie że jest śledzona.</p>
+
+      <div class="post-highlight">
+        <p><strong>Cells ID jako uzupełnienie triangulacji:</strong> Każda stacja bazowa ma unikalny identyfikator — LAC (Location Area Code) i Cell ID. W połączeniu z triangulacją służby tworzą <strong>mapę siły sygnałów</strong> która pozwala śledzić wzorce przemieszczania się konkretnego urządzenia. Mudi Ghost rozwiązuje problem u źródła — zmiana IMEI sprawia że dla stacji bazowych to zupełnie nowe urządzenie, historia lokalizacji zostaje przerwana.</p>
+      </div>
+
+      <p>Triangulacja jest standardową techniką stosowaną przez operatorów do zarządzania ruchem w sieci — i służby mają do niej dostęp na podstawie nakazów sądowych. Operator jest zobowiązany udostępnić dane lokalizacyjne. Ale służby mają też własne narzędzia — przenośne urządzenia do triangulacji, które nie wymagają współpracy z operatorem.</p>
+
+      <h2 id="ss7"><span class="accent">SS7</span> — luka w protokole, która pozwala na zdalne przechwytywanie rozmów</h2>
+
+      <p><strong>SS7 (Signaling System No. 7)</strong> to protokół stosowany w sieciach komórkowych do komunikacji między elementami infrastruktury. Powstał w latach 70-tych, kiedy bezpieczeństwo nie było priorytetem. Protokół zakłada że wszystkie elementy sieci są zaufane — bo w tamtych czasach tylko one miały dostęp do SS7.</p>
+
+      <p>Problem: dzisiaj SS7 jest częścią globalnej infrastruktury telekomunikacyjnej. Atakujący z odpowiednim dostępem — a ten dostęp można kupić za kilkaset euro miesięcznie na czarnym rynku — może wykorzystać luki w SS7 do:</p>
+
+      <ul>
+        <li><strong>Lokalizacji dowolnego telefonu</strong> — wysyłając zapytanie do sieci operatora</li>
+        <li><strong>Przechwytywania SMS-ów</strong> — w tym kodów dwuskładnikowej autoryzacji</li>
+        <li><strong>Przekierowywania połączeń</strong> — na numer kontrolowany przez atakującego</li>
+        <li><strong> Śledzenia w czasie rzeczywistym</strong> — bez wiedzy operatora</li>
+      </ul>
+
+      <p>Ataki przez SS7 są możliwe z dowolnego miejsca na świecie — wystarczy dostęp do sieci SS7, którą posiada każdy operator komórkowy. Hakerzy z Rosji, Chin, Izraela oferują usługi lokalizacji przez SS7 za kilkaset dolarów. To nie jest teoretyczne zagrożenie — to <strong>działający rynek usług szpiegowskich</strong>.</p>
+
+      <div class="post-warn">
+        ⚠️ <strong>Krytyczne zagrożenie dla posiadaczy kryptowalut:</strong> Atak przez SS7 na portfel kryptowalut to realne ryzyko. Atakujący przechwytuje SMS z kodem 2FA, przejmuje konto giełdy, transferuje środki. W 2022 roku zgłoszono straty rzędu milionów dolarów przez takie ataki. Jeśli używasz SMS-ów jako drugiego składnika autoryzacji — jesteś narażony.
+      </div>
+
+      <p>Protokół SS7 jest wciąż aktywny w większości sieci komórkowych na świecie mimo że nowsze sieci LTE/5G mają lepsze zabezpieczenia — te zabezpieczenia dotyczą tylko komunikacji między telefonem a stacją bazową. <strong>SS7 działa w tle jako warstwa sygnalizacyjna</strong> i jest niezbędny do działania sieci. Atakujący wykorzystują fakt że stare luki pozostają otwarte bo operatorzy nie chcą wyłączać starej infrastruktury.</p>
+
+      <h2 id="sorm"><span class="accent">SORM</span> i prawne przechwytywanie — jak działają służby w Polsce i UE</h2>
+
+      <p><strong>SORM (System Operacyjno-Rozpoznawczo-Monitorujący)</strong> to polski system prawnych interwepcji telekomunikacyjnych. Na jego podstawie służby mogą legalnie żądać od operatorów: danych lokalizacyjnych, treści rozmów, metadanych, historii połączeń. Wszystko na podstawie nakazu sądowego.</p>
+
+      <p>SORM działa w trzech fazach:</p>
+
+      <ol>
+        <li><strong>SORM-1:</strong> Przechwytywanie treści rozmów i wiadomości na wniosek sądu</li>
+        <li><strong>SORM-2:</strong> Dostęp do danych o lokalizacji w czasie rzeczywistym</li>
+        <li><strong>SORM-3:</strong> Analiza ruchu sieciowego i wzorców komunikacji</li>
+      </ol>
+
+      <p>Operatorzy w Polsce są zobowiązani do utrzymywania urządzeń SORM we własnej infrastrukturze i udostępniania danych służbom na każde żądanie. Ilość żądań rośnie z roku na rok — według raportów organizacji pozarządowych, polskie służby wysyłają setki tysięcy zapytań rocznie.</p>
+
+      <p><strong>Inne kraje mają podobne systemy:</strong></p>
+
+      <ul>
+        <li><strong>Niemcy:</strong> Telekommunikationsüberwachungsgesetz (TKG) — podobny do SORM</li>
+        <li><strong>Wielka Brytania:</strong> Investigatory Powers Act 2016 — wymusza na operatorach przechowywanie metadanych przez 12 miesięcy</li>
+        <li><strong>USA:</strong> CALEA — zobowiązuje producentów do tworzenia backdoorów w urządzeniach</li>
+        <li><strong>Rosja:</strong> SORM-3 kompleksowo monitoruje cały ruch sieciowy w kraju</li>
+      </ul>
+
+      <p>Co to oznacza w praktyce? <strong>Każda rozmowa przez komórkę może być legalnie przechwycona</strong> jeśli służby mają nakaz. Nie ma znaczenia czy masz VPN, szyfrowanie, aplikacje do anonimowej komunikacji — na poziomie sieci komórkowej (GSM/LTE) treść może być przechwycona zanim trafi do aplikacji.</p>
+
+      <div class="post-highlight">
+        <p><strong>Co służby wiedzą o Tobie dzięki SORM?</strong> Wystarczy nakaz żeby operator udostępnił: kto, kiedy, z kim i z jakiego miejsca się kontaktował. Dane lokalizacyjne z dokładnością do stacji bazowej. Treść rozmów jeśli nie były szyfrowane end-to-end. Pamiętaj: <strong>Wiadomości przez SMS czy zwykły głos to czysty tekst dla operatora i służb</strong>.</p>
+      </div>
+
+      <p>Wyjątek: <strong>aplikacje z szyfrowaniem end-to-end</strong> (Signal, WhatsApp) chronią treść przed SORM, ale metadane i tak są dostępne. Kto, kiedy, jak długo, z jakiej lokalizacji — to wszystko służby mogą pozyskać legalnie.</p>
+
+      <h2 id="ochrona">Jak utrudnić <span class="accent">śledzenie telefonu</span> — praktyczne kroki</h2>
+
+      <p>Wiedza o zagrożeniach to pierwszy krok. Teraz praktyczne metody utrudnienia śledzenia:</p>
+
+      <ul>
+        <li><strong>Zmiana IMEI</strong> — najskuteczniejsza metoda na poziomie urządzenia. Zmiana IMEI sprawia że dla sieci to zupełnie nowe urządzenie. Ciągłość identyfikacji zostaje przerwana. Tak działa <a href="/blog/mudi-ghost-skuteczna-zmiana-imei.html"><strong>Mudi Ghost ze sprzętową zmianą IMEI</strong></a>.</li>
+        <li><strong>Tryb samolotowy kiedy nie potrzebujesz łączności</strong> — najprostsza metoda. Wyłączasz wszystkie nadajniki w telefonie. Nikt nie może Cię namierzyć kiedy nie masz połączenia z siecią.</li>
+        <li><strong>Karta SIM bez rejestracji lub prepaid</strong> — utrudnia powiązanie IMSI z tożsamością. W wielu krajach można kupić bez dokumentów.</li>
+        <li><strong> VPN na poziomie routera</strong> — szyfruje cały ruch przed wyjściem z urządzenia. <a href="/blog/vpn-vs-proxy-vs-tor.html">VPN vs Proxy vs Tor</a> — porównanie rozwiązań.</li>
+        <li><strong>Aplikacje z E2EE</strong> — Signal, WhatsApp, iMessage. Chronią treść, nie metadane.</li>
+        <li><strong>Physical security phone</strong> — osobne urządzenie do pracy z wrażliwymi kontaktami. Wyłączone kiedy niepotrzebne.</li>
+      </ul>
+
+      <p>Pamiętaj że żadna pojedyncza metoda nie daje pełnej ochrony. Dopiero <strong>kombinacja kilku</strong> — zmiana IMEI, prepaid SIM, VPN, physical phone separation — utrudnia śledzenie na tyle żeby służby szukały łatwiejszych celów.</p>
+
+      <h2 id="podsumowanie">Podsumowanie — <span class="accent">Jak Policja Namierza Twój Telefon</span></h2>
+
+      <p>Mechanizmy śledzenia telefonów są zaawansowane, ale nie tajemne. <strong>IMSI</strong> to Twój niezmienny identyfikator w sieci — jednorazowo pozyskany pozwala śledzić Cię miesiącami. <strong>Stingray</strong> daje służbom mobilną pułapkę którą można ustawić w dowolnym miejscu — na demonstracji, przy spotkaniu, w samolocie. <strong>Triangulacja</strong> pozwala zlokalizować Cię z dokładnością do kilkudziesięciu metrów bez Twojej wiedzy. <strong>SS7</strong> to globalna luka przez którą hakerzy i służby mogą przechwytywać SMS-y, lokalizację, połączenia. <strong>SORM</strong> to prawne narzędzie które zobowiązuje operatorów do udostępniania wszystkiego na każde żądanie.</p>
+
+      <p>Dla osób które rozumieją ryzyko — dziennikarzy, aktywistów, prawników, biznesmenów — ta wiedza nie jest paraliżująca. Jest <strong>narzędziem do podejmowania świadomych decyzji</strong>. Wiesz jak działają mechanizmy inwigilacji — możesz dobrać odpowiednie środki ochrony.</p>
+
+      <p><strong>Mudi Ghost</strong> rozwiązuje problem u źródła: fizyczna zmiana IMEI jednym przełącznikiem. Dla sieci komórkowej to zupełnie nowe urządzenie — żaden zapis z wcześniejszych sesji nie może być powiązany z nowym IMEI. Ciągłość śledzenia zostaje przerwana.</p>
+
+      <div class="post-cta">
+        <h3>Szukasz <span class="accent">Ochrony Przed Inwigilacją?</span></h3>
+        <p><strong>Mudi Ghost</strong> to jedyny router na rynku ze sprzętową zmianą IMEI — nie aplikacja, nie soft, ale fizyczny przełącznik. WireGuard VPN, kill switch, randomizacja MAC. Od pierwszego włączenia.</p>
+        <a href="/cennik.html" class="btn">Zobacz Cennik — 375€</a>
+      </div>
+
+      <div class="post-tags">
+        <span class="tag">jak policja namierza telefon</span>
+        <span class="tag">IMSI</span>
+        <span class="tag">Stingray</span>
+        <span class="tag">triangulacja</span>
+        <span class="tag">śledzenie telefonu</span>
+        <span class="tag">ochrona przed inwigilacją</span>
+        <span class="tag">SS7</span>
+      </div>
+
+    </div>
+</article>
+</div>
+
+<section class="related-section">
+  <div style="max-width: var(--content-w); margin: 0 auto; padding: 0 40px;">
+    <h3 style="font-family: var(--font-mono); font-size: 11px; color: var(--cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0;">// Powiązane artykuły</h3>
+    <div class="related-grid">
+      <a href="/blog/co-to-jest-imei-anonimowosc.html" class="related-card">
+        <p class="rc-date">23 marca 2026</p>
+        <h4>Co to jest IMEI i jak wpływa na anonimowość w sieci komórkowej</h4>
+      </a>
+      <a href="/blog/telefon-sledzony-7-oznak-szpiegowania.html" class="related-card">
+        <p class="rc-date">8 kwietnia 2026</p>
+        <h4>Czy Twój Telefon Jest Śledzony? — 7 Oznak Szpiegowania</h4>
+      </a>
+      <a href="/blog/vpn-vs-proxy-vs-tor.html" class="related-card">
+        <p class="rc-date">3 kwietnia 2026</p>
+        <h4>VPN vs Proxy vs Tor — co chroni Twoją prywatność?</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">MUDI <span class="accent">GHOST</span></div>
+      <div class="footer-tagline">Advanced Privacy Firmware — Hardened Security Edition</div>
+      <div class="footer-email">mudi.ghost&#64;proton.me</div>
+    </div>
+    <nav class="footer-links" aria-label="Linki w stopce">
+      <a href="/">Strona Główna</a>
+      <a href="/cennik.html">Cennik</a>
+      <a href="/o-nas.html">O Nas</a>
+      <a href="/blog/">Blog</a>
+      <a href="/kontakt.html">Kontakt</a>
+      <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Mudi Ghost. Wszelkie prawa zastrzeżone.</span>
+  </div>
+</footer>
+
+<script>
+  const path = window.location.pathname;
+  document.querySelectorAll('.site-nav a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href === path || href === path + '/') a.classList.add('active');
+  });
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+
+<!-- GoatCounter -->
+<script data-goatcounter="https://mudighost.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
