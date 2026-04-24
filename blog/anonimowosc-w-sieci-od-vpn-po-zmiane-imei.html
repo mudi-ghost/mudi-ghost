@@ -412,6 +412,16 @@
   </div>
 </footer>
 
-<script src="/script.js"></script>
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+    });
+  }
+</script>
 </body>
 </html>
