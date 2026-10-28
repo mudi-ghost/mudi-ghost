@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instrukcja Obsługi Router VPN — Zmiana IMEI Krok po Kroku | Mudi Ghost</title>
-<meta name="description" content="Instrukcja obsługi Mudi Ghost — jak uruchomić router VPN, zmienić IMEI krok po kroku i skonfigurować APN karty SIM. Przewodnik bez wiedzy technicznej. GL-E750V2 Mudi V2.">
-<meta name="keywords" content="instrukcja obsługi router VPN, jak uruchomić router Mudi Ghost, zmiana IMEI krok po kroku, konfiguracja APN GL-E750V2, jak połączyć się z routerem VPN, pierwsze uruchomienie router LTE, instrukcja zmiana IMEI router, Auto Setup APN router">
+<meta name="description" content="Instrukcja obsługi Mudi Ghost — pierwsze uruchomienie, zmiana IMEI krok po kroku, Auto Setup karty SIM (APN), zmiana serwera i kraju VPN oraz rozwiązywanie problemów. GL-E750V2 Mudi V2.">
+<meta name="keywords" content="instrukcja obsługi router VPN, jak uruchomić router Mudi Ghost, zmiana IMEI krok po kroku, konfiguracja APN GL-E750V2, jak połączyć się z routerem VPN, pierwsze uruchomienie router LTE, instrukcja zmiana IMEI router, Auto Setup APN router, zmiana serwera VPN, zmiana kraju VPN, SIM card not registered, rozwiązywanie problemów router LTE">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://mudighost.com/konfiguracja-router-vpn-zmiana-imei">
 <meta property="og:title" content="Instrukcja Obsługi Router VPN — Zmiana IMEI Krok po Kroku | Mudi Ghost">
@@ -27,10 +27,10 @@
   "tool": { "@type": "HowToTool", "name": "GL-E750V2 Mudi V2 — Mudi Ghost" },
   "step": [
     { "@type": "HowToStep", "name": "Włóż kartę SIM przed włączeniem routera", "text": "Karta SIM musi być włożona przed włączeniem routera. Router nie obsługuje hot-plug." },
-    { "@type": "HowToStep", "name": "Włącz router (3 sekundy)", "text": "Naciśnij przycisk zasilania i przytrzymaj przez około 3 sekundy." },
+    { "@type": "HowToStep", "name": "Włącz router (3 sekundy)", "text": "Naciśnij przycisk zasilania i przytrzymaj przez około 3 sekundy. Uruchomienie trwa około 1–3 minut." },
     { "@type": "HowToStep", "name": "Sprawdź hasło Wi-Fi na wyświetlaczu", "text": "Krótkie naciśnięcie przycisku zasilania pokazuje nazwę sieci i hasło na wyświetlaczu." },
     { "@type": "HowToStep", "name": "Połącz się z Wi-Fi routera", "text": "Połącz telefon lub laptop z siecią widoczną na wyświetlaczu." },
-    { "@type": "HowToStep", "name": "Poczekaj na VPN (30–60 sekund)", "text": "Router automatycznie łączy się z siecią i uruchamia WireGuard VPN." }
+    { "@type": "HowToStep", "name": "Poczekaj na internet i VPN (1–2 minuty)", "text": "Router automatycznie łączy się z siecią komórkową i uruchamia WireGuard VPN." }
   ]
 }
 </script>
@@ -67,7 +67,7 @@
     margin: 8mm auto;
     position: relative;
     overflow: hidden;
-    display: block;
+    display: flex;
     flex-direction: column;
   }
 
@@ -83,7 +83,10 @@
     z-index: 0;
   }
 
-  @page { size: A4 portrait; margin: 0; }
+  @page { 
+    size: A4 portrait; 
+    margin: 0; 
+  }
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
@@ -92,20 +95,22 @@
   @media print {
     body { background: #fff; }
     .page { margin: 0; page-break-after: always; min-height: 297mm; }
+    .page:last-child { page-break-after: avoid; }
+    .step, .warn-box, .info-box { break-inside: avoid; }
   }
 
   /* HEADER */
   .header {
     position: relative; z-index: 1;
-    padding: 7mm 15mm 5mm;
+    padding: 7mm 12mm 4mm;
     border-bottom: 2px solid var(--accent);
     background: linear-gradient(180deg, var(--bg3) 0%, var(--bg) 100%);
   }
-  .header-top { display: block; align-items: center; justify-content: space-between; margin-bottom: 2mm; }
+  .header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2mm; }
   .brand-name {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 40pt; font-weight: 700;
-    color: var(--dark); letter-spacing: 6px; line-height: 1;
+    font-size: 38pt; font-weight: 700;
+    color: var(--dark); letter-spacing: 5px; line-height: 1;
   }
   .brand-name span { color: var(--accent); }
   .badge {
@@ -117,12 +122,12 @@
   }
   .header-sub { font-size: 7.5pt; color: var(--muted); margin-bottom: 2mm; font-family: 'Share Tech Mono', monospace; }
   .header-divider { height: 1px; background: linear-gradient(to right, var(--accent) 60%, transparent); margin: 2mm 0; }
-  .header-edition { font-family: 'Rajdhani', sans-serif; font-size: 12pt; font-weight: 600; color: var(--text); letter-spacing: 1px; }
+  .header-edition { font-family: 'Rajdhani', sans-serif; font-size: 11.5pt; font-weight: 600; color: var(--text); letter-spacing: 1px; }
   .header-tagline { font-size: 7.5pt; font-style: italic; color: var(--muted); margin-top: 1mm; }
 
   /* INTRO */
   .intro {
-    margin: 3mm 15mm;
+    margin: 3mm 12mm;
     padding: 3mm 5mm;
     border-left: 3px solid var(--accent);
     background: var(--bg2);
@@ -132,7 +137,7 @@
   .intro strong { color: var(--accent); }
 
   /* SECTION */
-  .section-wrap { padding: 0 15mm; margin-top: 3.5mm; position: relative; z-index: 1; }
+  .section-wrap { padding: 0 12mm; margin-top: 2.5mm; position: relative; z-index: 1; }
 
   .part-label {
     display: inline-block;
@@ -145,17 +150,17 @@
     font-family: 'Rajdhani', sans-serif; font-size: 10.5pt; font-weight: 700;
     color: var(--accent); letter-spacing: 2.5px; text-transform: uppercase;
     padding-bottom: 1.5mm; border-bottom: 1.5px solid var(--accent);
-    margin-bottom: 2.5mm;
-    display: block; align-items: center; gap: 7px;
+    margin-bottom: 2mm;
+    display: flex; align-items: center; gap: 7px;
   }
   .section-title::before { content: '//'; font-family: 'Share Tech Mono', monospace; font-size: 8.5pt; opacity: 0.5; }
 
   /* STEPS */
-  .steps { display: block; flex-direction: column; gap: 1.5mm; }
+  .steps { display: flex; flex-direction: column; gap: 1.2mm; }
 
   .step {
-    display: block; align-items: flex-start; gap: 3mm;
-    padding: 2.5mm 4mm;
+    display: flex; align-items: flex-start; gap: 3mm;
+    padding: 2.2mm 4mm;
     background: var(--bg2);
     border-left: 2px solid var(--border-dark);
   }
@@ -167,103 +172,99 @@
   }
   .step-body { flex: 1; }
   .step-title {
-    font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 700;
-    color: var(--dark); letter-spacing: 0.3px; margin-bottom: 0.8mm;
+    font-family: 'Rajdhani', sans-serif; font-size: 9.8pt; font-weight: 700;
+    color: var(--dark); letter-spacing: 0.3px; margin-bottom: 0.7mm;
   }
-  .step-desc { font-size: 8.5pt; line-height: 1.5; color: var(--text); }
+  .step-desc { font-size: 8.5pt; line-height: 1.45; color: var(--text); }
   .step-desc strong { color: var(--dark); font-weight: 700; }
   .step-desc em { color: var(--accent); font-style: normal; font-weight: 600; }
 
-  /* SUB-LIST inside step */
-  .sub-list { margin-top: 1mm; padding-left: 3mm; list-style: none; }
-  .sub-list li { font-size: 8.5pt; line-height: 1.45; color: var(--text); display: block; gap: 2mm; }
-  .sub-list li::before { content: '›'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
-
-  /* WARN BOX */
+  /* WARN / INFO BOX */
+  .warn-box, .info-box {
+    margin-top: 2mm; padding: 2.5mm 4mm;
+  }
   .warn-box {
-    margin-top: 2.5mm; padding: 2.5mm 4mm;
     border: 1.5px solid #cc6600; background: #fff8f0;
-    display: block; gap: 3mm; align-items: flex-start;
+    display: flex; gap: 3mm; align-items: flex-start;
   }
   .warn-icon { font-size: 12pt; flex-shrink: 0; line-height: 1.3; }
-  .warn-text { font-size: 8.5pt; line-height: 1.5; color: #7a3a00; }
+  .warn-text { font-size: 8.4pt; line-height: 1.45; color: #7a3a00; }
   .warn-text strong { color: #cc4400; }
 
-  /* INFO BOX */
   .info-box {
-    margin-top: 2.5mm; padding: 3mm 4.5mm;
     border: 1px solid var(--accent); background: var(--accent-dim);
   }
   .info-box-title {
     font-family: 'Rajdhani', sans-serif; font-size: 9.5pt; font-weight: 700;
     color: var(--accent); margin-bottom: 1mm; letter-spacing: 0.5px;
   }
-  .info-box p { font-size: 8.5pt; line-height: 1.5; color: var(--text); }
+  .info-box p { font-size: 8.4pt; line-height: 1.45; color: var(--text); }
   .info-box p strong { color: var(--dark); }
-
-  /* CONTACT */
-  .contact-box {
-    padding: 3.5mm 5mm; border: 1.5px solid var(--accent); background: var(--bg2);
-    display: block; align-items: center; justify-content: space-between; gap: 5mm;
-  }
-  .contact-invite { font-family: 'Rajdhani', sans-serif; font-size: 12pt; font-weight: 700; color: var(--dark); margin-bottom: 1mm; letter-spacing: 0.5px; }
-  .contact-desc { font-size: 8pt; line-height: 1.4; color: var(--muted); }
-  .contact-email {
-    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 10.5pt; font-weight: 700;
-    color: #ffffff; background: var(--accent); padding: 3mm 6mm; white-space: nowrap;
-  }
 
   /* DISCLAIMER + FOOTER */
   .disclaimer-bar {
-    padding: 2mm 15mm; text-align: center; font-size: 6.5pt; color: var(--muted);
+    padding: 2mm 12mm; text-align: center; font-size: 6.5pt; color: var(--muted);
     border-top: 1px solid var(--border); font-family: 'Share Tech Mono', monospace; background: var(--bg2);
   }
   .footer {
-    padding: 3mm 15mm; background: var(--dark);
-    display: block; align-items: center; justify-content: space-between;
+    padding: 3mm 12mm; background: var(--dark);
+    display: flex; align-items: center; justify-content: space-between;
     border-top: 2px solid var(--accent); position: relative; z-index: 1;
   }
-  .footer-brand { font-family: 'Rajdhani', sans-serif; font-size: 11pt; font-weight: 700; color: #ffffff; letter-spacing: 2px; }
+  .footer-brand { font-family: 'Rajdhani', sans-serif; font-size: 10.5pt; font-weight: 700; color: #ffffff; letter-spacing: 2px; }
   .footer-brand span { color: #00aaff; }
-  .footer-website { font-family: 'Rajdhani', sans-serif; font-size: 11pt; font-weight: 600; color: #ffffff; letter-spacing: 1px; margin-left: 4mm; }
-  .footer-edition { font-size: 7pt; color: #8899aa; margin-top: 0.5mm; font-family: 'Share Tech Mono', monospace; }
-  .footer-right { text-align: right; font-size: 7pt; color: #8899aa; font-family: 'Share Tech Mono', monospace; }
+  .footer-website { font-family: 'Rajdhani', sans-serif; font-size: 10.5pt; font-weight: 600; color: #ffffff; letter-spacing: 1px; margin-left: 4mm; }
+  .footer-right { text-align: right; font-size: 6.8pt; color: #8899aa; font-family: 'Share Tech Mono', monospace; }
 
   /* PAGE 2 HEADER */
   .p2-header {
-    padding: 4mm 15mm; border-bottom: 2px solid var(--accent);
+    padding: 4mm 12mm; border-bottom: 2px solid var(--accent);
     background: linear-gradient(180deg, var(--bg3) 0%, var(--bg) 100%);
-    display: block; align-items: center; justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
     position: relative; z-index: 1;
   }
-  .p2-brand { font-family: 'Rajdhani', sans-serif; font-size: 18pt; font-weight: 700; color: var(--dark); letter-spacing: 3px; }
+  .p2-brand { font-family: 'Rajdhani', sans-serif; font-size: 17pt; font-weight: 700; color: var(--dark); letter-spacing: 3px; }
   .p2-brand span { color: var(--accent); }
   .p2-sub { font-size: 7pt; color: var(--muted); font-style: italic; text-align: right; font-family: 'Share Tech Mono', monospace; line-height: 1.5; }
 
   .mt2 { margin-top: 2mm; }
-  .mt3 { margin-top: 3mm; }
-  .mt4 { margin-top: 4mm; }
+  .mt3 { margin-top: 2.5mm; }
   .footer-push { margin-top: auto; position: relative; z-index: 1; }
+  .shot { display:block; width:100%; margin-top:2mm; border:1px solid var(--border); }
+  .shot-narrow { width:55%; }
+  .cgrid { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(9,auto); grid-auto-flow:column; gap:0.6mm 4mm; font-size:7.8pt; line-height:1.35; }
+  .cgrid div { display:flex; justify-content:space-between; border-bottom:1px dotted var(--border); }
+  .cgrid span { color:var(--muted); }
+  .cgrid b { font-family:'Share Tech Mono',monospace; font-weight:400; color:var(--dark); }
+  .shot-sim { width:76%; }
+  .step-desc:has(.shot-sim)::after { content:""; display:block; clear:both; }
+  .pmap { width:100%; border-collapse:collapse; font-size:8.2pt; line-height:1.4; }
+  .pmap th { text-align:left; font-family:'Share Tech Mono',monospace; font-weight:400; font-size:7.8pt; color:var(--muted); border-bottom:1px solid var(--border); padding:1mm 2mm; }
+  .pmap td { vertical-align:top; padding:1.4mm 2mm; border-bottom:1px dotted var(--border); }
+  .pmap td:first-child { width:42%; font-weight:600; color:var(--dark); }
+  .terms { margin:3mm 0; }
+  .term { display:flex; gap:3mm; padding:1.6mm 0; border-bottom:1px dotted var(--border); }
+  .term-num { font-family:'Share Tech Mono',monospace; color:var(--accent); font-size:10pt; min-width:7mm; }
+  .term-title { font-weight:700; font-size:8.8pt; color:var(--dark); margin-bottom:0.4mm; }
+  .term-desc { font-size:8.2pt; line-height:1.45; color:var(--text); }
+  .closing { margin-top:3mm; font-size:8.4pt; line-height:1.5; color:var(--text); }
 
 @media screen and (max-width: 720px) {
   body { background: #fff; }
-  .page {
-    width: 100%;
-    min-height: unset;
-    margin: 0;
-    border-radius: 0;
-  }
-}
-
-
-@media screen and (max-width: 720px) {
-  body { background: #fff; }
-  .page {
-    width: 100%;
-    min-height: unset;
-    margin: 0;
-    border-radius: 0;
-  }
+  .page { width: 100%; min-height: unset; margin: 0 0 4mm; overflow: visible; }
+  .header, .p2-header { padding-left: 4mm; padding-right: 4mm; }
+  .section-wrap { padding: 0 4mm; }
+  .intro { margin: 3mm 4mm; }
+  .disclaimer-bar, .footer { padding-left: 4mm; padding-right: 4mm; }
+  .header-top, .p2-header, .footer { flex-wrap: wrap; gap: 2mm; }
+  .brand-name { font-size: 28pt; }
+  .p2-sub, .footer-right { text-align: left; }
+  .step { padding: 2.5mm 3mm; }
+  .step-desc, .warn-text, .info-box p, .term-desc, .pmap { font-size: 10.5pt; }
+  .step-title { font-size: 11.5pt; }
+  .shot-sim, .shot-narrow { width: 100%; }
+  .cgrid { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-flow: row; font-size: 10pt; }
+  .pmap td:first-child { width: 40%; }
 }
 </style>
 </head>
@@ -284,10 +285,9 @@
   </div>
 
   <div class="intro">
-    <strong>Mudi Ghost</strong> to nie jest zwykły router. To precyzyjnie zmodyfikowane urządzenie z zaawansowanym hardeningiem firmware — zaprojektowane z jednym celem: sprawić, abyś był niewidzialny w sieci. Ta instrukcja przeprowadzi Cię przez pierwsze uruchomienie i zmianę IMEI — krok po kroku, bez potrzeby posiadania wiedzy technicznej.
+    <strong>Mudi Ghost</strong> to nie jest zwykły router. To precyzyjnie zmodyfikowane urządzenie z zaawansowanym hardeningiem firmware (wzmocnieniem zabezpieczeń oprogramowania systemowego) — zaprojektowane z jednym celem: sprawić, abyś był niewidzialny w sieci. Ta instrukcja przeprowadzi Cię przez pierwsze uruchomienie, zmianę IMEI i rozwiązanie najczęstszych problemów — krok po kroku, bez potrzeby posiadania wiedzy technicznej.
   </div>
 
-  <!-- CZĘŚĆ 1 -->
   <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 1 — PIERWSZE URUCHOMIENIE</div>
     <div class="section-title">Jak uruchomić router i połączyć się z internetem</div>
@@ -298,7 +298,7 @@
         <div class="step-num">01</div>
         <div class="step-body">
           <div class="step-title">Włóż kartę SIM — zanim włączysz router</div>
-          <div class="step-desc"><em>Ważne:</em> karta SIM musi być włożona <strong>PRZED włączeniem routera</strong>. Router nie obsługuje hot-plug — jeśli włożysz kartę gdy urządzenie już działa, nie zostanie ona wykryta.</div>
+          <div class="step-desc"><em>Ważne:</em> karta SIM musi być włożona <strong>PRZED włączeniem routera</strong>. Router nie obsługuje tzw. <strong>hot-plug</strong> (nie wykryje karty włożonej w trakcie pracy).<br>Zdejmij tylną klapkę (podważ ją palcem w wycięciu przy krawędzi), wsuń kartę <strong>nano SIM</strong> do gniazda zgodnie z rysunkiem obok gniazda i załóż klapkę z powrotem.</div>
         </div>
       </div>
 
@@ -306,7 +306,7 @@
         <div class="step-num">02</div>
         <div class="step-body">
           <div class="step-title">Włącz router</div>
-          <div class="step-desc">Naciśnij przycisk zasilania i przytrzymaj przez około <strong>3 sekundy</strong>. Na wyświetlaczu pojawią się informacje o uruchamianiu. Poczekaj aż router w pełni się uruchomi — zajmuje to około <strong>30–60 sekund</strong>.</div>
+          <div class="step-desc">Naciśnij przycisk zasilania i przytrzymaj przez około <strong>3 sekundy</strong>. Na wyświetlaczu pojawią się informacje o uruchamianiu. Poczekaj aż router w pełni się uruchomi — zajmuje to około <strong>1–3 minut</strong> (pierwsze uruchomienie z nową kartą SIM może potrwać dłużej).</div>
         </div>
       </div>
 
@@ -323,16 +323,16 @@
         <div class="step-body">
           <div class="step-title">Połącz się z Wi-Fi routera</div>
           <div class="step-desc">Na swoim <strong>telefonie lub laptopie</strong> wejdź w ustawienia Wi-Fi. Znajdź sieć o nazwie którą widziałeś na wyświetlaczu i połącz się z nią wpisując hasło z wyświetlacza.<br>
-          <em>Uwaga:</em> nazwa sieci Wi-Fi jest celowo neutralna — nie zawiera słowa „Mudi" ani żadnych skojarzeń ze specjalistycznym sprzętem. To celowy zabieg dla Twojego bezpieczeństwa.</div>
+          <em>Uwaga:</em> nazwa sieci Wi-Fi jest celowo neutralna — nie zawiera słowa „Mudi" ani żadnych skojarzeń ze specjalistycznym sprzętem. To celowy zabieg dla Twojego bezpieczeństwa.<br><em>Nie widzisz sieci na liście?</em> Jeśli zamówiłeś sieć <strong>ukrytą</strong>, nie pojawi się ona na liście. W ustawieniach Wi-Fi wybierz <strong>„Dodaj sieć”</strong> (lub „Inna sieć”), wpisz jej nazwę dokładnie tak jak na wyświetlaczu (wielkość liter ma znaczenie), wybierz zabezpieczenie <strong>WPA2</strong> (czasem opisane jako WPA2-Personal) i podaj hasło.</div>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">05</div>
         <div class="step-body">
-          <div class="step-title">Poczekaj na VPN — ok. 30–60 sekund</div>
-          <div class="step-desc">Po połączeniu z Wi-Fi routera poczekaj chwilę — router automatycznie łączy się z siecią komórkową i uruchamia <strong>wbudowany VPN</strong>. Cały proces zajmuje zazwyczaj około 30–60 sekund. Dopiero po tym czasie Twój ruch internetowy jest w pełni zaszyfrowany i chroniony.<br>
-          Możesz zacząć korzystać z internetu gdy zobaczysz na wyświetlaczu informację o aktywnym połączeniu.</div>
+          <div class="step-title">Poczekaj na internet i VPN — ok. 1–2 minuty</div>
+          <div class="step-desc">Po połączeniu z Wi-Fi routera poczekaj chwilę — router automatycznie łączy się z siecią komórkową i uruchamia <strong>wbudowany VPN</strong> (szyfrowany tunel, który ukrywa Twój ruch i prawdziwy adres IP). Cały proces zajmuje zazwyczaj około 1–2 minut. Dopiero po tym czasie Twój ruch internetowy jest w pełni zaszyfrowany i chroniony.<br>
+          Najprościej sprawdzić, czy działa: otwórz dowolną stronę w przeglądarce. Jeśli po 3 minutach się nie otwiera — zajrzyj do tabelki na <strong>stronie 2</strong>.</div>
         </div>
       </div>
 
@@ -340,7 +340,7 @@
 
     <div class="warn-box mt3">
       <div class="warn-icon">⚠️</div>
-      <div class="warn-text"><strong>Brak internetu po uruchomieniu?</strong> Czasem karta SIM wymaga ręcznej konfiguracji punktu dostępu (APN). Nie martw się — to łatwe do naprawienia. Przejdź do <strong>Części 3</strong> na odwrocie tej instrukcji.</div>
+      <div class="warn-text"><strong>Coś nie działa?</strong> Nie martw się — większość problemów naprawisz sam w kilka minut. Na <strong>stronie 2</strong> znajdziesz tabelkę <strong>„Znajdź swój problem”</strong>, która wskaże Ci właściwą procedurę.</div>
     </div>
 
   </div>
@@ -372,10 +372,10 @@
   </div>
 
   <!-- CZĘŚĆ 2 -->
-  <div class="section-wrap mt4">
+  <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 2 — ZMIANA IMEI</div>
     <div class="section-title">Procedura zmiany IMEI — krok po kroku</div>
-    <div style="font-size:8pt;margin-bottom:2.5mm;color:var(--muted);font-family:'Share Tech Mono',monospace;">// Zalecamy zmianę IMEI za każdym razem gdy zmieniasz lokalizację lub kartę SIM</div>
+    <div style="font-size:8pt;margin-bottom:2mm;color:var(--muted);font-family:'Share Tech Mono',monospace;">// Zalecamy zmianę IMEI za każdym razem gdy zmieniasz lokalizację lub kartę SIM</div>
 
     <div class="steps">
 
@@ -383,7 +383,7 @@
         <div class="step-num">01</div>
         <div class="step-body">
           <div class="step-title">Znajdź przełącznik IMEI</div>
-          <div class="step-desc">Po <strong>lewej stronie</strong> routera znajduje się mały fizyczny przełącznik (toggle switch). Służy wyłącznie do zmiany IMEI.</div>
+          <div class="step-desc">Po <strong>lewej stronie</strong> routera znajduje się mały fizyczny przełącznik suwakowy (toggle switch). Służy wyłącznie do zmiany IMEI.</div>
         </div>
       </div>
 
@@ -423,70 +423,175 @@
 
     <div class="info-box mt3">
       <div class="info-box-title">// Dlaczego IMEI + karta SIM + zmiana lokalizacji?</div>
-      <p>Służby i operatorzy identyfikują urządzenie dwutorowo: przez <strong>IMEI</strong> modemu i przez <strong>IMSI</strong> karty SIM. Zmiana tylko jednego elementu pozostawia drugi jako punkt zaczepienia. Pełna procedura — nowy IMEI, nowa karta, nowe miejsce — skutecznie zrywa ciągłość identyfikacji i uniemożliwia powiązanie nowej aktywności z poprzednią historią operacyjną urządzenia.</p>
+      <p>Służby i operatorzy identyfikują urządzenie dwutorowo — po dwóch numerach: <strong>IMEI</strong> (numer seryjny modemu w routerze) i <strong>IMSI</strong> (numer zapisany na karcie SIM). Zmiana tylko jednego elementu pozostawia drugi jako punkt zaczepienia. Pełna procedura — nowy IMEI, nowa karta, nowe miejsce — skutecznie zrywa ciągłość identyfikacji i uniemożliwia powiązanie nowej aktywności z poprzednią historią operacyjną urządzenia.</p>
     </div>
   </div>
 
-  <!-- CZĘŚĆ 3 -->
-  <div class="section-wrap mt4">
+  <!-- MAPA PROBLEMÓW -->
+  <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 3 — ROZWIĄZYWANIE PROBLEMÓW</div>
+    <div class="section-title">Coś nie działa? Znajdź swój problem</div>
+    <div style="font-size:8.4pt;margin-bottom:2mm;color:var(--text);line-height:1.45;">Znajdź w lewej kolumnie swój problem — obok jest rozwiązanie.</div>
+    <table class="pmap">
+      <tr><th>Problem</th><th>Co zrobić</th></tr>
+      <tr><td>Router się nie włącza, ekran jest ciemny</td><td>Podłącz ładowarkę na <strong>30 minut</strong> (bateria może być rozładowana), potem przytrzymaj przycisk zasilania <strong>3 sekundy</strong>.</td></tr><tr><td>Nie widzę sieci Wi-Fi routera</td><td>Poczekaj <strong>2–3 minuty</strong> od włączenia. Masz sieć ukrytą? → <strong>strona 1, krok 04</strong>.</td></tr><tr><td>Nie pamiętam hasła Wi-Fi</td><td><strong>Krótko</strong> naciśnij przycisk zasilania — hasło pojawi się na wyświetlaczu.</td></tr><tr><td>Jestem połączony z Wi-Fi, ale strony się nie otwierają</td><td>Najpierw sprawdź połączenie karty SIM: <strong>Auto Setup → strona 3</strong>.</td></tr><tr><td>Karta SIM jest połączona (widać nazwę operatora), a strony dalej się nie otwierają</td><td>Zmień serwer VPN → <strong>strona 4</strong>.</td></tr><tr><td>Chcę łączyć się przez inny kraj</td><td>Zmiana kraju VPN → <strong>strona 4</strong>.</td></tr><tr><td>Internet działa bardzo wolno</td><td>Wybierz serwer VPN w kraju <strong>bliżej Ciebie</strong> → <strong>strona 4</strong>.</td></tr><tr><td>Panel proponuje aktualizację (Upgrade, New firmware)</td><td><strong>Nie aktualizuj!</strong> Aktualizacja usuwa funkcje Mudi Ghost → <strong>strona 6</strong>.</td></tr><tr><td>Nic nie pomogło</td><td>Wyłącz router (przytrzymaj przycisk zasilania <strong>dłużej niż 5 sekund</strong>), odczekaj 10 sekund i włącz ponownie. Dalej źle? Napisz: <strong style="font-family:'Share Tech Mono',monospace;color:var(--accent);">mudi&#46;ghost&#64;proton&#46;me</strong> — pomożemy krok po kroku.</td></tr>
+    </table>
+  </div>
+
+  <div class="footer-push">
+    <div class="disclaimer-bar">
+      Opisane funkcje uniemożliwiają identyfikację i śledzenie urządzenia przez służby, agencje rządowe i systemy komercyjnego profilowania. Urządzenie przeznaczone wyłącznie do legalnego użytku.
+    </div>
+    <div class="footer">
+      <div style="display:flex;align-items:center;gap:0;">
+        <div class="footer-brand">MUDI <span>GHOST</span></div>
+        <div class="footer-website">&nbsp;|&nbsp;<a href="https://mudighost.com" style="color:#ffffff;text-decoration:none;">mudighost.com</a></div>
+      </div>
+      <div class="footer-right">
+        based on GL-E750V2 Mudi V2<br>
+        based on research by independent privacy &amp; security specialists
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== STRONA 3 ========== -->
+<div class="page">
+
+  <div class="p2-header">
+    <div class="p2-brand">MUDI <span>GHOST</span></div>
+    <div class="p2-sub">
+      Advanced Privacy Firmware — Hardened Security Edition<br>
+      // based on GL-E750V2 Mudi V2
+    </div>
+  </div>
+
+  <!-- CZĘŚĆ 3: AUTO SETUP -->
+  <div class="section-wrap mt3">
+    <div class="part-label">CZĘŚĆ 3 — ROZWIĄZYWANIE PROBLEMÓW (CIĄG DALSZY)</div>
     <div class="section-title">Brak internetu — procedura Auto Setup</div>
-    <div style="font-size:8.5pt;margin-bottom:2mm;color:var(--text);line-height:1.45;">Czasem po włożeniu karty SIM router nie połączy się z siecią automatycznie. Dzieje się tak gdy karta SIM wymaga ręcznej konfiguracji. Nie martw się — to łatwe do naprawienia.</div>
+    <div style="font-size:8.4pt;margin-bottom:2mm;color:var(--text);line-height:1.45;"><strong>Kiedy to robić:</strong> jesteś połączony z Wi-Fi routera, ale strony się nie otwierają. Najczęściej router nie połączył się z siecią komórkową — np. nowa karta SIM potrzebuje ustawień operatora — tzw. <strong>APN</strong> (adres punktu dostępu do internetu w sieci operatora). Auto Setup ustawi je za Ciebie.</div>
 
     <div class="steps">
-
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-body">
           <div class="step-title">Otwórz panel administracyjny routera</div>
-          <div class="step-desc">Na swoim <strong>telefonie lub laptopie</strong> upewnij się że jesteś połączony z Wi-Fi Mudi Ghost. Następnie otwórz przeglądarkę internetową (np. Chrome, Safari, Firefox) i wpisz w pasku adresu:<br>
-          <strong style="font-family:'Share Tech Mono',monospace;font-size:10pt;color:var(--accent);">192.168.8.1</strong><br>
-          Naciśnij Enter. Pojawi się ekran logowania.</div>
+          <div class="step-desc">Na swoim <strong>telefonie lub laptopie</strong> upewnij się, że jesteś połączony z Wi-Fi routera. Otwórz przeglądarkę (np. Chrome, Safari, Firefox) i wpisz w pasku adresu:<br><strong style="font-family:'Share Tech Mono',monospace;color:var(--accent);font-size:10pt;">192.168.8.1</strong><br>Naciśnij Enter. Pojawi się ekran logowania.</div>
         </div>
       </div>
-
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-body">
           <div class="step-title">Zaloguj się do panelu</div>
-          <div class="step-desc">
-            Admin Password: <strong>takie samo jak hasło do Wi-Fi</strong> — widoczne na wyświetlaczu routera po krótkim naciśnięciu przycisku zasilania.
-          </div>
+          <div class="step-desc">Hasło (Admin Password) jest <strong>takie samo jak hasło do Wi-Fi</strong> — zobaczysz je na wyświetlaczu routera po krótkim naciśnięciu przycisku zasilania.</div>
         </div>
       </div>
-
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-body">
-          <div class="step-title">Przejdź do ustawień internetu</div>
-          <div class="step-desc">Po zalogowaniu kliknij <strong>Internet</strong> w menu po lewej stronie, a następnie wybierz zakładkę <strong>Cellular</strong> (sieć komórkowa).</div>
+          <div class="step-title">Znajdź ramkę Cellular</div>
+          <div class="step-desc">Po zalogowaniu zobaczysz stronę <strong>INTERNET</strong> (jeśli nie — kliknij <strong>INTERNET</strong> w menu po lewej). Przewiń w dół do ramki <strong>Cellular</strong> (sieć komórkowa). Napis <strong>SIM card not registered</strong> albo brak nazwy operatora oznacza, że router nie połączył się z siecią komórkową.<img class="shot shot-sim" src="/instrukcja-img/auto-setup-sim-not-registered.jpg" alt="Ramka Cellular przed Auto Setup" loading="lazy"></div>
         </div>
       </div>
-
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-body">
-          <div class="step-title">Uruchom Auto Setup</div>
-          <div class="step-desc">Kliknij przycisk <strong>Auto Setup</strong>. Router automatycznie wykryje ustawienia Twojego operatora. Poczekaj około <strong>30 sekund</strong>. Jeśli po tym czasie internet działa — gotowe. Jeśli zamiast przycisku <strong>Auto Setup</strong> widzisz przycisk <strong>Abort</strong> — kliknij go, odczekaj chwilę, a następnie kliknij <strong>Auto Setup</strong> który pojawi się w tym samym miejscu.</div>
+          <div class="step-title">Kliknij Auto Setup i czekaj</div>
+          <div class="step-desc">Kliknij niebieski przycisk <strong>Auto Setup</strong>. Pojawi się żółty napis <strong>Connecting…</strong> (łączenie), a przycisk zmieni się na różowy <strong>Abort</strong>. To normalne — router właśnie pobiera ustawienia operatora.<br><em>Nie klikaj Abort</em> — po prostu czekaj do <strong>2 minut</strong>.<img class="shot shot-sim" src="/instrukcja-img/auto-setup-connecting.jpg" alt="Auto Setup w trakcie łączenia" loading="lazy"></div>
         </div>
       </div>
-
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <div class="step-title">Sprawdź, czy działa</div>
+          <div class="step-desc">Udało się, gdy: u góry ramki widać <strong>nazwę operatora</strong> (np. Orange) i paski zasięgu, kropka obok jest <strong>niebieska</strong>, pojawił się <strong>IP Address</strong>, a przycisk zmienił się na <strong>Disconnect</strong> (nie klikaj go). Odczekaj jeszcze ok. minutę na VPN i otwórz dowolną stronę.<img class="shot shot-sim" src="/instrukcja-img/auto-setup-polaczono.jpg" alt="Udane połączenie z siecią komórkową" loading="lazy"></div>
+        </div>
+      </div>
     </div>
 
-    <div class="warn-box mt2">
-      <div class="warn-icon">📧</div>
-      <div class="warn-text">Jeśli Auto Setup nie pomoże — napisz do nas podając <strong>nazwę operatora i kraj</strong>. Pomożemy skonfigurować APN ręcznie i odpiszemy w ciągu 24 godzin: <strong>mudi&#46;ghost&#64;proton&#46;me</strong></div>
+  </div>
+
+  <div class="footer-push">
+    <div class="disclaimer-bar">
+      Opisane funkcje uniemożliwiają identyfikację i śledzenie urządzenia przez służby, agencje rządowe i systemy komercyjnego profilowania. Urządzenie przeznaczone wyłącznie do legalnego użytku.
+    </div>
+    <div class="footer">
+      <div style="display:flex;align-items:center;gap:0;">
+        <div class="footer-brand">MUDI <span>GHOST</span></div>
+        <div class="footer-website">&nbsp;|&nbsp;<a href="https://mudighost.com" style="color:#ffffff;text-decoration:none;">mudighost.com</a></div>
+      </div>
+      <div class="footer-right">
+        based on GL-E750V2 Mudi V2<br>
+        based on research by independent privacy &amp; security specialists
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== STRONA 4 ========== -->
+<div class="page">
+
+  <div class="p2-header">
+    <div class="p2-brand">MUDI <span>GHOST</span></div>
+    <div class="p2-sub">
+      Advanced Privacy Firmware — Hardened Security Edition<br>
+      // based on GL-E750V2 Mudi V2
     </div>
   </div>
 
-  <!-- KONTAKT -->
   <div class="section-wrap mt3">
-    <div class="contact-box">
-      <div>
-        <div class="contact-invite">Masz pytania? Napisz do nas.</div>
-        <div class="contact-desc">Odpowiemy na wszystkie pytania dotyczące produktu, konfiguracji i zamówień.<br>Komunikujemy się wyłącznie przez szyfrowany Proton Mail — end-to-end.</div>
+    <div class="warn-box">
+      <div class="warn-icon">⚠️</div>
+      <div class="warn-text"><strong>Auto Setup — dalej nie działa?</strong><br>
+      • <strong>Connecting…</strong> trwa dłużej niż 3 minuty → kliknij <strong>Abort</strong>, odczekaj 10 sekund i kliknij <strong>Auto Setup</strong> jeszcze raz.<br>
+      • Wciąż widzisz <strong>SIM card not registered</strong> → wyłącz router, wyjmij kartę SIM, sprawdź, czy była dobrze włożona, włóż ją ponownie i włącz router. Upewnij się też (np. w telefonie), że karta jest <strong>aktywna</strong>, ma <strong>pakiet danych</strong> i <strong>nie wymaga kodu PIN</strong>.<br>
+      • Operator jest połączony (jak na ostatnim obrazku na stronie 3), a strony się nie otwierają → to sprawa VPN: <strong>strona 4</strong>.</div>
+    </div>
+  </div>
+
+  <!-- CZĘŚĆ 3 (cd.) -->
+  <div class="section-wrap mt3">
+    <div class="part-label">CZĘŚĆ 3 — ROZWIĄZYWANIE PROBLEMÓW (CIĄG DALSZY)</div>
+    <div class="section-title">Brak połączenia z VPN lub zmiana kraju VPN</div>
+    <div style="font-size:8.4pt;margin-bottom:2mm;color:var(--text);line-height:1.45;">Router ma wgrane serwery VPN w wielu krajach. Czasem pojedynczy serwer przestaje działać (np. przerwa techniczna u dostawcy). Wtedy — dla Twojego bezpieczeństwa — router <strong>blokuje internet</strong>, zamiast wypuścić go bez szyfrowania. Wystarczy przełączyć się na inny serwer.<br>
+    <strong>Jak poznać, że chodzi o VPN, a nie o kartę SIM?</strong> W panelu routera w zakładce <strong>Internet</strong> ramka <strong>Cellular</strong> pokazuje nazwę operatora, niebieską kropkę i przycisk <strong>Disconnect</strong> (jak na ostatnim obrazku na stronie 3), a mimo to strony się nie otwierają.</div>
+
+    <div class="info-box" style="margin:0 0 2mm 0;">
+      <p><strong>Chcesz łączyć się przez inny kraj?</strong> Np. gdy jesteś za granicą albo żeby internet działał szybciej — wykonaj dokładnie te same kroki <strong>01–06</strong> i wybierz dowolny kraj z tabelki na stronie 5.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <div class="step-title">Zaloguj się do panelu routera</div>
+          <div class="step-desc">Tak samo jak w krokach <strong>01–02</strong> procedury Auto Setup (strona 3): połącz się z Wi-Fi routera, wpisz w przeglądarce <strong style="font-family:'Share Tech Mono',monospace;color:var(--accent);">192.168.8.1</strong> i zaloguj się hasłem z wyświetlacza.</div>
+        </div>
       </div>
-      <div class="contact-email">mudi&#46;ghost&#64;proton&#46;me</div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <div class="step-title">Otwórz VPN Dashboard</div>
+          <div class="step-desc">W menu po lewej stronie kliknij <strong>VPN</strong> — rozwinie się lista. Kliknij <strong>VPN Dashboard</strong>.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <div class="step-title">Sprawdź, jak wygląda połączenie</div>
+          <div class="step-desc">W sekcji <strong>VPN Client</strong> znajdź wiersz <strong>WireGuard</strong> (nazwa protokołu VPN, z którego korzysta router — patrz obrazek). Zobaczysz w nim ramkę z nazwą obecnego serwera (np. <span style="font-family:'Share Tech Mono',monospace;color:var(--accent);">Germany_de-ber-wg-001</span>) oraz przełącznik <strong>Enable</strong>, który powinien być <strong>włączony</strong> (niebieski).<br>Gdy VPN działa, kropka przy napisie WireGuard jest <strong>niebieska</strong>, a liczby w polu <strong>Traffic Statistics</strong> rosną. Szara kropka oznacza brak połączenia.<img class="shot" src="/instrukcja-img/vpn-dashboard-wireguard.jpg" alt="Wiersz WireGuard w VPN Dashboard" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <div class="step-title">Kliknij nazwę serwera</div>
+          <div class="step-desc">Kliknij ramkę z nazwą serwera (z ikonką strzałek <strong>⇄</strong>). Otworzy się okno <strong>Select Configuration File</strong> z listą wszystkich serwerów.</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -505,6 +610,132 @@
       </div>
     </div>
   </div>
+
+</div>
+
+<!-- ========== STRONA 5 ========== -->
+<div class="page">
+
+  <div class="p2-header">
+    <div class="p2-brand">MUDI <span>GHOST</span></div>
+    <div class="p2-sub">
+      Advanced Privacy Firmware — Hardened Security Edition<br>
+      // based on GL-E750V2 Mudi V2
+    </div>
+  </div>
+
+  <div class="section-wrap mt3">
+    <div class="part-label">CZĘŚĆ 3 — ROZWIĄZYWANIE PROBLEMÓW (CIĄG DALSZY)</div>
+    <div class="section-title">Zmiana serwera VPN — dokończenie</div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <div class="step-title">Wyszukaj i zaznacz nowy serwer</div>
+          <div class="step-desc">W polu <strong>Search configuration file</strong> wpisz nazwę kraju <strong>po angielsku</strong> (np. <em>Sweden</em> — patrz tabelka poniżej). Na liście zostaną serwery z tego kraju. Kliknij <strong>kółko</strong> przy dowolnym z nich, a następnie niebieski przycisk <strong>Apply</strong>.<br>Serwer możesz zmienić w trakcie działania VPN — ochrona nie zostanie przerwana. Przełącznika <strong>Enable</strong> nie trzeba ruszać.<img class="shot shot-narrow" src="/instrukcja-img/vpn-wybor-serwera.jpg" alt="Okno wyboru serwera" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">06</div>
+        <div class="step-body">
+          <div class="step-title">Poczekaj i sprawdź</div>
+          <div class="step-desc">Po około <strong>10–30 sekundach</strong> kropka przy WireGuard powinna być niebieska, a strony powinny się otwierać. Jeśli nie — wróć do kroku 04 i wybierz serwer z <strong>innego kraju</strong> (najwięcej serwerów mają <em>Sweden</em> i <em>Germany</em>).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-title">// Nazwy krajów na liście serwerów</div>
+      <div class="cgrid"><div><span>Austria</span><b>Austria</b></div><div><span>Belgia</span><b>Belgium</b></div><div><span>Bułgaria</span><b>Bulgaria</b></div><div><span>Chorwacja</span><b>Croatia</b></div><div><span>Czechy</span><b>Czech Republic</b></div><div><span>Dania</span><b>Denmark</b></div><div><span>Estonia</span><b>Estonia</b></div><div><span>Finlandia</span><b>Finland</b></div><div><span>Francja</span><b>France</b></div><div><span>Grecja</span><b>Greece</b></div><div><span>Hiszpania</span><b>Spain</b></div><div><span>Holandia</span><b>Netherlands</b></div><div><span>Irlandia</span><b>Ireland</b></div><div><span>Japonia</span><b>Japan</b></div><div><span>Kanada</span><b>Canada</b></div><div><span>Niemcy</span><b>Germany</b></div><div><span>Norwegia</span><b>Norway</b></div><div><span>Polska</span><b>Poland</b></div><div><span>Portugalia</span><b>Portugal</b></div><div><span>Rumunia</span><b>Romania</b></div><div><span>Słowacja</span><b>Slovakia</b></div><div><span>Słowenia</span><b>Slovenia</b></div><div><span>Szwajcaria</span><b>Switzerland</b></div><div><span>Szwecja</span><b>Sweden</b></div><div><span>Węgry</span><b>Hungary</b></div><div><span>Wielka Brytania</span><b>UK</b></div><div><span>Włochy</span><b>Italy</b></div></div>
+      <p style="margin-top:1.5mm;">Serwer w kraju bliżej Ciebie zwykle daje <strong>szybszy internet</strong>.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="warn-icon">⚠️</div>
+      <div class="warn-text"><strong>Nie zmieniaj innych ustawień VPN.</strong> Przełącznik <strong>Enable</strong> zostaw włączony, a w <strong>Global Options</strong> nie wyłączaj opcji <strong>Block Non-VPN Traffic</strong> (tzw. kill switch — blokada ruchu poza VPN) — to ona chroni Cię przed wyciekiem danych, gdy VPN chwilowo nie działa.</div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>Nadal nie działa?</strong> Napisz do nas: <strong style="font-family:'Share Tech Mono',monospace;color:var(--accent);">mudi&#46;ghost&#64;proton&#46;me</strong> — pomożemy krok po kroku.</p>
+    </div>
+  </div>
+
+  <div class="footer-push">
+    <div class="disclaimer-bar">
+      Opisane funkcje uniemożliwiają identyfikację i śledzenie urządzenia przez służby, agencje rządowe i systemy komercyjnego profilowania. Urządzenie przeznaczone wyłącznie do legalnego użytku.
+    </div>
+    <div class="footer">
+      <div style="display:flex;align-items:center;gap:0;">
+        <div class="footer-brand">MUDI <span>GHOST</span></div>
+        <div class="footer-website">&nbsp;|&nbsp;<a href="https://mudighost.com" style="color:#ffffff;text-decoration:none;">mudighost.com</a></div>
+      </div>
+      <div class="footer-right">
+        based on GL-E750V2 Mudi V2<br>
+        based on research by independent privacy &amp; security specialists
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== STRONA 6 ========== -->
+<div class="page">
+
+  <div class="p2-header">
+    <div class="p2-brand">MUDI <span>GHOST</span></div>
+    <div class="p2-sub">
+      Advanced Privacy Firmware — Hardened Security Edition<br>
+      // based on GL-E750V2 Mudi V2
+    </div>
+  </div>
+
+  <!-- CZĘŚĆ 4 -->
+  <div class="section-wrap mt3">
+    <div class="part-label">CZĘŚĆ 4 — WAŻNE INFORMACJE</div>
+    <div class="section-title">Zasady korzystania i wsparcia</div>
+
+    <div class="warn-box">
+      <div class="warn-icon">⚠️</div>
+      <div class="warn-text"><strong>Czego NIE robić — to może wyłączyć ochronę Mudi Ghost:</strong><br>
+      • <strong>Nie aktualizuj firmware</strong> (oprogramowania systemowego routera) — nawet gdy panel proponuje <em>Upgrade</em>. Nowa wersja usuwa funkcje Mudi Ghost.<br>
+      • <strong>Nie przywracaj ustawień fabrycznych</strong> (przycisk Reset pod klapką, opcja <em>Reset Firmware</em> w panelu) — znikną VPN i funkcja zmiany IMEI.<br>
+      • <strong>Nie zmieniaj nazwy sieci Wi-Fi ani hasła</strong> — są potrzebne do przedłużenia VPN (punkt 04).<br>
+      • <strong>Nie zmieniaj ustawień, których nie opisuje ta instrukcja</strong>, i nie wyłączaj <em>Block Non-VPN Traffic</em> (kill switch).<br>
+      • <strong>Nie otwieraj obudowy.</strong></div>
+    </div>
+
+    <div class="terms">
+      <div class="term"><div class="term-num">01</div><div><div class="term-title">Każde urządzenie sprawdzamy przed wysyłką</div><div class="term-desc">Każdy Mudi Ghost jest indywidualnie konfigurowany i testowany: uruchomienie, Wi-Fi, połączenie z siecią komórkową, VPN i zmiana IMEI. Do Ciebie trafia urządzenie sprawdzone i w pełni działające.</div></div></div>
+      <div class="term"><div class="term-num">02</div><div><div class="term-title">Zmiany wprowadzone samodzielnie</div><div class="term-desc">Panel administracyjny routera jest otwarty — każdy użytkownik może się do niego zalogować i zmienić dowolne ustawienie. Nie mamy wpływu na takie zmiany i nie odpowiadamy za ich skutki. Problemy spowodowane samodzielną zmianą ustawień lub oprogramowania, przywróceniem ustawień fabrycznych, otwarciem obudowy albo uszkodzeniem mechanicznym nie stanowią podstawy do reklamacji ani zwrotu.</div></div></div>
+      <div class="term"><div class="term-num">03</div><div><div class="term-title">Zakres naszej pomocy</div><div class="term-desc">Chętnie pomożemy przy pierwszym uruchomieniu i w sprawach opisanych w tej instrukcji. Nie naprawiamy zmian wprowadzonych przez użytkownika i nie konfigurujemy zewnętrznych usług.</div></div></div>
+      <div class="term"><div class="term-num">04</div><div><div class="term-title">VPN — ważność ok. 12 miesięcy</div><div class="term-desc">Usługa VPN jest aktywna przez ok. <strong>12 miesięcy</strong>, liczonych od przyjęcia i opłacenia zamówienia. <strong>Termin ważności kontrolujesz samodzielnie</strong> — nie wysyłamy przypomnień. Przedłużenie na kolejny rok jest <strong>usługą odpłatną</strong> — aktualne warunki znajdziesz na <a href="https://mudighost.com" style="color:var(--accent);"><strong>mudighost.com</strong></a> lub otrzymasz po kontakcie z nami. Aby przedłużyć VPN, napisz do nas i podaj <strong>oryginalną nazwę sieci Wi-Fi (SSID)</strong> oraz <strong>hasło routera</strong> — po nich rozpoznajemy Twoje urządzenie. Jeśli zostały zmienione, nie będziemy w stanie go zidentyfikować ani przedłużyć VPN. Możesz wtedy samodzielnie podłączyć własną usługę VPN — bez naszego wsparcia.</div></div></div>
+      <div class="term"><div class="term-num">05</div><div><div class="term-title">Sprzęt</div><div class="term-desc">Mudi Ghost działa na routerze <strong>GL.iNet Mudi V2 (GL-E750V2)</strong> — urządzeniu cenionym i chwalonym na całym świecie. Jak każde urządzenie elektroniczne może on jednak ulec awarii niezależnej od naszej konfiguracji (np. usterce podzespołów). Na takie awarie nie mamy wpływu i nie przyjmujemy z ich tytułu reklamacji.</div></div></div>
+      <div class="term"><div class="term-num">06</div><div><div class="term-title">Korzystanie zgodne z prawem</div><div class="term-desc">Odpowiadasz za korzystanie z urządzenia zgodnie z prawem kraju, w którym się znajdujesz.</div></div></div>
+    </div>
+
+    <div class="closing">
+      <strong>Mudi Ghost</strong> to autorska, profesjonalna konfiguracja prywatności — <em>Hardened Privacy Edition</em> — oparta na pracy niezależnych specjalistów ds. bezpieczeństwa i zbudowana na sprawdzonym sprzęcie GL.iNet. Dziękujemy za zaufanie.<br>
+      Pytania: <strong style="font-family:'Share Tech Mono',monospace;color:var(--accent);">mudi&#46;ghost&#64;proton&#46;me</strong> &nbsp;|&nbsp; <strong style="font-family:'Share Tech Mono',monospace;color:var(--accent);">mudighost.com</strong>
+    </div>
+
+  </div>
+
+  <div class="footer-push">
+    <div class="disclaimer-bar">
+      Opisane funkcje uniemożliwiają identyfikację i śledzenie urządzenia przez służby, agencje rządowe i systemy komercyjnego profilowania. Urządzenie przeznaczone wyłącznie do legalnego użytku.
+    </div>
+    <div class="footer">
+      <div style="display:flex;align-items:center;gap:0;">
+        <div class="footer-brand">MUDI <span>GHOST</span></div>
+        <div class="footer-website">&nbsp;|&nbsp;<a href="https://mudighost.com" style="color:#ffffff;text-decoration:none;">mudighost.com</a></div>
+      </div>
+      <div class="footer-right">
+        based on GL-E750V2 Mudi V2<br>
+        based on research by independent privacy &amp; security specialists
+      </div>
+    </div>
 
 </div>
 
