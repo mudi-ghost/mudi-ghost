@@ -28,21 +28,27 @@
   <meta property="article:tag" content="GrapheneOS">
   <meta property="article:tag" content="stingray">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Anonimowość w sieci — od VPN po zmianę IMEI | Mudi Ghost">
   <meta name="twitter:description" content="VPN to za mało. Kompletny przewodnik po anonimowości w sieci.">
+  <meta property="og:image" content="https://mudighost.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mudi Ghost: router VPN ze zmiennym IMEI">
+  <meta name="twitter:image" content="https://mudighost.com/og-image.jpg">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
+    "image": ["https://mudighost.com/og-image.jpg"],
     "headline": "Anonimowość w sieci — od VPN po zmianę IMEI",
     "description": "VPN to za mało. Poznaj kompletny przewodnik po anonimowości w sieci — od szyfrowania ruchu po zmianę IMEI i ochronę przed śledzeniem komórkowym.",
     "url": "https://mudighost.com/blog/anonimowosc-w-sieci-od-vpn-po-zmiane-imei",
     "datePublished": "2026-04-24",
-    "dateModified": "2026-04-24",
-    "author": { "@type": "Organization", "name": "Mudi Ghost", "url": "https://mudighost.com" },
-    "publisher": { "@type": "Organization", "name": "Mudi Ghost", "url": "https://mudighost.com" },
+    "dateModified": "2026-11-25",
+    "author": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } },
+    "publisher": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } },
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mudighost.com/blog/anonimowosc-w-sieci-od-vpn-po-zmiane-imei" }
   }
   </script>
@@ -53,16 +59,16 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Strona Główna", "item": "https://mudighost.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog" },
       { "@type": "ListItem", "position": 3, "name": "Anonimowość w sieci — od VPN po zmianę IMEI", "item": "https://mudighost.com/blog/anonimowosc-w-sieci-od-vpn-po-zmiane-imei" }
     ]
   }
   </script>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/Rajdhani-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.css">
 
   <style>
@@ -126,17 +132,17 @@
   <nav class="site-nav" id="siteNav" role="navigation" aria-label="Główna nawigacja">
     <a href="/">Strona Główna</a>
     <a href="/#funkcje">Funkcje</a>
-    <a href="/o-nas.html">O Nas</a>
-    <a href="/cennik.html">Cennik</a>
-    <a href="/blog/">Blog</a>
-    <a href="/kontakt.html">Kontakt</a>
+    <a href="/o-nas">O Nas</a>
+    <a href="/cennik">Cennik</a>
+    <a href="/blog">Blog</a>
+    <a href="/kontakt">Kontakt</a>
   </nav>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="/">Strona Główna</a>
   <span>›</span>
-  <a href="/blog/">Blog</a>
+  <a href="/blog">Blog</a>
   <span>›</span>
   <span style="color:var(--text)">Anonimowość w sieci</span>
 </nav>
@@ -197,7 +203,7 @@
         <li><strong>Pliki cookies</strong> — nadal śledzą Cię nawet przez VPN</li>
       </ul>
 
-      <p>VPN to idealne rozwiązanie dla <strong>anonimowości w internecie</strong> na warstwie IP i szyfrowania ruchu. Ale sieć komórkowa działa na zupełnie innych protokołach — i tutaj potrzebujesz dodatkowych narzędzi. <a href="/blog/vpn-vs-proxy-vs-tor.html">Porównanie VPN, Proxy i Tor</a> pokazuje dokładnie różnice w ochronie na różnych warstwach sieciowych.</p>
+      <p>VPN to idealne rozwiązanie dla <strong>anonimowości w internecie</strong> na warstwie IP i szyfrowania ruchu. Ale sieć komórkowa działa na zupełnie innych protokołach — i tutaj potrzebujesz dodatkowych narzędzi. <a href="/blog/vpn-vs-proxy-vs-tor">Porównanie VPN, Proxy i Tor</a> pokazuje dokładnie różnice w ochronie na różnych warstwach sieciowych.</p>
 
       <h2 id="warstwa-2"><span class="accent">Anonimowość komórkowa</span> — dlaczego IMEI jest Twoim cyfrowym odciskiem palca</h2>
 
@@ -221,7 +227,7 @@
 
       <p>Co to oznacza dla przeciętnego użytkownika? <strong>Twój IMEI jest jedynym punktem który jednoznacznie identyfikuje Cię w sieci komórkowej</strong> — niezależnie od tego czy używasz VPN, czy nie. Jeśli ktoś pozna Twój IMEI, może śledzić Cię na podstawie nadajników sieci komórkowych w całej Polsce i za granicą.</p>
 
-      <p>Więcej o metodach śledzenia przez służby znajdziesz w artykule <a href="/blog/jak-policja-namierza-telefon.html">"Jak policja namierza Twój telefon"</a> — opisuje IMSI catchers, triangulację i współpracę z operatorami.</p>
+      <p>Więcej o metodach śledzenia przez służby znajdziesz w artykule <a href="/blog/jak-policja-namierza-telefon">"Jak policja namierza Twój telefon"</a> — opisuje IMSI catchers, triangulację i współpracę z operatorami.</p>
 
       <h2 id="warstwa-3"><span class="accent">Jak pozostać anonimowym w sieci komórkowej</span> — zmiana IMEI krok po kroku</h2>
 
@@ -237,13 +243,13 @@
 
       <h3>Metoda 3: Router Mudi Ghost ze zmianą IMEI (REKOMENDOWANE)</h3>
 
-      <p><a href="/blog/mudi-ghost-skuteczna-zmiana-imei.html"><strong>Mudi Ghost</strong></a> to gotowe rozwiązanie sprzętowe. Router GL-E750V2 ze zmiennym IMEI — jedno przełączanie, kilka sekund, działa. Nie wymaga wiedzy technicznej, nie ma ryzyka brick, legalne w UE dla użytkowników prywatnych.</p>
+      <p><a href="/blog/mudi-ghost-skuteczna-zmiana-imei"><strong>Mudi Ghost</strong></a> to gotowe rozwiązanie sprzętowe. Router GL-E750V2 ze zmiennym IMEI — jedno przełączanie, kilka sekund, działa. Nie wymaga wiedzy technicznej, nie ma ryzyka brick, legalne w UE dla użytkowników prywatnych.</p>
 
       <div class="post-highlight">
-        <p><strong>Dlaczego Mudi Ghost:</strong> Zmiana IMEI na routerze oznacza że każde urządzenie podłączone do routera (laptop, tablet, drugi telefon przez tethering) jest niewidzialne dla sieci komórkowej jako posiadające oryginalny IMEI. Router zmienia swój własny IMEI automatycznie lub jednym kliknięciem. Koszt: 375€ — kompletny pakiet z routerem, konfiguracją i 12 miesiącami VPN.</p>
+        <p><strong>Dlaczego Mudi Ghost:</strong> Zmiana IMEI na routerze oznacza że każde urządzenie podłączone do routera (laptop, tablet, drugi telefon przez tethering) jest niewidzialne dla sieci komórkowej jako posiadające oryginalny IMEI. Router zmienia swój IMEI jednym ruchem przełącznika, wtedy kiedy tego potrzebujesz. Koszt: 375€ — kompletny pakiet z routerem, konfiguracją i 12 miesiącami VPN.</p>
       </div>
 
-      <p>Szczegółową instrukcję zmiany IMEI znajdziesz w <a href="/konfiguracja-router-vpn-zmiana-imei.html">przewodniku konfiguracji Mudi Ghost</a> — krok po kroku, bez wiedzy technicznej.</p>
+      <p>Szczegółową instrukcję zmiany IMEI znajdziesz w <a href="/konfiguracja-router-vpn-zmiana-imei">przewodniku konfiguracji Mudi Ghost</a> — krok po kroku, bez wiedzy technicznej.</p>
 
       <h2 id="warstwa-4"><span class="accent">Router VPN ze zmiennym IMEI</span> — jedyne rozwiązanie hardware'owe</h2>
 
@@ -265,7 +271,7 @@
         ⚠️ <strong>Na co zwrócić uwagę przy wyborze routera:</strong> Nie każdy "router z VPN" oferuje zmianę IMEI. Większość tanich routerów to tylko VPN klient — nie mają modemu komórkowego. Mudi Ghost jest jedynym gotowym rozwiązaniem z prawdziwym modemem 4G/LTE i możliwością zmiany IMEI jednym przełącznikiem.
       </div>
 
-      <p>Ceny i specyfikacje znajdziesz na <a href="/cennik.html">stronie cennika Mudi Ghost</a> — kompletny pakiet od 375€.</p>
+      <p>Ceny i specyfikacje znajdziesz na <a href="/cennik">stronie cennika Mudi Ghost</a> — kompletny pakiet od 375€.</p>
 
       <h2 id="porownanie"><span class="accent">Porównanie: sam VPN vs Mudi Ghost</span> — co wybrać?</h2>
 
@@ -320,7 +326,7 @@
 
       <h2 id="graphene"><span class="accent">GrapheneOS + Mudi Ghost</span> — kompletna ochrona strefy zero</h2>
 
-      <p>Jeśli szukasz absolutnie najwyższego poziomu prywatności — kombinacja <a href="/blog/czym-jest-grapheneos-najbezpieczniejszy-android.html"><strong>GrapheneOS</strong></a> na telefonie i <strong>Mudi Ghost</strong> jako router to najlepsze możliwe rozwiązanie dla użytkowników prywatnych w 2026.</p>
+      <p>Jeśli szukasz absolutnie najwyższego poziomu prywatności — kombinacja <a href="/blog/czym-jest-grapheneos-najbezpieczniejszy-android"><strong>GrapheneOS</strong></a> na telefonie i <strong>Mudi Ghost</strong> jako router to najlepsze możliwe rozwiązanie dla użytkowników prywatnych w 2026.</p>
 
       <h3>Co oferuje GrapheneOS:</h3>
       <ul>
@@ -361,7 +367,7 @@
       <div class="post-cta">
         <h3>Potrzebujesz kompletnej ochrony prywatności?</h3>
         <p><strong>Mudi Ghost</strong> to router VPN ze zmiennym IMEI. Jedno urządzenie, wiele warstw ochrony. Bez skomplikowanej konfiguracji.</p>
-        <a href="/cennik.html" class="btn">Zobacz Cennik</a>
+        <a href="/cennik" class="btn">Zobacz Cennik</a>
       </div>
 
     </div>
@@ -385,19 +391,19 @@
   <div style="max-width: var(--content-w); margin: 0 auto; padding: 0 40px;">
     <h3 style="font-family: var(--font-mono); font-size: 11px; color: var(--cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">Powiązane artykuły</h3>
     <div class="related-grid">
-      <a href="/blog/czym-jest-grapheneos-najbezpieczniejszy-android.html" class="related-card">
+      <a href="/blog/czym-jest-grapheneos-najbezpieczniejszy-android" class="related-card">
         <div class="rc-date">27 marca 2026</div>
         <h4>GrapheneOS — najbezpieczniejszy Android na świecie</h4>
       </a>
-      <a href="/blog/mudi-ghost-skuteczna-zmiana-imei.html" class="related-card">
+      <a href="/blog/mudi-ghost-skuteczna-zmiana-imei" class="related-card">
         <div class="rc-date">8 kwietnia 2026</div>
         <h4>Mudi Ghost — skuteczna zmiana IMEI krok po kroku</h4>
       </a>
-      <a href="/blog/vpn-vs-proxy-vs-tor.html" class="related-card">
+      <a href="/blog/vpn-vs-proxy-vs-tor" class="related-card">
         <div class="rc-date">3 kwietnia 2026</div>
         <h4>VPN vs Proxy vs Tor — co naprawdę chroni?</h4>
       </a>
-      <a href="/blog/jak-policja-namierza-telefon.html" class="related-card">
+      <a href="/blog/jak-policja-namierza-telefon" class="related-card">
         <div class="rc-date">16 kwietnia 2026</div>
         <h4>Jak policja namierza Twój telefon — metody i obrona</h4>
       </a>

@@ -1,0 +1,26 @@
+# Mudi Ghost
+
+> Mudi Ghost to gotowo skonfigurowany router prywatności oparty na GL.iNet GL-E750V2 (Mudi V2) z modemem LTE. Zmienia IMEI modemu jednym ruchem fizycznego przełącznika, szyfruje cały ruch przez WireGuard VPN z kill switchem oraz losuje adresy MAC i BSSID. Blog wyjaśnia, jak działa śledzenie telefonów (IMEI, IMSI, IMSI-catcher/Stingray, stacje BTS, SS7, probe requests Wi-Fi) i jak się przed nim chronić.
+
+Język treści: polski. Cena: 375 EUR (router, konfiguracja i VPN na 12 miesięcy). Kontakt: mudi.ghost@proton.me, https://t.me/mudighost. YouTube: https://www.youtube.com/@MudiGhost
+
+## Produkt
+- [Router VPN ze zmiennym IMEI](https://mudighost.com/): funkcje, film i procedura zmiany IMEI
+- [Cennik](https://mudighost.com/cennik): cena, zawartość pakietu, wysyłka, płatności
+- [Instrukcja obsługi](https://mudighost.com/konfiguracja-router-vpn-zmiana-imei): pierwsze uruchomienie, VPN, zmiana IMEI krok po kroku
+- [O nas](https://mudighost.com/o-nas)
+- [Kontakt](https://mudighost.com/kontakt)
+
+## Poradniki
+- [Co to jest IMEI i jak wpływa na anonimowość](https://mudighost.com/blog/co-to-jest-imei-anonimowosc)
+- [Jak policja namierza telefon](https://mudighost.com/blog/jak-policja-namierza-telefon): IMSI, IMSI-catcher, lokalizacja z BTS, SS7, retencja danych
+- [IMEI spoofing: czy to działa?](https://mudighost.com/blog/imei-spoofing-czy-to-dziala): dlaczego aplikacje nie zmieniają IMEI widzianego przez sieć
+- [Skuteczna zmiana IMEI w Mudi Ghost](https://mudighost.com/blog/mudi-ghost-skuteczna-zmiana-imei)
+- [Śledzenie przez Wi-Fi](https://mudighost.com/blog/sledzenie-przez-wifi): probe requests i randomizacja MAC
+- [Czy Twój telefon jest śledzony? 7 oznak](https://mudighost.com/blog/telefon-sledzony-7-oznak-szpiegowania)
+- [VPN vs Proxy vs Tor](https://mudighost.com/blog/vpn-vs-proxy-vs-tor)
+- [Czym jest GrapheneOS](https://mudighost.com/blog/czym-jest-grapheneos-najbezpieczniejszy-android)
+- [Anonimowość w sieci: od VPN po zmianę IMEI](https://mudighost.com/blog/anonimowosc-w-sieci-od-vpn-po-zmiane-imei)
+
+## Opcjonalnie
+- [Polityka prywatności](https://mudighost.com/polityka-prywatnosci)

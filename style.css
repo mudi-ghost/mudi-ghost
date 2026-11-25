@@ -3,7 +3,7 @@
    Cyber Noir / Tactical Privacy — v3.0
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+@import url('/fonts/fonts.css');
 
 :root {
   --cyan:      #00f2ff;
@@ -113,12 +113,20 @@ strong { color:var(--white); }
   body { padding-top: 64px; }
   .site-header { position:fixed; top:0; left:0; right:0; backdrop-filter:none; -webkit-backdrop-filter:none; background:#050a14; }
   .nav-toggle { display:flex; }
-  .site-nav { position:fixed; top:64px; left:0; right:0; bottom:0; background:#050a14; border-top:1px solid rgba(0,242,255,0.2); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:40px 24px; transform:translateX(100%); transition:transform 0.3s ease; z-index:9999; isolation:isolate; }
+  .site-nav { position:fixed; top:64px; left:0; right:0; bottom:0; background:#050a14; border-top:1px solid rgba(0,242,255,0.2); display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:8px; padding:24px 24px; overflow-y:auto; overscroll-behavior:contain; transform:translateX(100%); transition:transform 0.3s ease; z-index:9999; isolation:isolate; }
   .site-nav.open { transform:translateX(0); }
-  .site-nav a { font-size:22px; padding:12px 24px; width:100%; text-align:center; }
+  .site-nav a { font-size:22px; padding:12px 24px; width:100%; text-align:center; flex-shrink:0; }
+  /* wyśrodkowanie, które przy niskim ekranie nie wypycha pozycji pod nagłówek */
+  .site-nav a:first-child { margin-top:auto; }
+  .site-nav a:last-child { margin-bottom:auto; }
   .page-hero h1 { font-size:28px; letter-spacing:2px; }
   .btn { padding:12px 28px; font-size:15px; }
   .section-title { font-size:22px; margin-bottom:24px; }
+}
+
+@media (max-width:768px) and (max-height:560px) {
+  .site-nav { gap:2px; padding:12px 24px; }
+  .site-nav a { font-size:17px; padding:8px 24px; }
 }
 
 @media (max-width:480px) {

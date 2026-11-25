@@ -25,29 +25,27 @@
   <meta property="article:tag" content="fałszywa ochrona prywatności">
   <meta property="article:tag" content="sprzętowa zmiana IMEI">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="IMEI spoofing — prawda o fałszywej ochronie | Mudi Ghost">
   <meta name="twitter:description" content="Dowiedz się czym różni się IMEI spoofing od rzeczywistej zmiany IMEI. Dlaczego aplikacje do zmiany IMEI nie dają prawdziwej ochrony.">
+  <meta property="og:image" content="https://mudighost.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mudi Ghost: router VPN ze zmiennym IMEI">
+  <meta name="twitter:image" content="https://mudighost.com/og-image.jpg">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
+    "image": ["https://mudighost.com/og-image.jpg"],
     "headline": "IMEI spoofing — prawda o fałszywej ochronie",
     "description": "IMEI spoofing vs prawdziwa zmiana. Dlaczego aplikacje nie dają prawdziwej ochrony i jak Mudi Ghost rozwiązuje problem.",
     "url": "https://mudighost.com/blog/imei-spoofing-czy-to-dziala",
     "datePublished": "2026-03-25",
-    "dateModified": "2026-03-25",
-    "author": {
-      "@type": "Organization",
-      "name": "Mudi Ghost",
-      "url": "https://mudighost.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Mudi Ghost",
-      "url": "https://mudighost.com"
-    },
+    "dateModified": "2026-11-25",
+    "author": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } },
+    "publisher": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } },
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://mudighost.com/blog/imei-spoofing-czy-to-dziala"
@@ -61,16 +59,16 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Strona Główna", "item": "https://mudighost.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog" },
       { "@type": "ListItem", "position": 3, "name": "IMEI spoofing — czy to działa?", "item": "https://mudighost.com/blog/imei-spoofing-czy-to-dziala" }
     ]
   }
   </script>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/Rajdhani-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.css">
 
   <style>
@@ -137,17 +135,17 @@
   <nav class="site-nav" id="siteNav" role="navigation" aria-label="Główna nawigacja">
     <a href="/">Strona Główna</a>
     <a href="/#funkcje">Funkcje</a>
-    <a href="/o-nas.html">O Nas</a>
-    <a href="/cennik.html">Cennik</a>
-    <a href="/blog/">Blog</a>
-    <a href="/kontakt.html">Kontakt</a>
+    <a href="/o-nas">O Nas</a>
+    <a href="/cennik">Cennik</a>
+    <a href="/blog">Blog</a>
+    <a href="/kontakt">Kontakt</a>
   </nav>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="/">Strona Główna</a>
   <span>›</span>
-  <a href="/blog/">Blog</a>
+  <a href="/blog">Blog</a>
   <span>›</span>
   <span style="color:var(--text)">IMEI spoofing — czy to działa?</span>
 </nav>
@@ -189,7 +187,7 @@
 
       <p>Kluczowy fakt: IMEI jest wysyłany przy każdym połączeniu do sieci — niezależnie od tego, czy używasz VPN, czy nie. VPN szyfruje dane, ale nie maskuje IMEI. To dlatego służby mogą śledzić urządzenia nawet przy aktywnym tunelu VPN.</p>
 
-      <p>Jeśli szukasz <strong>rzeczywistego rozwiązania</strong> dla prywatności w sieci komórkowej, poznaj <a href="/o-nas.html"><strong>Mudi Ghost</strong></a> — urządzenie, które faktycznie zmienia Twój cyfrowy odcisk w sieci.</p>
+      <p>Jeśli szukasz <strong>rzeczywistego rozwiązania</strong> dla prywatności w sieci komórkowej, poznaj <a href="/o-nas"><strong>Mudi Ghost</strong></a> — urządzenie, które faktycznie zmienia Twój cyfrowy odcisk w sieci.</p>
 
 
       <h2 id="co-to-imei-spoofing">Czym jest <span class="accent">IMEI spoofing</span> — jak działają <span class="accent">aplikacje do zmiany IMEI</span></h2>
@@ -219,7 +217,7 @@
       <p><strong>2. Analiza zachowania:</strong> Urządzenie, które często zmienia IMEI, jest nietypowe i wzbudza podejrzenia. Normalne telefony rzadko lub nigdy nie zmieniają IMEI. Częste zmiany sygnalizują próbę uniknięcia śledzenia — co przyciąga uwagę zamiast ją odwracać.</p>
 
       <div class="post-warn">
-        ⚠️ <strong>Ważne:</strong> Wiele krajów (w tym Polska na podstawie Prawa telekomunikacyjnego) zabrania świadomej manipulacji IMEI. Używanie aplikacji do spoofowania może mieć konsekwencje prawne, a wykrycie próby ukrycia prawdziwego IMEI może skutkować blokadą urządzenia w sieci.
+        ⚠️ <strong>Ważne:</strong> aplikacje do spoofowania zmieniają tylko to, co pokazuje system telefonu, a nie to, co modem zgłasza sieci. Wykrycie próby ukrycia prawdziwego IMEI może skutkować blokadą urządzenia w sieci.
       </div>
 
       <p><strong>3. Współpraca międzynarodowa:</strong> Służby i operatorzy współpracują międzynarodowo. Twój prawdziwy IMEI widoczny za granicą zostaje powiązany z Twoim profilem w innych krajach — nawet jeśli w międzyczasie używałeś fałszywego IMEI w Polsce.</p>
@@ -231,7 +229,7 @@
 
       <p>Jeśli chcesz <strong>rzeczywistej ochrony prywatności</strong>, potrzebujesz rozwiązania sprzętowego, które faktycznie zmienia IMEI na poziomie modemu — nie tylko w systemie operacyjnym. To dokładnie to, co oferuje <strong>Mudi Ghost</strong>.</p>
 
-      <p><strong>Mudi Ghost</strong> to hardened router VPN z wbudowanym modemem LTE, który ma fizyczny przełącznik generujący losowy, prawdziwy IMEI przy każdym uruchomieniu. Każde włączenie routera = nowy, unikalny IMEI zarejestrowany w sieci komórkowej.</p>
+      <p><strong>Mudi Ghost</strong> to hardened router VPN z wbudowanym modemem LTE, który ma fizyczny przełącznik do zmiany IMEI. Przesuwasz go w górę, wyświetlacz prosi o wymianę karty SIM (zalecaną, ale nie wymaganą), a po przesunięciu w dół router nadaje nowy, losowy IMEI, prawdziwie zarejestrowany w sieci komórkowej. Zmieniasz go wtedy, kiedy chcesz.</p>
 
       <div class="post-highlight">
         <p><strong>Co wyróżnia Mudi Ghost:</strong></p>
@@ -261,7 +259,7 @@
       <div class="post-cta">
         <h3>Szukasz <span class="accent">Rzeczywistej Ochrony Prywatności?</span></h3>
         <p><strong>Mudi Ghost</strong> to hardened <strong>router VPN ze zmiennym IMEI</strong> — gotowy do użycia od pierwszego włączenia. WireGuard VPN, kill switch, randomizacja MAC. </p>
-        <a href="/cennik.html" class="btn">Zobacz Cennik</a>
+        <a href="/cennik" class="btn">Zobacz Cennik</a>
       </div>
 
 
@@ -302,11 +300,11 @@
     </div>
     <nav class="footer-links" aria-label="Linki w stopce">
       <a href="/">Strona Główna</a>
-      <a href="/cennik.html">Cennik</a>
-      <a href="/o-nas.html">O Nas</a>
-      <a href="/blog/">Blog</a>
-      <a href="/kontakt.html">Kontakt</a>
-      <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+      <a href="/cennik">Cennik</a>
+      <a href="/o-nas">O Nas</a>
+      <a href="/blog">Blog</a>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/polityka-prywatnosci">Polityka Prywatności</a>
     </nav>
   </div>
   <div class="footer-bottom">

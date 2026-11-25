@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instrukcja Obsługi Router VPN — Zmiana IMEI Krok po Kroku | Mudi Ghost</title>
-<meta name="description" content="Instrukcja obsługi Mudi Ghost — pierwsze uruchomienie, zmiana IMEI krok po kroku, Auto Setup karty SIM (APN), zmiana serwera i kraju VPN oraz rozwiązywanie problemów. GL-E750V2 Mudi V2.">
+<meta name="description" content="Instrukcja Mudi Ghost: pierwsze uruchomienie, zmiana IMEI krok po kroku, konfiguracja APN karty SIM, zmiana serwera VPN i rozwiązywanie problemów.">
 <meta name="keywords" content="instrukcja obsługi router VPN, jak uruchomić router Mudi Ghost, zmiana IMEI krok po kroku, konfiguracja APN GL-E750V2, jak połączyć się z routerem VPN, pierwsze uruchomienie router LTE, instrukcja zmiana IMEI router, Auto Setup APN router, zmiana serwera VPN, zmiana kraju VPN, SIM card not registered, rozwiązywanie problemów router LTE">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://mudighost.com/konfiguracja-router-vpn-zmiana-imei">
@@ -13,29 +13,33 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://mudighost.com/konfiguracja-router-vpn-zmiana-imei">
 <meta property="og:locale" content="pl_PL">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Instrukcja Router VPN — Zmiana IMEI | Mudi Ghost">
 <meta name="twitter:description" content="Jak uruchomić Mudi Ghost i zmienić IMEI krok po kroku. Instrukcja bez wiedzy technicznej.">
+<meta property="og:site_name" content="Mudi Ghost">
+<meta property="og:image" content="https://mudighost.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mudi Ghost: router VPN ze zmiennym IMEI">
+<meta name="twitter:image" content="https://mudighost.com/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Jak uruchomić router VPN Mudi Ghost i zmienić IMEI — instrukcja krok po kroku",
-  "description": "Instrukcja obsługi routera Mudi Ghost: pierwsze uruchomienie, zmiana IMEI, konfiguracja APN karty SIM.",
+  "@type": "TechArticle",
+  "headline": "Jak uruchomić router VPN Mudi Ghost i zmienić IMEI: instrukcja krok po kroku",
+  "description": "Pierwsze uruchomienie, zmiana IMEI i konfiguracja APN karty SIM w routerze Mudi Ghost.",
   "url": "https://mudighost.com/konfiguracja-router-vpn-zmiana-imei",
-  "tool": { "@type": "HowToTool", "name": "GL-E750V2 Mudi V2 — Mudi Ghost" },
-  "step": [
-    { "@type": "HowToStep", "name": "Włóż kartę SIM przed włączeniem routera", "text": "Karta SIM musi być włożona przed włączeniem routera. Router nie obsługuje hot-plug." },
-    { "@type": "HowToStep", "name": "Włącz router (3 sekundy)", "text": "Naciśnij przycisk zasilania i przytrzymaj przez około 3 sekundy. Uruchomienie trwa około 1–3 minut." },
-    { "@type": "HowToStep", "name": "Sprawdź hasło Wi-Fi na wyświetlaczu", "text": "Krótkie naciśnięcie przycisku zasilania pokazuje nazwę sieci i hasło na wyświetlaczu." },
-    { "@type": "HowToStep", "name": "Połącz się z Wi-Fi routera", "text": "Połącz telefon lub laptop z siecią widoczną na wyświetlaczu." },
-    { "@type": "HowToStep", "name": "Poczekaj na internet i VPN (1–2 minuty)", "text": "Router automatycznie łączy się z siecią komórkową i uruchamia WireGuard VPN." }
-  ]
+  "image": ["https://mudighost.com/og-image.jpg"],
+  "datePublished": "2026-03-18",
+  "dateModified": "2026-11-25",
+  "inLanguage": "pl",
+  "author": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/" },
+  "publisher": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } }
 }
 </script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+  @import url('/fonts/fonts.css');
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -266,6 +270,7 @@
   .cgrid { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-flow: row; font-size: 10pt; }
   .pmap td:first-child { width: 40%; }
 }
+  .doc-h1 { font-family: 'Rajdhani', sans-serif; font-size: 12.5pt; font-weight: 700; color: var(--accent); letter-spacing: 1px; margin-top: 1.5mm; }
 </style>
 </head>
 <body>
@@ -280,6 +285,7 @@
     </div>
     <div class="header-sub">// based on GL-E750V2 Mudi V2 &nbsp;|&nbsp; <a href="https://mudighost.com" style="color:var(--accent);text-decoration:none;">mudighost.com</a></div>
     <div class="header-divider"></div>
+    <h1 class="doc-h1">Instrukcja obsługi Mudi Ghost: uruchomienie i zmiana IMEI</h1>
     <div class="header-edition">Advanced Privacy Firmware — Hardened Security Edition</div>
     <div class="header-tagline">Based on research by independent privacy &amp; security specialists</div>
   </div>
@@ -290,14 +296,14 @@
 
   <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 1 — PIERWSZE URUCHOMIENIE</div>
-    <div class="section-title">Jak uruchomić router i połączyć się z internetem</div>
+    <h2 class="section-title">Jak uruchomić router i połączyć się z internetem</h2>
 
     <div class="steps">
 
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-body">
-          <div class="step-title">Włóż kartę SIM — zanim włączysz router</div>
+          <h3 class="step-title">Włóż kartę SIM — zanim włączysz router</h3>
           <div class="step-desc"><em>Ważne:</em> karta SIM musi być włożona <strong>PRZED włączeniem routera</strong>. Router nie obsługuje tzw. <strong>hot-plug</strong> (nie wykryje karty włożonej w trakcie pracy).<br>Zdejmij tylną klapkę (podważ ją palcem w wycięciu przy krawędzi), wsuń kartę <strong>nano SIM</strong> do gniazda zgodnie z rysunkiem obok gniazda i załóż klapkę z powrotem.</div>
         </div>
       </div>
@@ -305,7 +311,7 @@
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-body">
-          <div class="step-title">Włącz router</div>
+          <h3 class="step-title">Włącz router</h3>
           <div class="step-desc">Naciśnij przycisk zasilania i przytrzymaj przez około <strong>3 sekundy</strong>. Na wyświetlaczu pojawią się informacje o uruchamianiu. Poczekaj aż router w pełni się uruchomi — zajmuje to około <strong>1–3 minut</strong> (pierwsze uruchomienie z nową kartą SIM może potrwać dłużej).</div>
         </div>
       </div>
@@ -313,7 +319,7 @@
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-body">
-          <div class="step-title">Znajdź swoje hasło Wi-Fi na wyświetlaczu</div>
+          <h3 class="step-title">Znajdź swoje hasło Wi-Fi na wyświetlaczu</h3>
           <div class="step-desc">Naciśnij <strong>krótko</strong> przycisk zasilania (nie przytrzymuj — tylko krótkie kliknięcie). Na wyświetlaczu pojawi się <strong>nazwa sieci Wi-Fi</strong> oraz <strong>hasło</strong>. Zapamiętaj lub zapisz te dane.</div>
         </div>
       </div>
@@ -321,7 +327,7 @@
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-body">
-          <div class="step-title">Połącz się z Wi-Fi routera</div>
+          <h3 class="step-title">Połącz się z Wi-Fi routera</h3>
           <div class="step-desc">Na swoim <strong>telefonie lub laptopie</strong> wejdź w ustawienia Wi-Fi. Znajdź sieć o nazwie którą widziałeś na wyświetlaczu i połącz się z nią wpisując hasło z wyświetlacza.<br>
           <em>Uwaga:</em> nazwa sieci Wi-Fi jest celowo neutralna — nie zawiera słowa „Mudi" ani żadnych skojarzeń ze specjalistycznym sprzętem. To celowy zabieg dla Twojego bezpieczeństwa.<br><em>Nie widzisz sieci na liście?</em> Jeśli zamówiłeś sieć <strong>ukrytą</strong>, nie pojawi się ona na liście. W ustawieniach Wi-Fi wybierz <strong>„Dodaj sieć”</strong> (lub „Inna sieć”), wpisz jej nazwę dokładnie tak jak na wyświetlaczu (wielkość liter ma znaczenie), wybierz zabezpieczenie <strong>WPA2</strong> (czasem opisane jako WPA2-Personal) i podaj hasło.</div>
         </div>
@@ -330,7 +336,7 @@
       <div class="step">
         <div class="step-num">05</div>
         <div class="step-body">
-          <div class="step-title">Poczekaj na internet i VPN — ok. 1–2 minuty</div>
+          <h3 class="step-title">Poczekaj na internet i VPN — ok. 1–2 minuty</h3>
           <div class="step-desc">Po połączeniu z Wi-Fi routera poczekaj chwilę — router automatycznie łączy się z siecią komórkową i uruchamia <strong>wbudowany VPN</strong> (szyfrowany tunel, który ukrywa Twój ruch i prawdziwy adres IP). Cały proces zajmuje zazwyczaj około 1–2 minut. Dopiero po tym czasie Twój ruch internetowy jest w pełni zaszyfrowany i chroniony.<br>
           Najprościej sprawdzić, czy działa: otwórz dowolną stronę w przeglądarce. Jeśli po 3 minutach się nie otwiera — zajrzyj do tabelki na <strong>stronie 2</strong>.</div>
         </div>
@@ -374,7 +380,7 @@
   <!-- CZĘŚĆ 2 -->
   <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 2 — ZMIANA IMEI</div>
-    <div class="section-title">Procedura zmiany IMEI — krok po kroku</div>
+    <h2 class="section-title">Procedura zmiany IMEI — krok po kroku</h2>
     <div style="font-size:8pt;margin-bottom:2mm;color:var(--muted);font-family:'Share Tech Mono',monospace;">// Zalecamy zmianę IMEI za każdym razem gdy zmieniasz lokalizację lub kartę SIM</div>
 
     <div class="steps">
@@ -382,7 +388,7 @@
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-body">
-          <div class="step-title">Znajdź przełącznik IMEI</div>
+          <h3 class="step-title">Znajdź przełącznik IMEI</h3>
           <div class="step-desc">Po <strong>lewej stronie</strong> routera znajduje się mały fizyczny przełącznik suwakowy (toggle switch). Służy wyłącznie do zmiany IMEI.</div>
         </div>
       </div>
@@ -390,7 +396,7 @@
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-body">
-          <div class="step-title">Przesuń przełącznik do góry i czekaj</div>
+          <h3 class="step-title">Przesuń przełącznik do góry i czekaj</h3>
           <div class="step-desc">Przesuń przełącznik <strong>w górę</strong> i zostaw go w tej pozycji. Na wyświetlaczu pojawią się instrukcje — czytaj je uważnie i postępuj dokładnie zgodnie z tym co pokazuje ekran.<br><em>Nie spiesz się i nie rób nic dopóki wyświetlacz Cię o to nie poprosi.</em></div>
         </div>
       </div>
@@ -398,7 +404,7 @@
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-body">
-          <div class="step-title">Wymień kartę SIM gdy wyświetlacz o to poprosi</div>
+          <h3 class="step-title">Wymień kartę SIM gdy wyświetlacz o to poprosi</h3>
           <div class="step-desc">Wyświetlacz poprosi Cię o wymianę karty SIM. Wyjmij starą kartę i włóż nową. Jeśli używasz tej samej karty — wyjmij ją i włóż z powrotem.</div>
         </div>
       </div>
@@ -406,7 +412,7 @@
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-body">
-          <div class="step-title">Przesuń przełącznik z powrotem na dół</div>
+          <h3 class="step-title">Przesuń przełącznik z powrotem na dół</h3>
           <div class="step-desc">Po wymianie karty SIM przesuń przełącznik <strong>na dół</strong>. Router zapisze nowy IMEI i <strong>automatycznie się wyłączy</strong>.</div>
         </div>
       </div>
@@ -414,7 +420,7 @@
       <div class="step">
         <div class="step-num">05</div>
         <div class="step-body">
-          <div class="step-title">Zmień lokalizację — przed ponownym włączeniem</div>
+          <h3 class="step-title">Zmień lokalizację — przed ponownym włączeniem</h3>
           <div class="step-desc">Po wyłączeniu routera <strong>zmień fizyczną lokalizację</strong> zanim go ponownie włączysz. To ważny krok dla zachowania anonimowości — włączenie routera z nowym IMEI w tej samej lokalizacji co poprzednio zmniejsza skuteczność ochrony.<br>Następnie włącz router (przytrzymaj 3 sekundy) — uruchomi się z nowym IMEI i automatycznie połączy z VPN.</div>
         </div>
       </div>
@@ -430,7 +436,7 @@
   <!-- MAPA PROBLEMÓW -->
   <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 3 — ROZWIĄZYWANIE PROBLEMÓW</div>
-    <div class="section-title">Coś nie działa? Znajdź swój problem</div>
+    <h2 class="section-title">Coś nie działa? Znajdź swój problem</h2>
     <div style="font-size:8.4pt;margin-bottom:2mm;color:var(--text);line-height:1.45;">Znajdź w lewej kolumnie swój problem — obok jest rozwiązanie.</div>
     <table class="pmap">
       <tr><th>Problem</th><th>Co zrobić</th></tr>
@@ -459,53 +465,60 @@
 <!-- ========== STRONA 3 ========== -->
 <div class="page">
 
-  <div class="p2-header">
-    <div class="p2-brand">MUDI <span>GHOST</span></div>
-    <div class="p2-sub">
-      Advanced Privacy Firmware — Hardened Security Edition<br>
-      // based on GL-E750V2 Mudi V2
-    </div>
-  </div>
+  <div class="p2-header">
+
+    <div class="p2-brand">MUDI <span>GHOST</span></div>
+
+    <div class="p2-sub">
+
+      Advanced Privacy Firmware — Hardened Security Edition<br>
+
+      // based on GL-E750V2 Mudi V2
+
+    </div>
+
+  </div>
+
 
   <!-- CZĘŚĆ 3: AUTO SETUP -->
   <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 3 — ROZWIĄZYWANIE PROBLEMÓW (CIĄG DALSZY)</div>
-    <div class="section-title">Brak internetu — procedura Auto Setup</div>
+    <h2 class="section-title">Brak internetu — procedura Auto Setup</h2>
     <div style="font-size:8.4pt;margin-bottom:2mm;color:var(--text);line-height:1.45;"><strong>Kiedy to robić:</strong> jesteś połączony z Wi-Fi routera, ale strony się nie otwierają. Najczęściej router nie połączył się z siecią komórkową — np. nowa karta SIM potrzebuje ustawień operatora — tzw. <strong>APN</strong> (adres punktu dostępu do internetu w sieci operatora). Auto Setup ustawi je za Ciebie.</div>
 
     <div class="steps">
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-body">
-          <div class="step-title">Otwórz panel administracyjny routera</div>
+          <h3 class="step-title">Otwórz panel administracyjny routera</h3>
           <div class="step-desc">Na swoim <strong>telefonie lub laptopie</strong> upewnij się, że jesteś połączony z Wi-Fi routera. Otwórz przeglądarkę (np. Chrome, Safari, Firefox) i wpisz w pasku adresu:<br><strong style="font-family:'Share Tech Mono',monospace;color:var(--accent);font-size:10pt;">192.168.8.1</strong><br>Naciśnij Enter. Pojawi się ekran logowania.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-body">
-          <div class="step-title">Zaloguj się do panelu</div>
+          <h3 class="step-title">Zaloguj się do panelu</h3>
           <div class="step-desc">Hasło (Admin Password) jest <strong>takie samo jak hasło do Wi-Fi</strong> — zobaczysz je na wyświetlaczu routera po krótkim naciśnięciu przycisku zasilania.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-body">
-          <div class="step-title">Znajdź ramkę Cellular</div>
+          <h3 class="step-title">Znajdź ramkę Cellular</h3>
           <div class="step-desc">Po zalogowaniu zobaczysz stronę <strong>INTERNET</strong> (jeśli nie — kliknij <strong>INTERNET</strong> w menu po lewej). Przewiń w dół do ramki <strong>Cellular</strong> (sieć komórkowa). Napis <strong>SIM card not registered</strong> albo brak nazwy operatora oznacza, że router nie połączył się z siecią komórkową.<img class="shot shot-sim" src="/instrukcja-img/auto-setup-sim-not-registered.jpg" alt="Ramka Cellular przed Auto Setup" loading="lazy"></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-body">
-          <div class="step-title">Kliknij Auto Setup i czekaj</div>
+          <h3 class="step-title">Kliknij Auto Setup i czekaj</h3>
           <div class="step-desc">Kliknij niebieski przycisk <strong>Auto Setup</strong>. Pojawi się żółty napis <strong>Connecting…</strong> (łączenie), a przycisk zmieni się na różowy <strong>Abort</strong>. To normalne — router właśnie pobiera ustawienia operatora.<br><em>Nie klikaj Abort</em> — po prostu czekaj do <strong>2 minut</strong>.<img class="shot shot-sim" src="/instrukcja-img/auto-setup-connecting.jpg" alt="Auto Setup w trakcie łączenia" loading="lazy"></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">05</div>
         <div class="step-body">
-          <div class="step-title">Sprawdź, czy działa</div>
+          <h3 class="step-title">Sprawdź, czy działa</h3>
           <div class="step-desc">Udało się, gdy: u góry ramki widać <strong>nazwę operatora</strong> (np. Orange) i paski zasięgu, kropka obok jest <strong>niebieska</strong>, pojawił się <strong>IP Address</strong>, a przycisk zmienił się na <strong>Disconnect</strong> (nie klikaj go). Odczekaj jeszcze ok. minutę na VPN i otwórz dowolną stronę.<img class="shot shot-sim" src="/instrukcja-img/auto-setup-polaczono.jpg" alt="Udane połączenie z siecią komórkową" loading="lazy"></div>
         </div>
       </div>
@@ -513,21 +526,36 @@
 
   </div>
 
-  <div class="footer-push">
-    <div class="disclaimer-bar">
-      Opisane funkcje uniemożliwiają identyfikację i śledzenie urządzenia przez służby, agencje rządowe i systemy komercyjnego profilowania. Urządzenie przeznaczone wyłącznie do legalnego użytku.
-    </div>
-    <div class="footer">
-      <div style="display:flex;align-items:center;gap:0;">
-        <div class="footer-brand">MUDI <span>GHOST</span></div>
-        <div class="footer-website">&nbsp;|&nbsp;<a href="https://mudighost.com" style="color:#ffffff;text-decoration:none;">mudighost.com</a></div>
-      </div>
-      <div class="footer-right">
-        based on GL-E750V2 Mudi V2<br>
-        based on research by independent privacy &amp; security specialists
-      </div>
-    </div>
-  </div>
+  <div class="footer-push">
+
+    <div class="disclaimer-bar">
+
+      Opisane funkcje uniemożliwiają identyfikację i śledzenie urządzenia przez służby, agencje rządowe i systemy komercyjnego profilowania. Urządzenie przeznaczone wyłącznie do legalnego użytku.
+
+    </div>
+
+    <div class="footer">
+
+      <div style="display:flex;align-items:center;gap:0;">
+
+        <div class="footer-brand">MUDI <span>GHOST</span></div>
+
+        <div class="footer-website">&nbsp;|&nbsp;<a href="https://mudighost.com" style="color:#ffffff;text-decoration:none;">mudighost.com</a></div>
+
+      </div>
+
+      <div class="footer-right">
+
+        based on GL-E750V2 Mudi V2<br>
+
+        based on research by independent privacy &amp; security specialists
+
+      </div>
+
+    </div>
+
+  </div>
+
 
 </div>
 
@@ -555,7 +583,7 @@
   <!-- CZĘŚĆ 3 (cd.) -->
   <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 3 — ROZWIĄZYWANIE PROBLEMÓW (CIĄG DALSZY)</div>
-    <div class="section-title">Brak połączenia z VPN lub zmiana kraju VPN</div>
+    <h2 class="section-title">Brak połączenia z VPN lub zmiana kraju VPN</h2>
     <div style="font-size:8.4pt;margin-bottom:2mm;color:var(--text);line-height:1.45;">Router ma wgrane serwery VPN w wielu krajach. Czasem pojedynczy serwer przestaje działać (np. przerwa techniczna u dostawcy). Wtedy — dla Twojego bezpieczeństwa — router <strong>blokuje internet</strong>, zamiast wypuścić go bez szyfrowania. Wystarczy przełączyć się na inny serwer.<br>
     <strong>Jak poznać, że chodzi o VPN, a nie o kartę SIM?</strong> W panelu routera w zakładce <strong>Internet</strong> ramka <strong>Cellular</strong> pokazuje nazwę operatora, niebieską kropkę i przycisk <strong>Disconnect</strong> (jak na ostatnim obrazku na stronie 3), a mimo to strony się nie otwierają.</div>
 
@@ -567,28 +595,28 @@
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-body">
-          <div class="step-title">Zaloguj się do panelu routera</div>
+          <h3 class="step-title">Zaloguj się do panelu routera</h3>
           <div class="step-desc">Tak samo jak w krokach <strong>01–02</strong> procedury Auto Setup (strona 3): połącz się z Wi-Fi routera, wpisz w przeglądarce <strong style="font-family:'Share Tech Mono',monospace;color:var(--accent);">192.168.8.1</strong> i zaloguj się hasłem z wyświetlacza.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-body">
-          <div class="step-title">Otwórz VPN Dashboard</div>
+          <h3 class="step-title">Otwórz VPN Dashboard</h3>
           <div class="step-desc">W menu po lewej stronie kliknij <strong>VPN</strong> — rozwinie się lista. Kliknij <strong>VPN Dashboard</strong>.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-body">
-          <div class="step-title">Sprawdź, jak wygląda połączenie</div>
+          <h3 class="step-title">Sprawdź, jak wygląda połączenie</h3>
           <div class="step-desc">W sekcji <strong>VPN Client</strong> znajdź wiersz <strong>WireGuard</strong> (nazwa protokołu VPN, z którego korzysta router — patrz obrazek). Zobaczysz w nim ramkę z nazwą obecnego serwera (np. <span style="font-family:'Share Tech Mono',monospace;color:var(--accent);">Germany_de-ber-wg-001</span>) oraz przełącznik <strong>Enable</strong>, który powinien być <strong>włączony</strong> (niebieski).<br>Gdy VPN działa, kropka przy napisie WireGuard jest <strong>niebieska</strong>, a liczby w polu <strong>Traffic Statistics</strong> rosną. Szara kropka oznacza brak połączenia.<img class="shot" src="/instrukcja-img/vpn-dashboard-wireguard.jpg" alt="Wiersz WireGuard w VPN Dashboard" loading="lazy"></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-body">
-          <div class="step-title">Kliknij nazwę serwera</div>
+          <h3 class="step-title">Kliknij nazwę serwera</h3>
           <div class="step-desc">Kliknij ramkę z nazwą serwera (z ikonką strzałek <strong>⇄</strong>). Otworzy się okno <strong>Select Configuration File</strong> z listą wszystkich serwerów.</div>
         </div>
       </div>
@@ -626,21 +654,21 @@
 
   <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 3 — ROZWIĄZYWANIE PROBLEMÓW (CIĄG DALSZY)</div>
-    <div class="section-title">Zmiana serwera VPN — dokończenie</div>
+    <h2 class="section-title">Zmiana serwera VPN — dokończenie</h2>
 
     <div class="steps">
 
       <div class="step">
         <div class="step-num">05</div>
         <div class="step-body">
-          <div class="step-title">Wyszukaj i zaznacz nowy serwer</div>
+          <h3 class="step-title">Wyszukaj i zaznacz nowy serwer</h3>
           <div class="step-desc">W polu <strong>Search configuration file</strong> wpisz nazwę kraju <strong>po angielsku</strong> (np. <em>Sweden</em> — patrz tabelka poniżej). Na liście zostaną serwery z tego kraju. Kliknij <strong>kółko</strong> przy dowolnym z nich, a następnie niebieski przycisk <strong>Apply</strong>.<br>Serwer możesz zmienić w trakcie działania VPN — ochrona nie zostanie przerwana. Przełącznika <strong>Enable</strong> nie trzeba ruszać.<img class="shot shot-narrow" src="/instrukcja-img/vpn-wybor-serwera.jpg" alt="Okno wyboru serwera" loading="lazy"></div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">06</div>
         <div class="step-body">
-          <div class="step-title">Poczekaj i sprawdź</div>
+          <h3 class="step-title">Poczekaj i sprawdź</h3>
           <div class="step-desc">Po około <strong>10–30 sekundach</strong> kropka przy WireGuard powinna być niebieska, a strony powinny się otwierać. Jeśli nie — wróć do kroku 04 i wybierz serwer z <strong>innego kraju</strong> (najwięcej serwerów mają <em>Sweden</em> i <em>Germany</em>).</div>
         </div>
       </div>
@@ -683,18 +711,25 @@
 <!-- ========== STRONA 6 ========== -->
 <div class="page">
 
-  <div class="p2-header">
-    <div class="p2-brand">MUDI <span>GHOST</span></div>
-    <div class="p2-sub">
-      Advanced Privacy Firmware — Hardened Security Edition<br>
-      // based on GL-E750V2 Mudi V2
-    </div>
-  </div>
+  <div class="p2-header">
+
+    <div class="p2-brand">MUDI <span>GHOST</span></div>
+
+    <div class="p2-sub">
+
+      Advanced Privacy Firmware — Hardened Security Edition<br>
+
+      // based on GL-E750V2 Mudi V2
+
+    </div>
+
+  </div>
+
 
   <!-- CZĘŚĆ 4 -->
   <div class="section-wrap mt3">
     <div class="part-label">CZĘŚĆ 4 — WAŻNE INFORMACJE</div>
-    <div class="section-title">Zasady korzystania i wsparcia</div>
+    <h2 class="section-title">Zasady korzystania i wsparcia</h2>
 
     <div class="warn-box">
       <div class="warn-icon">⚠️</div>
@@ -722,20 +757,34 @@
 
   </div>
 
-  <div class="footer-push">
-    <div class="disclaimer-bar">
-      Opisane funkcje uniemożliwiają identyfikację i śledzenie urządzenia przez służby, agencje rządowe i systemy komercyjnego profilowania. Urządzenie przeznaczone wyłącznie do legalnego użytku.
-    </div>
-    <div class="footer">
-      <div style="display:flex;align-items:center;gap:0;">
-        <div class="footer-brand">MUDI <span>GHOST</span></div>
-        <div class="footer-website">&nbsp;|&nbsp;<a href="https://mudighost.com" style="color:#ffffff;text-decoration:none;">mudighost.com</a></div>
-      </div>
-      <div class="footer-right">
-        based on GL-E750V2 Mudi V2<br>
-        based on research by independent privacy &amp; security specialists
-      </div>
-    </div>
+  <div class="footer-push">
+
+    <div class="disclaimer-bar">
+
+      Opisane funkcje uniemożliwiają identyfikację i śledzenie urządzenia przez służby, agencje rządowe i systemy komercyjnego profilowania. Urządzenie przeznaczone wyłącznie do legalnego użytku.
+
+    </div>
+
+    <div class="footer">
+
+      <div style="display:flex;align-items:center;gap:0;">
+
+        <div class="footer-brand">MUDI <span>GHOST</span></div>
+
+        <div class="footer-website">&nbsp;|&nbsp;<a href="https://mudighost.com" style="color:#ffffff;text-decoration:none;">mudighost.com</a></div>
+
+      </div>
+
+      <div class="footer-right">
+
+        based on GL-E750V2 Mudi V2<br>
+
+        based on research by independent privacy &amp; security specialists
+
+      </div>
+
+    </div>
+
 
 </div>
 

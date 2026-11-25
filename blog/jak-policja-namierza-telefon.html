@@ -27,21 +27,27 @@
   <meta property="article:tag" content="triangulacja">
   <meta property="article:tag" content="śledzenie telefonu">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Jak Policja Namierza Twój Telefon — IMSI, Stingray, Triangulacja">
   <meta name="twitter:description" content="Technologie śledzenia telefonów których większość osób nie zna. Poznaj jak naprawdę działają służby.">
+  <meta property="og:image" content="https://mudighost.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mudi Ghost: router VPN ze zmiennym IMEI">
+  <meta name="twitter:image" content="https://mudighost.com/og-image.jpg">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
+    "image": ["https://mudighost.com/og-image.jpg"],
     "headline": "Jak Policja Namierza Twój Telefon — IMSI, Stingray, Triangulacja",
     "description": "Technologie śledzenia telefonów komórkowych — IMSI, Stingray, triangulacja, SORM. Przystępna analiza dla osób dbających o prywatność.",
     "url": "https://mudighost.com/blog/jak-policja-namierza-telefon",
     "datePublished": "2026-04-16",
-    "dateModified": "2026-04-16",
-    "author": { "@type": "Organization", "name": "Mudi Ghost", "url": "https://mudighost.com" },
-    "publisher": { "@type": "Organization", "name": "Mudi Ghost", "url": "https://mudighost.com" },
+    "dateModified": "2026-11-25",
+    "author": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } },
+    "publisher": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } },
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mudighost.com/blog/jak-policja-namierza-telefon" }
   }
   </script>
@@ -52,16 +58,16 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Strona Główna", "item": "https://mudighost.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog" },
       { "@type": "ListItem", "position": 3, "name": "Jak Policja Namierza Twój Telefon — IMSI, Stingray, Triangulacja", "item": "https://mudighost.com/blog/jak-policja-namierza-telefon" }
     ]
   }
   </script>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/Rajdhani-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.css">
 
   <style>
@@ -128,17 +134,17 @@
   <nav class="site-nav" id="siteNav" role="navigation" aria-label="Główna nawigacja">
     <a href="/">Strona Główna</a>
     <a href="/#funkcje">Funkcje</a>
-    <a href="/o-nas.html">O Nas</a>
-    <a href="/cennik.html">Cennik</a>
-    <a href="/blog/">Blog</a>
-    <a href="/kontakt.html">Kontakt</a>
+    <a href="/o-nas">O Nas</a>
+    <a href="/cennik">Cennik</a>
+    <a href="/blog">Blog</a>
+    <a href="/kontakt">Kontakt</a>
   </nav>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="/">Strona Główna</a>
   <span>›</span>
-  <a href="/blog/">Blog</a>
+  <a href="/blog">Blog</a>
   <span>›</span>
   <span style="color:var(--text)">Jak Policja Namierza Twój Telefon</span>
 </nav>
@@ -162,7 +168,7 @@
     <nav class="post-toc" aria-label="Spis treści">
       <h4>Spis Treści</h4>
       <ol>
-        <li><a href="#imsi">IMSI — Twój niezmienny identyfikator w sieci komórkowej</a></li>
+        <li><a href="#imsi">IMSI — identyfikator Twojej karty SIM</a></li>
         <li><a href="#stingray">Stingray — pułapka na telefony, którą można postawić w dowolnym miejscu</a></li>
         <li><a href="#triangulacja">Triangulacja — jak dokładnie lokalizują Cię na podstawie stacji bazowych</a></li>
         <li><a href="#ss7">SS7 — luka w protokole, która pozwala na zdalne przechwytywanie rozmów</a></li>
@@ -174,19 +180,19 @@
 
     <div class="post-body">
 
-      <h2 id="imsi"><span class="accent">IMSI</span> — Twój niezmienny identyfikator w sieci komórkowej</h2>
+      <h2 id="imsi"><span class="accent">IMSI</span> — identyfikator Twojej karty SIM</h2>
 
       <p>Wiesz że Twój telefon ma <strong>IMEI</strong> — 15-cyfrowy numer identyfikacyjny wbudowany w modem. Ale mniej osób zna <strong>IMSI (International Mobile Subscriber Identity)</strong> — tożsamość subskrybenta zapisaną na karcie SIM. IMSI to Twój prawdziwy klucz do sieci komórkowej: podczas gdy IMEI identyfikuje urządzenie, <strong>IMSI identyfikuje Ciebie jako abonenta</strong>. Składa się z kodu kraju (MCC), kodu sieci (MNC) i unikalnego numeru MSIN przypisanego przez operatora.</p>
 
       <p>Kiedy telefon łączy się z siecią, wysyła swoje IMSI do najbliższej stacji bazowej. Operator na tej podstawie wie: kto się łączy, w jakiej sieci, z jakimi uprawnieniami. Ten proces jest nieunikniony i odbywa się przy każdym połączeniu — nawet jeśli nie wykonujesz żadnego połączenia, modem periodycznie komunikuje się z siecią żeby utrzymać rejestrację.</p>
 
-      <p><strong>Dlaczego IMSI jest kluczowy dla służb?</strong> Ponieważ — w przeciwieństwie do numeru telefonu — nie zmieniasz go przez zmianę karty SIM. Jeśli służby raz pozyskają Twoje IMSI, mogą śledzić Cię niezależnie od tego jak często zmieniasz numery. Wystarczy że włożysz kartę SIM do dowolnego telefonu — IMSI pozostaje to samo.</p>
+      <p><strong>Dlaczego IMSI jest kluczowy dla służb?</strong> Ponieważ jest zapisany na karcie SIM i wędruje razem z nią. Jeśli służby raz pozyskają Twoje IMSI, rozpoznają Cię w każdym telefonie, do którego włożysz tę kartę. Nowa karta SIM to nowy IMSI, ale telefon nadal zgłasza sieci ten sam IMEI, więc powiązanie starej i nowej karty jest proste. Dlatego zmiana karty działa dopiero razem ze zmianą IMEI.</p>
 
       <div class="post-highlight">
         <p><strong>Co to jest IMSI?</strong> To 15-cyfrowy numer zapisany na karcie SIM, jednoznacznie identyfikujący użytkownika w sieci komórkowej. Składa się z: kodu kraju (MCC, 3 cyfry), kodu operatora (MNC, 2-3 cyfry) i numeru subskrybenta (MSIN, do 10 cyfr). Przykład: <span style="font-family: var(--font-mono); letter-spacing: -0.5px;">260&#x200B; 01&#x200B; 1234&#x200B; 567&#x200B; 890</span> — Polska, operator Play, numer abonenta.</p>
       </div>
 
-      <p>Problem jest fundamentalny: <strong>IMSI jest wysyłany w czystej formie przy każdym połączeniu</strong>. W przeciwieństwie do zaszyfrowanej treści rozmowy, sam identyfikator podróżuje otwartym tekstem. To oznacza że każdy kto może nasłuchiwać na poziomie stacji bazowej — a takich urządzeń jest na rynku wiele — może poznać Twoje IMSI. Dlatego policja namierza telefon tak skutecznie, nawet jeśli ofiara myśli że jest chroniona.</p>
+      <p>Problem jest fundamentalny: <strong>w sieciach 2G, 3G i 4G telefon wysyła IMSI otwartym tekstem, gdy stacja bazowa o to poprosi</strong>, np. przy pierwszym logowaniu do sieci. Na co dzień sieć posługuje się tymczasowym identyfikatorem (TMSI), ale fałszywa stacja bazowa może w każdej chwili zażądać prawdziwego IMSI, a telefon go poda. Dopiero pełne 5G szyfruje ten identyfikator (SUCI). To oznacza, że każdy, kto postawi w pobliżu fałszywą stację bazową (a takich urządzeń jest na rynku wiele), może poznać Twoje IMSI. Dlatego policja namierza telefon tak skutecznie, nawet jeśli ofiara myśli że jest chroniona.</p>
 
       <h2 id="stingray"><span class="accent">Stingray</span> — pułapka na telefony, którą można postawić w dowolnym miejscu</h2>
 
@@ -249,11 +255,11 @@
         ⚠️ <strong>Krytyczne zagrożenie dla posiadaczy kryptowalut:</strong> Atak przez SS7 na portfel kryptowalut to realne ryzyko. Atakujący przechwytuje SMS z kodem 2FA, przejmuje konto giełdy, transferuje środki. W 2022 roku zgłoszono straty rzędu milionów dolarów przez takie ataki. Jeśli używasz SMS-ów jako drugiego składnika autoryzacji — jesteś narażony.
       </div>
 
-      <p>Protokół SS7 jest wciąż aktywny w większości sieci komórkowych na świecie mimo że nowsze sieci LTE/5G mają lepsze zabezpieczenia — te zabezpieczenia dotyczą tylko komunikacji między telefonem a stacją bazową. <strong>SS7 działa w tle jako warstwa sygnalizacyjna</strong> i jest niezbędny do działania sieci. Atakujący wykorzystują fakt że stare luki pozostają otwarte bo operatorzy nie chcą wyłączać starej infrastruktury. Dlatego warto poznać różnicę między <a href="/blog/imei-spoofing-czy-to-dziala.html"><strong>fałszywymi aplikacjami do "zmiany IMEI" a prawdziwą ochroną</strong></a>.</p>
+      <p>Protokół SS7 jest wciąż aktywny w większości sieci komórkowych na świecie mimo że nowsze sieci LTE/5G mają lepsze zabezpieczenia — te zabezpieczenia dotyczą tylko komunikacji między telefonem a stacją bazową. <strong>SS7 działa w tle jako warstwa sygnalizacyjna</strong> i jest niezbędny do działania sieci. Atakujący wykorzystują fakt że stare luki pozostają otwarte bo operatorzy nie chcą wyłączać starej infrastruktury. Dlatego warto poznać różnicę między <a href="/blog/imei-spoofing-czy-to-dziala"><strong>fałszywymi aplikacjami do "zmiany IMEI" a prawdziwą ochroną</strong></a>.</p>
 
       <h2 id="sorm"><span class="accent">SORM</span> i prawne przechwytywanie — jak działają służby w Polsce i UE</h2>
 
-      <p><strong>SORM (System Operacyjno-Rozpoznawczo-Monitorujący)</strong> to polski system prawnych interwepcji telekomunikacyjnych. Na jego podstawie służby mogą legalnie żądać od operatorów: danych lokalizacyjnych, treści rozmów, metadanych, historii połączeń. Wszystko na podstawie nakazu sądowego.</p>
+      <p><strong>SORM (СОРМ)</strong> to rosyjski system, który zobowiązuje operatorów do zapewnienia służbom stałego dostępu do ruchu w sieci. W Polsce i w UE nie ma SORM, ale cel jest podobny: operatorzy muszą umożliwić służbom legalne przechwytywanie (lawful interception) i przez 12 miesięcy przechowują dane o połączeniach i lokalizacji. Na podsłuch treści rozmów służby potrzebują zgody sądu, ale po dane o lokalizacji i historii połączeń sięgają bez niej, a sąd kontroluje to dopiero po fakcie.</p>
 
       <p>SORM składa się z trzech faz:</p>
 
@@ -287,19 +293,19 @@
       <p>Wiedza o zagrożeniach to pierwszy krok. Teraz praktyczne metody utrudnienia śledzenia:</p>
 
       <ul>
-        <li><strong>Zmiana IMEI</strong> — najskuteczniejsza metoda na poziomie urządzenia. Zmiana IMEI sprawia że dla sieci to zupełnie nowe urządzenie. Ciągłość identyfikacji zostaje przerwana. Tak działa <a href="/blog/mudi-ghost-skuteczna-zmiana-imei.html"><strong>Mudi Ghost ze sprzętową zmianą IMEI</strong></a>.</li>
+        <li><strong>Zmiana IMEI</strong> — najskuteczniejsza metoda na poziomie urządzenia. Zmiana IMEI sprawia że dla sieci to zupełnie nowe urządzenie. Ciągłość identyfikacji zostaje przerwana. Tak działa <a href="/blog/mudi-ghost-skuteczna-zmiana-imei"><strong>Mudi Ghost ze sprzętową zmianą IMEI</strong></a>.</li>
         <li><strong>Tryb samolotowy kiedy nie potrzebujesz łączności</strong> — najprostsza metoda. Wyłączasz wszystkie nadajniki w telefonie. Nikt nie może Cię namierzyć kiedy nie masz połączenia z siecią.</li>
         <li><strong>Karta SIM bez rejestracji lub prepaid</strong> — utrudnia powiązanie IMSI z tożsamością. W wielu krajach można kupić bez dokumentów.</li>
-        <li><strong>VPN na poziomie routera</strong> — szyfruje cały ruch przed wyjściem z urządzenia. <a href="/blog/vpn-vs-proxy-vs-tor.html">VPN vs Proxy vs Tor</a> — porównanie rozwiązań.</li>
+        <li><strong>VPN na poziomie routera</strong> — szyfruje cały ruch przed wyjściem z urządzenia. <a href="/blog/vpn-vs-proxy-vs-tor">VPN vs Proxy vs Tor</a> — porównanie rozwiązań.</li>
         <li><strong>Aplikacje z E2EE</strong> — Signal, WhatsApp, iMessage. Chronią treść, nie metadane.</li>
-        <li><strong>Physical security phone</strong> — osobne urządzenie do pracy z wrażliwymi kontaktami. Wyłączone kiedy niepotrzebne. <a href="/blog/czym-jest-grapheneos-najbezpieczniejszy-android.html"><strong>GrapheneOS</strong></a> to najbezpieczniejszy wybór jeśli chodzi o hardened Android.</li>
+        <li><strong>Physical security phone</strong> — osobne urządzenie do pracy z wrażliwymi kontaktami. Wyłączone kiedy niepotrzebne. <a href="/blog/czym-jest-grapheneos-najbezpieczniejszy-android"><strong>GrapheneOS</strong></a> to najbezpieczniejszy wybór jeśli chodzi o hardened Android.</li>
       </ul>
 
       <p>Pamiętaj że żadna pojedyncza metoda nie daje pełnej ochrony. Dopiero <strong>kombinacja kilku</strong> — zmiana IMEI, prepaid SIM, VPN, physical phone separation — utrudnia śledzenie na tyle żeby służby szukały łatwiejszych celów.</p>
 
       <h2 id="podsumowanie">Podsumowanie — <span class="accent">Jak Policja Namierza Twój Telefon</span></h2>
 
-      <p>Mechanizmy śledzenia telefonów są zaawansowane, ale nie tajemne. Policja namierza telefon wykorzystując <strong>IMSI</strong> — Twój niezmienny identyfikator w sieci — jednorazowo pozyskany pozwala śledzić Cię miesiącami. <strong>Stingray</strong> daje służbom mobilną pułapkę którą można ustawić w dowolnym miejscu — na demonstracji, przy spotkaniu, w samolocie. <strong>Triangulacja</strong> pozwala zlokalizować Cię z dokładnością do kilkudziesięciu metrów bez Twojej wiedzy. <strong>SS7</strong> to globalna luka przez którą hakerzy i służby mogą przechwytywać SMS-y, lokalizację, połączenia. <strong>SORM</strong> to prawne narzędzie które zobowiązuje operatorów do udostępniania wszystkiego na każde żądanie.</p>
+      <p>Mechanizmy śledzenia telefonów są zaawansowane, ale nie tajemne. Policja namierza telefon wykorzystując <strong>IMSI</strong> karty SIM, który raz pozyskany pozwala śledzić Cię miesiącami, dopóki nie zmienisz karty i IMEI. <strong>Stingray</strong> daje służbom mobilną pułapkę którą można ustawić w dowolnym miejscu — na demonstracji, przy spotkaniu, w samolocie. <strong>Triangulacja</strong> pozwala zlokalizować Cię z dokładnością do kilkudziesięciu metrów bez Twojej wiedzy. <strong>SS7</strong> to globalna luka przez którą hakerzy i służby mogą przechwytywać SMS-y, lokalizację, połączenia. <strong>SORM</strong> to prawne narzędzie które zobowiązuje operatorów do udostępniania wszystkiego na każde żądanie.</p>
 
       <p>Dla osób które rozumieją ryzyko — dziennikarzy, aktywistów, prawników, biznesmenów — ta wiedza nie jest paraliżująca. Jest <strong>narzędziem do podejmowania świadomych decyzji</strong>. Wiesz jak działają mechanizmy inwigilacji — możesz dobrać odpowiednie środki ochrony.</p>
 
@@ -308,7 +314,7 @@
       <div class="post-cta">
         <h3>Szukasz <span class="accent">Ochrony Przed Inwigilacją?</span></h3>
         <p><strong>Mudi Ghost</strong> to jedyny router na rynku ze sprzętową zmianą IMEI — nie aplikacja, nie soft, ale fizyczny przełącznik. WireGuard VPN, kill switch, randomizacja MAC. Od pierwszego włączenia.</p>
-        <a href="/cennik.html" class="btn">Zobacz Cennik — 375€</a>
+        <a href="/cennik" class="btn">Zobacz Cennik — 375€</a>
       </div>
 
       <div class="post-tags">
@@ -331,15 +337,15 @@
   <div style="max-width: var(--content-w); margin: 0 auto; padding: 0 40px;">
     <h3 style="font-family: var(--font-mono); font-size: 11px; color: var(--cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0;">// Powiązane artykuły</h3>
     <div class="related-grid">
-      <a href="/blog/co-to-jest-imei-anonimowosc.html" class="related-card">
+      <a href="/blog/co-to-jest-imei-anonimowosc" class="related-card">
         <p class="rc-date">23 marca 2026</p>
         <h4>Co to jest IMEI i jak wpływa na anonimowość w sieci komórkowej</h4>
       </a>
-      <a href="/blog/telefon-sledzony-7-oznak-szpiegowania.html" class="related-card">
+      <a href="/blog/telefon-sledzony-7-oznak-szpiegowania" class="related-card">
         <p class="rc-date">8 kwietnia 2026</p>
         <h4>Czy Twój Telefon Jest Śledzony? — 7 Oznak Szpiegowania</h4>
       </a>
-      <a href="/blog/vpn-vs-proxy-vs-tor.html" class="related-card">
+      <a href="/blog/vpn-vs-proxy-vs-tor" class="related-card">
         <p class="rc-date">3 kwietnia 2026</p>
         <h4>VPN vs Proxy vs Tor — co chroni Twoją prywatność?</h4>
       </a>
@@ -356,11 +362,11 @@
     </div>
     <nav class="footer-links" aria-label="Linki w stopce">
       <a href="/">Strona Główna</a>
-      <a href="/cennik.html">Cennik</a>
-      <a href="/o-nas.html">O Nas</a>
-      <a href="/blog/">Blog</a>
-      <a href="/kontakt.html">Kontakt</a>
-      <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+      <a href="/cennik">Cennik</a>
+      <a href="/o-nas">O Nas</a>
+      <a href="/blog">Blog</a>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/polityka-prywatnosci">Polityka Prywatności</a>
     </nav>
   </div>
   <div class="footer-bottom">

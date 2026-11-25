@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mudi Ghost — Router VPN ze Zmiennym IMEI | Anonimowość w Sieci</title>
-  <meta name="description" content="Mudi Ghost to hardened privacy router ze zmiennym IMEI jednym przełącznikiem. WireGuard VPN z kill switch, randomizacja MAC i BSSID. Dla dziennikarzy, aktywistów i profesjonalistów. 375€.">
+  <meta name="description" content="Mudi Ghost: router VPN ze zmiennym IMEI jednym ruchem przełącznika. WireGuard VPN z kill switch, losowy MAC i BSSID. Dla dziennikarzy i aktywistów. 375€.">
   <meta name="keywords" content="router VPN ze zmiennym IMEI, anonimowy router, router z VPN, zmiana IMEI, WireGuard router, hardened router, anonimowość w sieci">
   <meta name="author" content="Mudi Ghost">
   <meta name="robots" content="index, follow">
@@ -18,10 +18,16 @@
   <meta name="twitter:title" content="Mudi Ghost — Router VPN ze Zmiennym IMEI">
   <meta name="twitter:description" content="Hardened router VPN ze zmiennym IMEI. WireGuard VPN z kill switch, randomizacja MAC i BSSID. 375€ — płatność krypto.">
   <meta property="og:site_name" content="Mudi Ghost">
+  <meta property="og:image" content="https://mudighost.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mudi Ghost: router VPN ze zmiennym IMEI">
+  <meta name="twitter:image" content="https://mudighost.com/og-image.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": "https://mudighost.com/#product",
     "name": "Mudi Ghost",
     "description": "Hardened Privacy Router ze zmiennym IMEI, WireGuard VPN z kill switch, randomizacja MAC i BSSID",
     "url": "https://mudighost.com/",
@@ -30,7 +36,7 @@
       "@type": "Offer",
       "price": "375",
       "priceCurrency": "EUR",
-      "priceValidUntil": "2026-12-31",
+      "priceValidUntil": "2027-12-31",
       "availability": "https://schema.org/InStock",
       "shippingDetails": {
         "@type": "OfferShippingDetails",
@@ -68,11 +74,49 @@
     "keywords": "router VPN ze zmiennym IMEI, anonimowy router, zmiana IMEI, WireGuard, anonimowość w sieci"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mudighost.com/#organization",
+        "name": "Mudi Ghost",
+        "url": "https://mudighost.com/",
+        "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 },
+        "email": "mudi.ghost@proton.me",
+        "sameAs": ["https://www.youtube.com/@MudiGhost", "https://t.me/mudighost"],
+        "contactPoint": { "@type": "ContactPoint", "email": "mudi.ghost@proton.me", "contactType": "customer service", "availableLanguage": ["pl", "ru", "en"] }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mudighost.com/#website",
+        "url": "https://mudighost.com/",
+        "name": "Mudi Ghost",
+        "inLanguage": "pl",
+        "publisher": { "@id": "https://mudighost.com/#organization" }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://mudighost.com/#film",
+        "name": "Zmiana IMEI i router VPN: jak zniknąć z radarów | Mudi Ghost",
+        "description": "Jak telefon zdradza, gdzie jesteś: IMEI, stacje BTS, retencja danych i triangulacja. I jak router Mudi Ghost ze zmiennym IMEI i VPN WireGuard wyprowadza Twój telefon z tego systemu.",
+        "thumbnailUrl": ["https://mudighost.com/video/mudi-ghost-film.jpg"],
+        "uploadDate": "2026-11-18T22:40:00+01:00",
+        "duration": "PT2M0S",
+        "contentUrl": "https://www.youtube.com/watch?v=poSaVr6WoDI",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/poSaVr6WoDI",
+        "inLanguage": "pl",
+        "publisher": { "@id": "https://mudighost.com/#organization" }
+      }
+    ]
+  }
+  </script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/Rajdhani-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.css">
   <style>
     .hero {
@@ -105,6 +149,21 @@
     .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadein 0.8s 0.4s ease both; }
     @keyframes fadein { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
 
+
+    /* film: ładowany z YouTube dopiero po kliknięciu */
+    .film-section { padding: 70px 0 20px; position: relative; z-index: 1; }
+    .film-section .container { max-width: 960px; margin: 0 auto; }
+    .film-frame { position: relative; border: 1px solid var(--cyan); box-shadow: 0 0 40px rgba(0,242,255,0.10); background: #000; }
+    .film-player { position: relative; width: 100%; aspect-ratio: 16 / 9; display: block; padding: 0; border: 0; cursor: pointer; background: #000 center / cover no-repeat; overflow: hidden; }
+    .film-player img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .film-player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .film-play { position: absolute; left: 74%; top: 50%; transform: translate(-50%, -50%); width: 92px; height: 92px; border-radius: 50%; background: rgba(5,10,20,0.75); border: 2px solid var(--cyan); box-shadow: 0 0 30px var(--cyan-glow); display: flex; align-items: center; justify-content: center; transition: transform var(--transition), background var(--transition); }
+    .film-play::after { content: ''; margin-left: 7px; border-style: solid; border-width: 17px 0 17px 28px; border-color: transparent transparent transparent var(--cyan); }
+    .film-player:hover .film-play, .film-player:focus-visible .film-play { transform: translate(-50%, -50%) scale(1.08); background: rgba(5,10,20,0.9); }
+    .film-player:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+    .film-caption { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 14px; font-family: var(--font-mono); font-size: 13px; color: var(--muted); letter-spacing: 1px; }
+    .film-caption a { color: var(--cyan); text-decoration: none; }
+    .film-caption a:hover { text-decoration: underline; }
     .features-section { padding: 90px 0; position: relative; z-index: 1; }
     .intro-section { padding: 90px 0; position: relative; z-index: 1; }
     .intro-section .container { max-width: 900px; margin: 0 auto; }
@@ -154,6 +213,7 @@
       .feature-card { grid-column: span 1 !important; }
       .features-section, .protocol-section { padding: 60px 0; }
       .targets-section { padding: 60px 0; }
+      .film-section { padding: 60px 0 10px; }
     }
     @media (max-width: 600px) {
       .hero-title { font-size: 38px; letter-spacing: 2px; }
@@ -162,6 +222,9 @@
       .step { grid-template-columns: 44px 1fr; }
       .cta-section { padding: 50px 24px; }
       .cta-section h2 { font-size: 26px; }
+      .film-play { width: 70px; height: 70px; }
+      .film-play::after { border-width: 13px 0 13px 21px; margin-left: 5px; }
+      .film-caption { font-size: 12px; }
     }
   </style>
 </head>
@@ -175,10 +238,10 @@
   <nav class="site-nav" id="siteNav" role="navigation" aria-label="Główna nawigacja">
     <a href="/">Strona Główna</a>
     <a href="/#funkcje">Funkcje</a>
-    <a href="/o-nas.html">O Nas</a>
-    <a href="/cennik.html">Cennik</a>
-    <a href="/blog/">Blog</a>
-    <a href="/kontakt.html">Kontakt</a>
+    <a href="/o-nas">O Nas</a>
+    <a href="/cennik">Cennik</a>
+    <a href="/blog">Blog</a>
+    <a href="/kontakt">Kontakt</a>
   </nav>
 </header>
 
@@ -189,9 +252,23 @@
     <p class="hero-tagline">W świecie powszechnej inwigilacji, w którym agencje rządowe i komercyjne systemy profilowania śledzą każde urządzenie — <strong><strong><span class="accent">Mudi Ghost</span></strong></strong>, router VPN ze zmiennym IMEI, gra według własnych zasad. Stań się niewidzialny.</p>
     <p class="hero-meta">GL-E750V2 MUDI V2 &nbsp;|&nbsp; WIREGUARD VPN &nbsp;|&nbsp; ZMIANA IMEI &nbsp;|&nbsp; KILL SWITCH</p>
     <div class="hero-ctas">
-      <a href="/cennik.html" class="btn btn-solid">Zamów Teraz — 375€</a>
+      <a href="/cennik" class="btn btn-solid">Zamów Teraz — 375€</a>
       <a href="#funkcje" class="btn">Zobacz Funkcje</a>
     </div>
+  </div>
+</section>
+
+<section class="film-section" aria-labelledby="film-title">
+  <div class="container">
+    <p class="section-label">Film · 2 minuty</p>
+    <h2 class="section-title" id="film-title">Zobacz, jak <span class="accent">Twój telefon zdradza, gdzie jesteś</span></h2>
+    <div class="film-frame">
+      <button type="button" class="film-player" id="filmPlayer" data-yt="poSaVr6WoDI" aria-label="Odtwórz film: Zmiana IMEI i router VPN, jak zniknąć z radarów (2 minuty)">
+        <img src="/video/mudi-ghost-film.webp" width="1280" height="720" alt="Kadr z filmu Mudi Ghost: napis Oni widzą Twój telefon i telefon w czerwonym celowniku" loading="lazy" decoding="async">
+        <span class="film-play" aria-hidden="true"></span>
+      </button>
+    </div>
+    <p class="film-caption"><span>Film ładuje się z YouTube dopiero po kliknięciu.</span><a href="https://www.youtube.com/@MudiGhost" rel="noopener" target="_blank">Kanał Mudi Ghost na YouTube</a></p>
   </div>
 </section>
 
@@ -332,8 +409,8 @@
   <h2>Gotowy Stać Się <span class="accent">Niewidzialnym?</span></h2>
   <p><strong><strong><span class="accent">Mudi Ghost</span></strong></strong> to Twój klucz do pełnej anonimowości w sieci. Zachowaj niewidzialność dla służb i agencji rządowych — każde urządzenie konfigurujemy indywidualnie, gotowe do działania od pierwszego włączenia.</p>
   <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-    <a href="/cennik.html" class="btn btn-solid">Zobacz Cennik</a>
-    <a href="/kontakt.html" class="btn">Napisz Do Nas</a>
+    <a href="/cennik" class="btn btn-solid">Zobacz Cennik</a>
+    <a href="/kontakt" class="btn">Napisz Do Nas</a>
   </div>
 </section>
 
@@ -346,11 +423,11 @@
     </div>
     <nav class="footer-links" aria-label="Linki w stopce">
       <a href="/">Strona Główna</a>
-      <a href="/cennik.html">Cennik</a>
-      <a href="/o-nas.html">O Nas</a>
-      <a href="/blog/">Blog</a>
-      <a href="/kontakt.html">Kontakt</a>
-      <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+      <a href="/cennik">Cennik</a>
+      <a href="/o-nas">O Nas</a>
+      <a href="/blog">Blog</a>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/polityka-prywatnosci">Polityka Prywatności</a>
     </nav>
   </div>
   <div class="footer-bottom">
@@ -359,7 +436,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const path = window.location.pathname;
   document.querySelectorAll('.site-nav a').forEach(a => {
     const href = a.getAttribute('href');
@@ -376,6 +453,19 @@
     toggle.setAttribute('aria-expanded', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
+
+  const film = document.getElementById('filmPlayer');
+  if (film) {
+    film.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + film.dataset.yt + '?autoplay=1&rel=0&modestbranding=1';
+      f.title = 'Zmiana IMEI i router VPN: jak zniknąć z radarów | Mudi Ghost';
+      f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      film.replaceWith(Object.assign(document.createElement('div'), { className: 'film-player' }));
+      document.querySelector('.film-frame .film-player').appendChild(f);
+    }, { once: true });
+  }
   nav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       nav.classList.remove('open');

@@ -25,21 +25,27 @@
   <meta property="article:tag" content="bezpieczny telefon">
   <meta property="article:tag" content="Android bez Google">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GrapheneOS — najbezpieczniejszy Android | Mudi Ghost">
   <meta name="twitter:description" content="GrapheneOS to hardened system operacyjny bazujący na Androidzie — bez usług Google, z maksymalną ochroną prywatności.">
+  <meta property="og:image" content="https://mudighost.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mudi Ghost: router VPN ze zmiennym IMEI">
+  <meta name="twitter:image" content="https://mudighost.com/og-image.jpg">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
+    "image": ["https://mudighost.com/og-image.jpg"],
     "headline": "GrapheneOS — najbezpieczniejszy Android",
     "description": "GrapheneOS to hardened system operacyjny bazujący na Androidzie — bez usług Google i z maksymalną ochroną prywatności.",
     "url": "https://mudighost.com/blog/czym-jest-grapheneos-najbezpieczniejszy-android",
     "datePublished": "2026-03-27",
     "dateModified": "2026-03-27",
-    "author": { "@type": "Organization", "name": "Mudi Ghost", "url": "https://mudighost.com" },
-    "publisher": { "@type": "Organization", "name": "Mudi Ghost", "url": "https://mudighost.com" },
+    "author": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } },
+    "publisher": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } },
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mudighost.com/blog/czym-jest-grapheneos-najbezpieczniejszy-android" }
   }
   </script>
@@ -50,16 +56,16 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Strona Główna", "item": "https://mudighost.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog" },
       { "@type": "ListItem", "position": 3, "name": "GrapheneOS", "item": "https://mudighost.com/blog/czym-jest-grapheneos-najbezpieczniejszy-android" }
     ]
   }
   </script>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/Rajdhani-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.css">
 
   <style>
@@ -276,17 +282,17 @@
   <nav class="site-nav" id="siteNav" role="navigation" aria-label="Główna nawigacja">
     <a href="/">Strona Główna</a>
     <a href="/#funkcje">Funkcje</a>
-    <a href="/o-nas.html">O Nas</a>
-    <a href="/cennik.html">Cennik</a>
-    <a href="/blog/">Blog</a>
-    <a href="/kontakt.html">Kontakt</a>
+    <a href="/o-nas">O Nas</a>
+    <a href="/cennik">Cennik</a>
+    <a href="/blog">Blog</a>
+    <a href="/kontakt">Kontakt</a>
   </nav>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="/">Strona Główna</a>
   <span>›</span>
-  <a href="/blog/">Blog</a>
+  <a href="/blog">Blog</a>
   <span>›</span>
   <span style="color:var(--text)">GrapheneOS</span>
 </nav>
@@ -348,7 +354,7 @@
         <p><strong>Sandboxed Google Play</strong> — jedną z najważniejszych funkcji GrapheneOS jest możliwość instalacji Google Play w trybie sandboxed. Oznacza to, że nawet jeśli potrzebujesz aplikacji wymagających Google Services (jak bankowe aplikacje mobilne), możesz je uruchomić w <strong>całkowicie odizolowanym środowisku</strong>, gdzie Google Play ma minimalne uprawnienia i nie ma dostępu do danych z innych części systemu.</p>
       </div>
 
-      <p>System oferuje również zaawansowane opcje lock screen, w tym możliwość wymuszenia wyłączenia USB i pogo pins gdy urządzenie jest zablokowane, co zapobiega atakom typu <strong>juice jacking</strong> oraz fizycznym próbom dostępu do danych przez porty. Połączenie GrapheneOS z rozwiązaniami sprzętowymi takimi jak <a href="/cennik.html"><strong>Mudi Ghost</strong></a> tworzy <strong>kompletne, wielowarstwowe rozwiązanie</strong> dla osób, które potrzebują ochrony na poziomie systemowym i sieciowym.</p>
+      <p>System oferuje również zaawansowane opcje lock screen, w tym możliwość wymuszenia wyłączenia USB i pogo pins gdy urządzenie jest zablokowane, co zapobiega atakom typu <strong>juice jacking</strong> oraz fizycznym próbom dostępu do danych przez porty. Połączenie GrapheneOS z rozwiązaniami sprzętowymi takimi jak <a href="/cennik"><strong>Mudi Ghost</strong></a> tworzy <strong>kompletne, wielowarstwowe rozwiązanie</strong> dla osób, które potrzebują ochrony na poziomie systemowym i sieciowym.</p>
 
       <h2 id="grapheneos-vs-android">GrapheneOS vs stock <span class="accent">Android</span> — kluczowe różnice</h2>
 
@@ -364,7 +370,7 @@
         ⚠️ <strong>Ważna uwaga</strong> — GrapheneOS wymaga urządzenia Google Pixel z odblokowanym bootloaderem. Jeśli Twój telefon jest powiązany z operatorem lub posiada wersję OEM z zablokowanym bootloaderem, instalacja może być niemożliwa. Przed zakupem upewnij się, że wybierasz wariant odblokowany (nie Carrier Locked).
       </div>
 
-      <p>Nawet najlepszy system operacyjny nie zapewni pełnej ochrony, jeśli warstwa sprzętowa pozostaje podatna na identyfikację. Dlatego połączenie GrapheneOS z urządzeniem oferującym sprzętową zmianę identyfikatorów sieciowych tworzy praktycznie <strong>nieprzeniknioną barierę</strong> dla tradycyjnych metod śledzenia. <a href="/cennik.html"><strong>Router VPN ze zmiennym IMEI</strong></a> taki jak Mudi Ghost uzupełnia ochronę systemową o rozwiązania sprzętowe, które eliminują możliwość identyfikacji urządzenia na poziomie sieci komórkowej.</p>
+      <p>Nawet najlepszy system operacyjny nie zapewni pełnej ochrony, jeśli warstwa sprzętowa pozostaje podatna na identyfikację. Dlatego połączenie GrapheneOS z urządzeniem oferującym sprzętową zmianę identyfikatorów sieciowych tworzy praktycznie <strong>nieprzeniknioną barierę</strong> dla tradycyjnych metod śledzenia. <a href="/cennik"><strong>Router VPN ze zmiennym IMEI</strong></a> taki jak Mudi Ghost uzupełnia ochronę systemową o rozwiązania sprzętowe, które eliminują możliwość identyfikacji urządzenia na poziomie sieci komórkowej.</p>
 
       <h2 id="dla-kogo-grapheneos">Dla kogo jest <span class="accent">GrapheneOS</span> i jak zacząć</h2>
 
@@ -383,14 +389,14 @@
 
       <p><strong>GrapheneOS</strong> reprezentuje najwyższy standard mobilnego bezpieczeństwa wśród dostępnych publicznie systemów operacyjnych. Całkowite odseparowanie od ekosystemu Google, zaawansowane mechanizmy ochrony pamięci, szczegółowa <strong>kontrola uprawnień aplikacji</strong> oraz szybkie aktualizacje bezpieczeństwa czynią go wyborem numer jeden dla osób, które priorytetowo traktują <strong>prywatność i bezpieczeństwo</strong> swojej komunikacji mobilnej.</p>
 
-      <p>Prawdziwa prywatność wymaga holistycznego podejścia obejmującego zarówno oprogramowanie (system operacyjny, aplikacje, sieci VPN), jak i sprzęt (urządzenia z odpowiednimi zabezpieczeniami). Połączenie GrapheneOS z rozwiązaniami sprzętowymi takimi jak <a href="/cennik.html"><strong>Mudi Ghost</strong></a> tworzy <strong>wielowarstwową ochronę</strong>, która skutecznie utrudnia śledzenie na poziomie zarówno systemowym, jak i sieciowym. Na temat sprzętowej ochrony przed śledzeniem pisaliśmy też w artykule <a href="/blog/co-to-jest-imei-anonimowosc"><strong>co to jest IMEI</strong></a> oraz wyjaśniliśmy dlaczego <a href="/blog/imei-spoofing-czy-to-dziala"><strong>IMEI spoofing nie działa</strong></a>.</p>
+      <p>Prawdziwa prywatność wymaga holistycznego podejścia obejmującego zarówno oprogramowanie (system operacyjny, aplikacje, sieci VPN), jak i sprzęt (urządzenia z odpowiednimi zabezpieczeniami). Połączenie GrapheneOS z rozwiązaniami sprzętowymi takimi jak <a href="/cennik"><strong>Mudi Ghost</strong></a> tworzy <strong>wielowarstwową ochronę</strong>, która skutecznie utrudnia śledzenie na poziomie zarówno systemowym, jak i sieciowym. Na temat sprzętowej ochrony przed śledzeniem pisaliśmy też w artykule <a href="/blog/co-to-jest-imei-anonimowosc"><strong>co to jest IMEI</strong></a> oraz wyjaśniliśmy dlaczego <a href="/blog/imei-spoofing-czy-to-dziala"><strong>IMEI spoofing nie działa</strong></a>.</p>
 
       <p>Jeśli poważnie myślisz o ochronie swojej cyfrowej tożsamości — GrapheneOS jest punktem wyjścia, od którego warto zacząć budowę prywatnego ekosystemu mobilnego.</p>
 
       <div class="post-cta">
         <h3>Szukasz <span class="accent">Rzeczywistej Ochrony Prywatności?</span></h3>
         <p>Mudi Ghost to <strong>hardened router VPN ze zmiennym IMEI</strong> — gotowy do użycia od pierwszego włączenia. WireGuard VPN, kill switch, randomizacja MAC.</p>
-        <a href="/cennik.html" class="btn">Zobacz Cennik</a>
+        <a href="/cennik" class="btn">Zobacz Cennik</a>
       </div>
 
       <div class="post-tags">
@@ -416,11 +422,11 @@
     </div>
     <nav class="footer-links" aria-label="Linki w stopce">
       <a href="/">Strona Główna</a>
-      <a href="/cennik.html">Cennik</a>
-      <a href="/o-nas.html">O Nas</a>
-      <a href="/blog/">Blog</a>
-      <a href="/kontakt.html">Kontakt</a>
-      <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+      <a href="/cennik">Cennik</a>
+      <a href="/o-nas">O Nas</a>
+      <a href="/blog">Blog</a>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/polityka-prywatnosci">Polityka Prywatności</a>
     </nav>
   </div>
   <div class="footer-bottom">
