@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jak zmienić IMEI w telefonie? Co działa, a co nie | Mudi Ghost</title>
+
+  <meta name="description" content="Jak zmienić IMEI? Sprawdzamy aplikacje, root, reset i nową kartę SIM. Większość sposobów nie działa. Skuteczny jest jeden: router Mudi Ghost.">
+
+  <meta name="keywords" content="jak zmienić IMEI, zmiana IMEI, jak zmienić IMEI w telefonie, zmiana IMEI Android, zmiana IMEI iPhone, aplikacja do zmiany IMEI, router ze zmiennym IMEI, Mudi Ghost">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Mudi Ghost">
+  <link rel="canonical" href="https://mudighost.com/blog/jak-zmienic-imei">
+
+  <meta property="og:title" content="Jak zmienić IMEI w telefonie? Co działa, a co nie | Mudi Ghost">
+  <meta property="og:description" content="Aplikacje, root, reset, nowa karta SIM: sprawdzamy, czy którakolwiek z tych metod naprawdę zmienia IMEI widziany przez sieć. I co działa zamiast nich.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mudighost.com/blog/jak-zmienic-imei">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="Mudi Ghost">
+  <meta property="article:published_time" content="2026-11-25T18:00:00+01:00">
+  <meta property="article:tag" content="jak zmienić IMEI">
+  <meta property="article:tag" content="zmiana IMEI">
+  <meta property="article:tag" content="IMEI spoofing">
+  <meta property="article:tag" content="router ze zmiennym IMEI">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jak zmienić IMEI w telefonie? Co działa, a co nie | Mudi Ghost">
+  <meta name="twitter:description" content="Aplikacje, root, reset, nowa karta SIM: sprawdzamy, czy którakolwiek z tych metod naprawdę zmienia IMEI widziany przez sieć. I co działa zamiast nich.">
+  <meta property="og:image" content="https://mudighost.com/blog/img/jak-zmienic-imei-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Budowa numeru IMEI: TAC, numer seryjny i cyfra kontrolna">
+  <meta name="twitter:image" content="https://mudighost.com/blog/img/jak-zmienic-imei-og.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://mudighost.com/blog/jak-zmienic-imei#article",
+    "image": ["https://mudighost.com/blog/img/jak-zmienic-imei-og.jpg", "https://mudighost.com/blog/img/jak-zmienic-imei-budowa.webp"],
+    "headline": "Jak zmienić IMEI w telefonie? Co działa, a co nie",
+    "description": "Jak zmienić IMEI? Sprawdzamy aplikacje, root, reset i nową kartę SIM. Większość sposobów nie działa. Skuteczny jest jeden: router Mudi Ghost.",
+    "url": "https://mudighost.com/blog/jak-zmienic-imei",
+    "datePublished": "2026-11-25",
+    "dateModified": "2026-11-25",
+    "inLanguage": "pl",
+    "author": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/" },
+    "publisher": { "@type": "Organization", "@id": "https://mudighost.com/#organization", "name": "Mudi Ghost", "url": "https://mudighost.com/", "logo": { "@type": "ImageObject", "url": "https://mudighost.com/logo-512.png", "width": 512, "height": 512 } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mudighost.com/blog/jak-zmienic-imei" },
+    "about": [{ "@type": "Thing", "name": "IMEI" }, { "@type": "Product", "@id": "https://mudighost.com/#product", "name": "Mudi Ghost" }]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Strona Główna", "item": "https://mudighost.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mudighost.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Jak zmienić IMEI", "item": "https://mudighost.com/blog/jak-zmienic-imei" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preload" href="/fonts/Rajdhani-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .breadcrumb { max-width: var(--content-w); margin: 0 auto; padding: 16px 40px 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; position: relative; z-index: 1; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--cyan); }
+    .breadcrumb span { color: var(--border); }
+    .post-wrap { max-width: var(--content-w); margin: 0 auto; padding: 48px 40px 80px; position: relative; z-index: 1; }
+    .post-wrap h1 { font-family: var(--font-head); font-size: 40px; font-weight: 700; color: var(--white); letter-spacing: 2px; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
+    .post-wrap h1 .accent { color: var(--cyan); }
+    .post-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+    .post-meta span::before { content: '// '; color: var(--cyan); }
+    .post-intro { font-size: 17px; line-height: 1.8; color: var(--text); margin-bottom: 36px; padding: 22px 26px; background: var(--dark2); border-left: 4px solid var(--cyan); }
+    .post-toc { background: var(--dark2); border: 1px solid var(--border); border-left: 3px solid var(--cyan); padding: 20px 24px; margin-bottom: 40px; }
+    .post-toc h4 { font-family: var(--font-mono); font-size: 11px; color: var(--cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .post-toc h4::before { content: '// '; }
+    .post-toc ol { list-style: none; display: flex; flex-direction: column; gap: 6px; counter-reset: toc-counter; padding: 0; margin: 0; }
+    .post-toc ol li { counter-increment: toc-counter; }
+    .post-toc ol li a { font-size: 14px; color: var(--muted); text-decoration: none; display: flex; gap: 10px; align-items: flex-start; line-height: 1.4; transition: color 0.2s; }
+    .post-toc ol li a::before { content: counter(toc-counter, decimal-leading-zero); color: var(--cyan); font-family: var(--font-mono); font-size: 11px; flex-shrink: 0; padding-top: 1px; }
+    .post-toc ol li a:hover { color: var(--cyan); }
+    .post-body h2 { font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--white); letter-spacing: 1px; text-transform: uppercase; margin: 44px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .post-body h2 .accent { color: var(--cyan); }
+    .post-body h3 { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--cyan); margin: 24px 0 10px; }
+    .post-body p { font-size: 16px; line-height: 1.85; margin-bottom: 18px; color: var(--text); }
+    .post-body strong { color: var(--white); }
+    .post-body a { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.2s; }
+    .post-body a:hover { opacity: 0.75; }
+    /* FIXED LIST STYLING - like main site */
+    .post-body ul { list-style: none; padding: 0; margin: 0 0 24px 0; display: flex; flex-direction: column; gap: 20px; }
+    .post-body ul li { position: relative; padding-left: 28px; font-size: 15px; line-height: 1.7; color: var(--text); }
+    .post-body ul li::before { content: '›'; position: absolute; left: 0; top: 2px; color: var(--cyan); font-family: var(--font-mono); font-size: 18px; font-weight: 700; }
+    .post-body ul li strong { color: var(--cyan); font-size: 16px; }
+    
+    /* Highlight box */
+    .post-highlight { background: var(--dark3); border: 1px solid var(--cyan); padding: 18px 22px; margin: 24px 0; box-shadow: inset 0 0 20px rgba(0,242,255,0.03); }
+    .post-highlight p { margin-bottom: 0; }
+    .post-warn { background: rgba(255,160,0,0.04); border-left: 3px solid #ffa000; padding: 14px 18px; margin: 24px 0; font-size: 15px; line-height: 1.65; color: var(--text); }
+    .post-cta { background: var(--dark2); border: 2px solid var(--cyan); padding: 28px 32px; margin: 48px 0 36px; text-align: center; position: relative; overflow: hidden; }
+    .post-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--cyan); box-shadow: 0 0 16px var(--cyan-glow); }
+    .post-cta h3 { font-family: var(--font-head); font-size: 22px; color: var(--white); margin-bottom: 10px; }
+    .post-cta p { font-size: 15px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+    .post-cta .btn { display: inline-block; font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--dark); background: var(--cyan); padding: 14px 28px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: all 0.2s; }
+    .post-cta .btn:hover { background: var(--white); box-shadow: 0 0 20px rgba(0,242,255,0.4); }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .tag { font-family: var(--font-mono); font-size: 11px; padding: 4px 12px; border: 1px solid var(--border); color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .related-section { background: var(--dark2); padding: 50px 0; position: relative; z-index: 1; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
+    .related-card { background: var(--dark3); border: 1px solid var(--border); border-top: 2px solid var(--cyan); padding: 20px; text-decoration: none; display: block; transition: transform 0.2s, box-shadow 0.2s; }
+    .related-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,242,255,0.07); }
+    .related-card .rc-date { font-family: var(--font-mono); font-size: 10px; color: var(--muted); margin-bottom: 8px; }
+    .related-card .rc-date::before { content: '// '; color: var(--cyan); }
+    .related-card h4 { font-family: var(--font-head); font-size: 16px; color: var(--white); line-height: 1.3; }
+    @media (max-width: 768px) { .post-wrap { padding: 32px 24px 60px; } .post-wrap h1 { font-size: 26px; letter-spacing: 1px; } .breadcrumb { padding: 16px 24px 0; } .post-intro { font-size: 16px; padding: 16px 18px; } .post-body h2 { font-size: 20px; } .related-grid { grid-template-columns: 1fr; } }
+
+    /* tylko w tym wpisie: krótka odpowiedź, obrazy z filmu, tabela porównawcza */
+    .post-answer { background: var(--dark3); border: 1px solid var(--cyan); border-left: 4px solid var(--cyan); padding: 18px 22px; margin: 0 0 36px; }
+    .post-answer .label { font-family: var(--font-mono); font-size: 11px; color: var(--cyan); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .post-answer p { font-size: 16px; line-height: 1.75; margin: 0; color: var(--text); }
+    .post-figure { margin: 26px 0 30px; }
+    .post-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border); }
+    .post-figure figcaption { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-top: 8px; letter-spacing: 0.5px; }
+    .post-figure figcaption::before { content: '// '; color: var(--cyan); }
+    .compare-wrap { overflow-x: auto; margin: 24px 0 28px; -webkit-overflow-scrolling: touch; }
+    .compare { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 14px; }
+    .compare th { text-align: left; padding: 10px 12px; color: var(--cyan); font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--cyan); }
+    .compare td { padding: 11px 12px; border-bottom: 1px solid var(--border); color: var(--text); line-height: 1.5; vertical-align: top; }
+    .compare tr.win td { background: rgba(0,242,255,0.05); color: var(--white); }
+    .compare .no { color: #ff5a6a; font-weight: 600; }
+    .compare .yes { color: var(--cyan); font-weight: 600; }
+    .faq-q { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--white); margin: 22px 0 6px; }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo">MUDI <span class="accent">GHOST</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="siteNav" role="navigation" aria-label="Główna nawigacja">
+    <a href="/">Strona Główna</a>
+    <a href="/#funkcje">Funkcje</a>
+    <a href="/o-nas">O Nas</a>
+    <a href="/cennik">Cennik</a>
+    <a href="/blog">Blog</a>
+    <a href="/kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Strona Główna</a>
+  <span>›</span>
+  <a href="/blog">Blog</a>
+  <span>›</span>
+  <span style="color:var(--text)">Jak zmienić IMEI</span>
+</nav>
+
+<div class="post-wrap">
+  <article itemscope itemtype="https://schema.org/Article">
+
+    <p class="section-label">Blog — Prywatność w Sieci</p>
+
+    <h1>Jak zmienić IMEI? <span class="accent">Co działa, a co nie</span></h1>
+
+    <div class="post-meta">
+      <span>25 listopada 2026</span>
+      <span>Czas czytania: 7 min</span>
+    </div>
+
+    <div class="post-intro">
+      Wpisujesz w wyszukiwarkę „jak zmienić IMEI” i dostajesz aplikacje, porady z forów i generatory numerów. Sprawdziliśmy po kolei wszystkie popularne sposoby. Wniosek jest prosty: <strong>prawie żaden z nich nie zmienia IMEI, który widzi sieć komórkowa</strong>. Poniżej wyjaśniamy dlaczego i pokazujemy jedyną metodę, która naprawdę działa.
+    </div>
+
+    <div class="post-answer">
+      <p class="label">// Krótka odpowiedź</p>
+      <p>IMEI jest zapisany w modemie telefonu, a nie w systemie. Aplikacje, reset do ustawień fabrycznych i nowa karta SIM go nie zmieniają, a ingerencja w modem przez root grozi uszkodzeniem telefonu. Skuteczna zmiana IMEI to zmiana w samym modemie: tak działa router <strong>Mudi Ghost</strong>, który nadaje nowy IMEI jednym ruchem przełącznika, a telefon łączy się przez jego Wi-Fi.</p>
+    </div>
+
+    <nav class="post-toc" aria-label="Spis treści">
+      <h4>Spis Treści</h4>
+      <ol>
+        <li><a href="#co-to-imei">Co to jest IMEI i jak go sprawdzić</a></li>
+        <li><a href="#dlaczego-trudno">Dlaczego IMEI tak trudno zmienić</a></li>
+        <li><a href="#aplikacje">Sposób 1: aplikacje do zmiany IMEI</a></li>
+        <li><a href="#reset-sim">Sposób 2: reset, nowa karta SIM, eSIM</a></li>
+        <li><a href="#root">Sposób 3: root i narzędzia serwisowe</a></li>
+        <li><a href="#iphone">Sposób 4: iPhone</a></li>
+        <li><a href="#mudi-ghost">Sposób, który działa: router <span class="accent">Mudi Ghost</span></a></li>
+        <li><a href="#porownanie">Porównanie wszystkich sposobów</a></li>
+        <li><a href="#nie-tylko-imei">Sama zmiana IMEI to nie wszystko</a></li>
+        <li><a href="#faq">Najczęstsze pytania</a></li>
+        <li><a href="#podsumowanie">Podsumowanie</a></li>
+      </ol>
+    </nav>
+
+    <div class="post-body">
+
+      <h2 id="co-to-imei">Co to jest <span class="accent">IMEI</span> i jak go sprawdzić</h2>
+
+      <p><strong>IMEI</strong> (International Mobile Equipment Identity) to 15-cyfrowy numer, który producent nadaje modemowi komórkowemu. Identyfikuje <strong>urządzenie</strong>, a nie abonenta. Telefon przekazuje go sieci przy rejestracji w stacjach bazowych, także wtedy, gdy z niego nie korzystasz. Telefon na dwie karty SIM ma dwa numery IMEI, po jednym na każde gniazdo.</p>
+
+      <p>Numer ma stałą budowę:</p>
+      <ul>
+        <li><strong>TAC</strong> (8 cyfr): kod producenta i modelu, np. konkretny model Samsunga czy iPhone'a.</li>
+        <li><strong>Numer seryjny</strong> (6 cyfr): unikalny numer tego egzemplarza.</li>
+        <li><strong>Cyfra kontrolna</strong> (1 cyfra): wyliczana algorytmem Luhna, pozwala wykryć błędnie wpisany numer.</li>
+      </ul>
+
+      <figure class="post-figure">
+        <img src="/blog/img/jak-zmienic-imei-budowa.webp" width="1280" height="720" alt="Budowa numeru IMEI: TAC, numer seryjny i cyfra kontrolna" loading="lazy" decoding="async">
+        <figcaption>Budowa numeru IMEI. Kadr z filmu Mudi Ghost</figcaption>
+      </figure>
+
+      <div class="post-highlight">
+        <p><strong>Jak sprawdzić IMEI:</strong> wpisz <strong>*#06#</strong> w aplikacji Telefon. Numer znajdziesz też w ustawieniach (zwykle „Informacje o telefonie”), na pudełku i na naklejce pod baterią w starszych modelach.</p>
+      </div>
+
+      <p>Więcej o tym, jak IMEI służy do śledzenia, piszemy w artykule <a href="/blog/co-to-jest-imei-anonimowosc">Co to jest IMEI i jak wpływa na anonimowość</a>.</p>
+
+      <h2 id="dlaczego-trudno">Dlaczego <span class="accent">IMEI tak trudno zmienić</span></h2>
+
+      <p>IMEI nie jest ustawieniem systemu, które można przestawić jak nazwę telefonu. Siedzi w chronionej pamięci <strong>modemu</strong>, czyli osobnego układu, który rozmawia z siecią komórkową. System operacyjny może ten numer odczytać, ale nie ma do niego swobodnego dostępu do zapisu. Producenci zabezpieczają go celowo, bo IMEI służy do blokowania skradzionych telefonów.</p>
+
+      <p>Dlatego każda metoda, która działa „w telefonie”, a nie „w modemie”, zmienia co najwyżej to, co <strong>Ty widzisz na ekranie</strong>. Sieć, operator i fałszywa stacja bazowa (IMSI-catcher) dalej dostają prawdziwy numer prosto z modemu.</p>
+
+      <h2 id="aplikacje">Sposób 1: <span class="accent">aplikacje do zmiany IMEI</span></h2>
+
+      <p>W sklepach i na forach znajdziesz dziesiątki programów typu „IMEI changer”. Działają według jednego schematu: podmieniają numer, który system zwraca innym aplikacjom. Modem nadal zgłasza sieci oryginalny IMEI.</p>
+
+      <ul>
+        <li><strong>Sieć widzi stary numer:</strong> zmiana dotyczy tylko ekranu i aplikacji w telefonie.</li>
+        <li><strong>Większość wymaga roota:</strong> telefon traci zabezpieczenia, a często też gwarancję.</li>
+        <li><strong>Znika po restarcie:</strong> podmiana w wielu przypadkach nie przetrwa ponownego uruchomienia.</li>
+        <li><strong>Bez szans z IMSI-catcherem:</strong> fałszywa stacja bazowa pyta modem bezpośrednio i dostaje prawdziwy numer.</li>
+      </ul>
+
+      <p>To tak zwany <strong>IMEI spoofing</strong>. Szczegółowo rozbieramy go w artykule <a href="/blog/imei-spoofing-czy-to-dziala">IMEI spoofing: czy to działa?</a> Krótko: nie działa.</p>
+
+      <div class="post-warn">
+        ⚠️ <strong>Uwaga na „generatory IMEI”:</strong> strony, które generują poprawne numery IMEI, niczego w telefonie nie zmieniają. Tworzą tylko ciąg cyfr, który przejdzie test cyfry kontrolnej.
+      </div>
+
+      <h2 id="reset-sim">Sposób 2: <span class="accent">reset, nowa karta SIM, eSIM</span></h2>
+
+      <p>To najczęstsze nieporozumienie. Wiele osób zakłada, że „nowy start” telefonu zmienia jego tożsamość w sieci. Tak nie jest:</p>
+
+      <ul>
+        <li><strong>Reset do ustawień fabrycznych</strong> usuwa dane i konta, ale IMEI zostaje ten sam, bo jest zapisany w modemie, a nie w systemie.</li>
+        <li><strong>Nowa karta SIM lub eSIM</strong> zmienia IMSI, czyli identyfikator karty. IMEI telefonu pozostaje bez zmian, więc sieć od razu widzi, że nowa karta trafiła do tego samego urządzenia.</li>
+        <li><strong>Nowy numer telefonu</strong> nie zmienia ani IMEI, ani tego, że urządzenie ma już swoją historię w bazie operatora.</li>
+      </ul>
+
+      <p>Jak sieć łączy kartę z urządzeniem, opisujemy w artykule <a href="/blog/jak-policja-namierza-telefon">Jak policja namierza telefon</a>.</p>
+
+      <h2 id="root">Sposób 3: <span class="accent">root i narzędzia serwisowe</span></h2>
+
+      <p>Na części starszych telefonów z Androidem, z określonymi układami, istnieją narzędzia serwisowe, które potrafią zapisać w pamięci modemu inny numer. Na forach wygląda to jak „prawdziwa” zmiana. W praktyce to najbardziej ryzykowna z metod:</p>
+
+      <ul>
+        <li><strong>Ryzyko uszkodzenia:</strong> błąd w zapisie kończy się telefonem bez zasięgu, z komunikatem o nieprawidłowym IMEI albo urządzeniem, które się nie uruchamia.</li>
+        <li><strong>Utrata gwarancji i zabezpieczeń:</strong> wymaga odblokowania bootloadera i roota.</li>
+        <li><strong>Niezgodność z modelem:</strong> numer, którego kod TAC nie pasuje do modelu telefonu, jest dla operatora łatwy do wykrycia.</li>
+        <li><strong>Nie działa w nowych telefonach:</strong> współczesne modele chronią pamięć modemu sprzętowo.</li>
+        <li><strong>Każda zmiana to od nowa to samo ryzyko:</strong> nie da się tego robić szybko ani w terenie.</li>
+      </ul>
+
+      <p>Nie podajemy instrukcji tej metody, bo jej koszt jest wysoki, a efekt niepewny. Do ochrony prywatności nie nadaje się w ogóle.</p>
+
+      <h2 id="iphone">Sposób 4: <span class="accent">iPhone</span></h2>
+
+      <p>W iPhonie zmiana IMEI jest w praktyce niewykonalna. Modem jest chroniony przez mechanizmy bezpieczeństwa Apple, a dodatki instalowane po jailbreaku, które obiecują zmianę numeru, robią to samo co aplikacje na Androida: zmieniają tylko to, co widzą inne aplikacje. Sieć dalej widzi prawdziwy IMEI.</p>
+
+      <h2 id="mudi-ghost">Sposób, który działa: <span class="accent">router Mudi Ghost</span></h2>
+
+      <p>Skoro telefonu nie da się bezpiecznie przestawić, trzeba zmienić podejście. Zamiast zmieniać IMEI telefonu, <strong>wyłączasz telefon z sieci komórkowej</strong>, a łączność zapewnia urządzenie, którego IMEI zmienić można.</p>
+
+      <p><strong>Mudi Ghost</strong> to router z modemem 4G LTE i oprogramowaniem, które zmienia IMEI <strong>w samym modemie</strong>, a nie na ekranie. Telefon pracuje w trybie samolotowym i łączy się z internetem wyłącznie przez Wi-Fi routera. Sieć komórkowa widzi tylko router. Twój telefon dla niej nie istnieje.</p>
+
+      <figure class="post-figure">
+        <img src="/blog/img/jak-zmienic-imei-mudi-ghost.webp" width="1280" height="640" alt="Zmiana IMEI w routerze Mudi Ghost: nowy IMEI i nowa karta SIM" loading="lazy" decoding="async">
+        <figcaption>Zmiana IMEI w Mudi Ghost. Kadr z filmu Mudi Ghost</figcaption>
+      </figure>
+
+      <h3>Jak zmienić IMEI w Mudi Ghost</h3>
+      <ul>
+        <li><strong>Przesuń przełącznik w górę:</strong> boczny przełącznik na obudowie uruchamia procedurę.</li>
+        <li><strong>Wymień kartę SIM, gdy wyświetlacz o to poprosi:</strong> zalecane, ale nie wymagane. IMEI zmieni się także bez nowej karty.</li>
+        <li><strong>Przesuń przełącznik w dół:</strong> router nadaje nowy, losowy IMEI, bez związku z poprzednim.</li>
+      </ul>
+
+      <p>Całość trwa około dwóch minut. Zmieniasz IMEI wtedy, kiedy chcesz, i tyle razy, ile potrzebujesz. Bez komputera, bez roota, bez ryzyka dla telefonu. Dokładną procedurę opisuje <a href="/konfiguracja-router-vpn-zmiana-imei">instrukcja obsługi</a>, a szczegóły techniczne artykuł <a href="/blog/mudi-ghost-skuteczna-zmiana-imei">Skuteczna zmiana IMEI w Mudi Ghost</a>.</p>
+
+      <div class="post-highlight">
+        <p><strong>Dlaczego to działa, a aplikacje nie:</strong> nowy numer zgłasza sieci sam modem. Operator, stacje bazowe i IMSI-catcher widzą urządzenie, które pojawia się w sieci po raz pierwszy. Dodatkowo cały ruch idzie szyfrowanym tunelem WireGuard VPN z kill switchem.</p>
+      </div>
+
+      <h2 id="porownanie">Porównanie <span class="accent">wszystkich sposobów</span></h2>
+
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead>
+            <tr><th>Sposób</th><th>Czy sieć widzi nowy IMEI</th><th>Ryzyko dla telefonu</th><th>Jak często można zmieniać</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Aplikacja „IMEI changer”</td><td class="no">Nie</td><td>Root, utrata zabezpieczeń</td><td>Znika po restarcie</td></tr>
+            <tr><td>Reset do ustawień fabrycznych</td><td class="no">Nie</td><td>Brak</td><td>Nic nie zmienia</td></tr>
+            <tr><td>Nowa karta SIM lub eSIM</td><td class="no">Nie (zmienia tylko IMSI)</td><td>Brak</td><td>Nic nie zmienia w IMEI</td></tr>
+            <tr><td>Root i narzędzia serwisowe</td><td class="no">Czasem, jeśli się uda</td><td>Wysokie: brak zasięgu, uszkodzenie</td><td>Każda zmiana to nowe ryzyko</td></tr>
+            <tr><td>iPhone (jailbreak)</td><td class="no">Nie</td><td>Utrata zabezpieczeń</td><td>Nie dotyczy</td></tr>
+            <tr class="win"><td><strong>Router Mudi Ghost</strong></td><td class="yes">Tak, nowy IMEI w modemie</td><td>Żadne: telefon nietknięty</td><td>Kiedy chcesz, jednym ruchem</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="nie-tylko-imei">Sama zmiana IMEI <span class="accent">to nie wszystko</span></h2>
+
+      <p>Sieć identyfikuje Cię na kilka sposobów naraz. Żeby nowy IMEI dał efekt, warto zadbać o pozostałe ślady:</p>
+      <ul>
+        <li><strong>Karta SIM (IMSI):</strong> stara karta łączy nowy IMEI z Twoją historią. Dlatego przy zmianie zalecamy nową kartę.</li>
+        <li><strong>Miejsce:</strong> nowy IMEI włączony w tym samym miejscu co stary ułatwia powiązanie obu. Instrukcja zaleca zmianę lokalizacji przed ponownym włączeniem.</li>
+        <li><strong>Wi-Fi i adres MAC:</strong> telefon zdradza się także przez Wi-Fi. Mudi Ghost losuje adresy MAC i BSSID. Więcej w artykule <a href="/blog/sledzenie-przez-wifi">Śledzenie przez Wi-Fi</a>.</li>
+        <li><strong>Telefon:</strong> najmocniejszy zestaw to Mudi Ghost i telefon z <a href="/blog/czym-jest-grapheneos-najbezpieczniejszy-android">GrapheneOS</a> w trybie samolotowym.</li>
+      </ul>
+
+      <h2 id="faq">Najczęstsze <span class="accent">pytania</span></h2>
+
+      <p class="faq-q">Czy reset do ustawień fabrycznych zmienia IMEI?</p>
+      <p>Nie. Reset usuwa dane z systemu, a IMEI jest zapisany w modemie.</p>
+
+      <p class="faq-q">Czy nowa karta SIM zmienia IMEI?</p>
+      <p>Nie. Nowa karta zmienia IMSI, czyli identyfikator karty. IMEI urządzenia zostaje ten sam.</p>
+
+      <p class="faq-q">Czy da się zmienić IMEI w telefonie bez roota?</p>
+      <p>Nie w sposób, który widziałaby sieć. Aplikacje bez roota mogą najwyżej pokazać inny numer na ekranie.</p>
+
+      <p class="faq-q">Ile razy można zmienić IMEI w Mudi Ghost?</p>
+      <p>Tyle, ile potrzebujesz. Każdy ruch przełącznika w górę i w dół nadaje nowy, losowy numer.</p>
+
+      <p class="faq-q">Czy przy każdej zmianie muszę wymieniać kartę SIM?</p>
+      <p>Nie musisz, ale to zalecane. IMEI zmieni się także bez nowej karty, a nowa karta usuwa drugi ślad, czyli IMSI.</p>
+
+      <h2 id="podsumowanie">Podsumowanie: <span class="accent">jak zmienić IMEI</span></h2>
+
+      <p>Aplikacje, generatory, reset i nowa karta SIM nie zmieniają IMEI, który widzi sieć. Root i narzędzia serwisowe są ryzykowne, niepewne i w nowych telefonach nie działają, a w iPhonie zmiana jest w praktyce niemożliwa. Jedyny skuteczny i bezpieczny sposób to zmiana IMEI w modemie, poza telefonem.</p>
+
+      <p>Tak działa <strong>Mudi Ghost</strong>: telefon w trybie samolotowym łączy się przez Wi-Fi routera, a router nadaje nowy IMEI jednym ruchem przełącznika, kiedy tylko chcesz.</p>
+
+      <div class="post-cta">
+        <h3>Chcesz naprawdę zmienić IMEI?</h3>
+        <p>Mudi Ghost to router VPN ze zmiennym IMEI. Nowy IMEI jednym ruchem przełącznika, WireGuard VPN z kill switchem, losowy MAC i BSSID. Gotowy od pierwszego włączenia.</p>
+        <a href="/cennik" class="btn">Zobacz Cennik</a>
+      </div>
+
+      <div class="post-tags">
+        <span class="tag">jak zmienić IMEI</span>
+        <span class="tag">zmiana IMEI</span>
+        <span class="tag">IMEI spoofing</span>
+        <span class="tag">IMEI Android</span>
+        <span class="tag">IMEI iPhone</span>
+        <span class="tag">router ze zmiennym IMEI</span>
+        <span class="tag">Mudi Ghost</span>
+      </div>
+
+    </div>
+  </article>
+</div>
+
+
+<section class="related-section">
+  <div class="content-wrap">
+    <p class="section-label">Blog</p>
+    <h2 class="section-title">Powiązane <span class="accent">Artykuły</span></h2>
+    <div class="related-grid">
+      <a href="/blog/imei-spoofing-czy-to-dziala" class="related-card">
+        <div class="rc-date">25 marca 2026</div>
+        <h4>IMEI spoofing: czy to działa? Prawda o fałszywej ochronie</h4>
+      </a>
+      <a href="/blog/mudi-ghost-skuteczna-zmiana-imei" class="related-card">
+        <div class="rc-date">31 marca 2026</div>
+        <h4>Mudi Ghost: skuteczna zmiana IMEI</h4>
+      </a>
+      <a href="/blog/co-to-jest-imei-anonimowosc" class="related-card">
+        <div class="rc-date">23 marca 2026</div>
+        <h4>Co to jest IMEI i jak wpływa na anonimowość w sieci komórkowej</h4>
+      </a>
+      <a href="/blog/jak-policja-namierza-telefon" class="related-card">
+        <div class="rc-date">16 kwietnia 2026</div>
+        <h4>Jak policja namierza Twój telefon</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">MUDI <span class="accent">GHOST</span></div>
+      <div class="footer-tagline">Advanced Privacy Firmware — Hardened Security Edition</div>
+      <div class="footer-email">mudi.ghost&#64;proton.me</div>
+    </div>
+    <nav class="footer-links" aria-label="Linki w stopce">
+      <a href="/">Strona Główna</a>
+      <a href="/cennik">Cennik</a>
+      <a href="/o-nas">O Nas</a>
+      <a href="/blog">Blog</a>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/polityka-prywatnosci">Polityka Prywatności</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Mudi Ghost. Wszelkie prawa zastrzeżone.</span>
+    <span>Produkt przeznaczony wyłącznie do legalnego użytku.</span>
+  </div>
+</footer>
+
+<script>
+  const path = window.location.pathname;
+  document.querySelectorAll('.site-nav a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href === path || href === path + '/') a.classList.add('active');
+  });
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+
+<script data-goatcounter="https://mudighost.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>

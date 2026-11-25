@@ -12,6 +12,7 @@ Język treści: polski. Cena: 375 EUR (router, konfiguracja i VPN na 12 miesięc
 - [Kontakt](https://mudighost.com/kontakt)
 
 ## Poradniki
+- [Jak zmienić IMEI w telefonie? Co działa, a co nie](https://mudighost.com/blog/jak-zmienic-imei): przegląd sposobów (aplikacje, reset, karta SIM, root, iPhone) i jedyna skuteczna metoda
 - [Co to jest IMEI i jak wpływa na anonimowość](https://mudighost.com/blog/co-to-jest-imei-anonimowosc)
 - [Jak policja namierza telefon](https://mudighost.com/blog/jak-policja-namierza-telefon): IMSI, IMSI-catcher, lokalizacja z BTS, SS7, retencja danych
 - [IMEI spoofing: czy to działa?](https://mudighost.com/blog/imei-spoofing-czy-to-dziala): dlaczego aplikacje nie zmieniają IMEI widzianego przez sieć
