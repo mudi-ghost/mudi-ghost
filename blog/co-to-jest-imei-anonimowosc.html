@@ -148,7 +148,7 @@
 
 <div class="post-wrap">
   <article itemscope itemtype="https://schema.org/Article">
-    <p class="section-label">Blog — Prywatność w Sieci</p>
+    <p class="section-label">Blog · Prywatność w sieci</p>
 
     <h1><span class="accent">Co to jest IMEI</span> i jak wpływa na anonimowość w sieci komórkowej</h1>
 
@@ -158,15 +158,15 @@
     </div>
 
     <div class="post-intro">
-      <strong>Co to jest IMEI</strong> i dlaczego każdy, kto myśli o prawdziwej prywatności w sieci komórkowej, musi to zrozumieć? <strong>IMEI</strong> to unikalny 15-cyfrowy numer identyfikacyjny Twojego urządzenia — <strong>cyfrowy odcisk palca</strong>, którym służby i operatorzy śledzą Cię na każdym kroku. Ten artykuł wyjaśnia, jak działa <strong>śledzenie po IMEI</strong> i dlaczego <strong>zmiana IMEI</strong> to podstawowa operacja OPSEC dla każdego, kto chce zachować anonimowość.
+      <strong>Co to jest IMEI</strong> i dlaczego każdy, kto myśli o prawdziwej prywatności w sieci komórkowej, musi to zrozumieć? <strong>IMEI</strong> to unikalny 15-cyfrowy numer identyfikacyjny Twojego urządzenia, <strong>cyfrowy odcisk palca</strong>, którym służby i operatorzy śledzą Cię na każdym kroku. Ten artykuł wyjaśnia, jak działa <strong>śledzenie po IMEI</strong> i dlaczego <strong>zmiana IMEI</strong> to podstawowa operacja OPSEC dla każdego, kto chce zachować anonimowość.
     </div>
 
     <nav class="post-toc">
       <h4>Spis Treści</h4>
       <ol>
-        <li><a href="#co-to-jest-imei">Czym jest IMEI — cyfrowy odcisk palca</a></li>
+        <li><a href="#co-to-jest-imei">Czym jest IMEI: cyfrowy odcisk palca</a></li>
         <li><a href="#jak-sluzby-wykorzystuja-imei">Jak służby śledzą po IMEI</a></li>
-        <li><a href="#baza-imei-polska">Baza IMEI w Polsce — UKE i służby</a></li>
+        <li><a href="#baza-imei-polska">Baza IMEI w Polsce: UKE i służby</a></li>
         <li><a href="#jak-zmienic-imei">Jak zmiana IMEI zapewnia anonimowość</a></li>
         <li><a href="#podsumowanie">Podsumowanie</a></li>
       </ol>
@@ -174,78 +174,78 @@
 
     <div class="post-body">
 
-      <h2 id="co-to-jest-imei">Czym jest IMEI — <span class="accent">cyfrowy odcisk palca</span> Twojego urządzenia</h2>
+      <h2 id="co-to-jest-imei">Czym jest IMEI: <span class="accent">cyfrowy odcisk palca</span> Twojego urządzenia</h2>
 
-      <p><strong>IMEI</strong> (International Mobile Equipment Identity) to 15-cyfrowy numer identyfikacyjny przypisywany każdemu urządzeniu wyposażonemu w modem GSM/LTE. W przeciwieństwie do adresu IP, który możesz zmienić używając VPN, IMEI jest zakodowany w sprzęcie — jest to Twój <strong>cyfrowy odcisk palca</strong>, który pozostaje z urządzeniem na zawsze.</p>
+      <p><strong>IMEI</strong> (International Mobile Equipment Identity) to 15-cyfrowy numer identyfikacyjny przypisywany każdemu urządzeniu wyposażonemu w modem GSM/LTE. W przeciwieństwie do adresu IP, który możesz zmienić używając VPN, IMEI jest zakodowany w sprzęcie, jest to Twój <strong>cyfrowy odcisk palca</strong>, który pozostaje z urządzeniem na zawsze.</p>
 
       <p>Kiedy łączysz się z siecią komórkową, Twój modem wysyła IMEI do operatora. Ten numer trafia do centralnej bazy danych, gdzie jest powiązany z Twoją kartą SIM (IMSI), danymi osobowymi z umowy oraz lokalizacją. W ten sposób powstaje kompletny profil: <strong>kto</strong> (dane osobowe), <strong>czym</strong> (urządzenie po IMEI), <strong>gdzie</strong> (lokalizacja BTS) i <strong>kiedy</strong> (timestamp każdego połączenia).</p>
 
       <div class="post-highlight">
-        <p><strong>Kluczowy fakt:</strong> IMEI jest wysyłany przy każdym połączeniu do sieci — niezależnie od tego, czy używasz VPN, czy nie. VPN szyfruje dane, ale nie maskuje IMEI. To dlatego służby mogą śledzić urządzenia nawet przy aktywnym tunelu VPN.</p>
+        <p><strong>Kluczowy fakt:</strong> IMEI jest wysyłany przy każdym połączeniu do sieci, niezależnie od tego, czy używasz VPN, czy nie. VPN szyfruje dane, ale nie maskuje IMEI. To dlatego służby mogą śledzić urządzenia nawet przy aktywnym tunelu VPN.</p>
       </div>
 
-      <p>Więcej o tym jak działa <a href="/o-nas"><strong>Mudi Ghost</strong></a> — i dlaczego <a href="/cennik"><strong>router VPN ze zmiennym IMEI</strong></a> rozwiązuje ten problem sprzętowo, dając Ci nową tożsamość jednym ruchem przełącznika.</p>
+      <p>Więcej o tym jak działa <a href="/o-nas"><strong>Mudi Ghost</strong></a> i dlaczego <a href="/cennik"><strong>router VPN ze zmiennym IMEI</strong></a> rozwiązuje ten problem sprzętowo, dając Ci nową tożsamość jednym ruchem przełącznika.</p>
 
       <h2 id="jak-sluzby-wykorzystuja-imei">Jak służby wykorzystują IMEI do <span class="accent">śledzenia po IMEI</span></h2>
 
       <p>Służby specjalne i organy ścigania w praktycznie każdym kraju mają dostęp do baz danych zawierających IMEI wszystkich urządzeń w sieci. Proces <strong>śledzenia po IMEI</strong> działa na kilku poziomach:</p>
 
       <ul>
-        <li><strong>IMSI Catcher (StingRay)</strong> — pseudostacje bazowe, które wymuszają na urządzeniu wysłanie IMEI, nawet gdy telefon jest w trybie uśpienia. Służby stawiają te urządzenia w pobliżu monitorowanych osób.</li>
-        <li><strong>Bazy operatorów</strong> — Policja i ABW mają bezpośredni dostęp do baz Orange, Play, T-Mobile i Plus. Zarejestrowanie IMEI = natychmiastowe powiązanie z danymi osobowymi właściciela.</li>
-        <li><strong>Współpraca międzynarodowa</strong> — Interpol i Europol wymieniają się danymi IMEI między krajami. Twój IMEI widoczny za granicą = powiązanie z Twoim profilem w innym państwie.</li>
-        <li><strong>Analiza historyczna</strong> — służby analizują wzorce ruchu. Jeśli urządzenie z IMEI X pojawia się w określonych lokalizacjach o określonych porach, powstaje profil przemieszczenia — bez konieczności podsłuchu.</li>
+        <li><strong>IMSI Catcher (StingRay)</strong>: pseudostacje bazowe, które wymuszają na urządzeniu wysłanie IMEI, nawet gdy telefon jest w trybie uśpienia. Służby stawiają te urządzenia w pobliżu monitorowanych osób.</li>
+        <li><strong>Bazy operatorów</strong>: Policja i ABW mają bezpośredni dostęp do baz Orange, Play, T-Mobile i Plus. Zarejestrowanie IMEI = natychmiastowe powiązanie z danymi osobowymi właściciela.</li>
+        <li><strong>Współpraca międzynarodowa</strong>: Interpol i Europol wymieniają się danymi IMEI między krajami. Twój IMEI widoczny za granicą = powiązanie z Twoim profilem w innym państwie.</li>
+        <li><strong>Analiza historyczna</strong>: służby analizują wzorce ruchu. Jeśli urządzenie z IMEI X pojawia się w określonych lokalizacjach o określonych porach, powstaje profil przemieszczenia, bez konieczności podsłuchu.</li>
       </ul>
 
-      <p>Problem polega na tym, że <strong>zmiana IMEI</strong> tradycyjnymi metodami jest niemożliwa dla zwykłego użytkownika — wymaga dostępu do pamięci modem lub specjalistycznego oprogramowania. Większość smartfonów ma IMEI wypalony na stałe w układzie.</p>
+      <p>Problem polega na tym, że <strong>zmiana IMEI</strong> tradycyjnymi metodami jest niemożliwa dla zwykłego użytkownika, wymaga dostępu do pamięci modem lub specjalistycznego oprogramowania. Większość smartfonów ma IMEI wypalony na stałe w układzie.</p>
 
       <div class="post-warn">
         ⚠️ <strong>Ostrzeżenie:</strong> Używanie zwykłego VPN bez zmiany IMEI daje fałszywe poczucie bezpieczeństwa. Służby znają Twój sprzęt po IMEI i mogą śledzić lokalizację niezależnie od tego, jakiego VPN-u używasz.
       </div>
 
-      <h2 id="baza-imei-polska">Baza IMEI w Polsce — <span class="accent">UKE i służby</span></h2>
+      <h2 id="baza-imei-polska">Baza IMEI w Polsce: <span class="accent">UKE i służby</span></h2>
 
-      <p>W Polsce rynek telekomunikacyjny nadzoruje Urząd Komunikacji Elektronicznej (UKE). Operatorzy (Orange, Play, T-Mobile, Plus) prowadzą wewnętrzne bazy danych urządzeń i na żądanie służb — na podstawie Prawa telekomunikacyjnego — są zobowiązani udostępniać dane powiązane z IMEI. Dane te są następnie udostępniane:</p>
+      <p>W Polsce rynek telekomunikacyjny nadzoruje Urząd Komunikacji Elektronicznej (UKE). Operatorzy (Orange, Play, T-Mobile, Plus) prowadzą wewnętrzne bazy danych urządzeń i na żądanie służb, na podstawie Prawa telekomunikacyjnego, są zobowiązani udostępniać dane powiązane z IMEI. Dane te są następnie udostępniane:</p>
 
       <ul>
-        <li><strong>Policji i ABW</strong> — na podstawie prawa telekomunikacyjnego służby mogą żądać danych powiązanych z IMEI.</li>
-        <li><strong>Prokuraturze</strong> — w toku postępowań karnych IMEI służy jako dowód powiązania urządzenia z podejrzanym.</li>
-        <li><strong>Urzędom skarbowym</strong> — przy kontrolach celnych i podatkowych.</li>
+        <li><strong>Policji i ABW</strong>: na podstawie prawa telekomunikacyjnego służby mogą żądać danych powiązanych z IMEI.</li>
+        <li><strong>Prokuraturze</strong>: w toku postępowań karnych IMEI służy jako dowód powiązania urządzenia z podejrzanym.</li>
+        <li><strong>Urzędom skarbowym</strong>: przy kontrolach celnych i podatkowych.</li>
       </ul>
 
-      <p>Kiedy kupujesz telefon lub router w Polsce, Twój IMEI jest powiązany z danymi zakupu (poprzez fakturę lub umowę). Na żądanie służb — na podstawie art. 180 Prawa telekomunikacyjnego — operatorzy są zobowiązani udostępnić dane powiązane z tym IMEI. To oznacza, że od pierwszego połączenia w polskiej sieci, Twój <strong>cyfrowy odcisk palca jest w systemie</strong>. Zmiana karty SIM (IMSI) bez zmiany IMEI to niepełna ochrona — służby nadal widzą to samo urządzenie.</p>
+      <p>Kiedy kupujesz telefon lub router w Polsce, Twój IMEI jest powiązany z danymi zakupu (poprzez fakturę lub umowę). Na żądanie służb, na podstawie art. 180 Prawa telekomunikacyjnego, operatorzy są zobowiązani udostępnić dane powiązane z tym IMEI. To oznacza, że od pierwszego połączenia w polskiej sieci, Twój <strong>cyfrowy odcisk palca jest w systemie</strong>. Zmiana karty SIM (IMSI) bez zmiany IMEI to niepełna ochrona, służby nadal widzą to samo urządzenie.</p>
 
-      <p>Dopiero <strong>zmiana IMEI</strong> w połączeniu z nową kartą SIM tworzy kompletną barierę operacyjną. Urządzenie pojawia się w sieci jako nowe, nierozpoznane — zerwanie ciągłości identyfikacji.</p>
+      <p>Dopiero <strong>zmiana IMEI</strong> w połączeniu z nową kartą SIM tworzy kompletną barierę operacyjną. Urządzenie pojawia się w sieci jako nowe, nierozpoznane, zerwanie ciągłości identyfikacji.</p>
 
       <h2 id="jak-zmienic-imei">Jak zmiana IMEI zapewnia <span class="accent">anonimowość</span> w praktyce</h2>
 
       <p><strong>Zmiana IMEI</strong> to jedyna skuteczna metoda na zerwanie powiązania między Tobą a urządzeniem. W praktyce wygląda to tak:</p>
 
       <ul>
-        <li><strong>Nowy sprzęt z możliwością zmiany IMEI</strong> — <strong>router Mudi Ghost</strong> ma fizyczny przełącznik, który generuje losowy IMEI przy każdym użyciu.</li>
-        <li><strong>Nowa karta SIM (prepaid)</strong> — kupiona anonimowo, bez rejestracji na Twoje dane.</li>
-        <li><strong>Zmiana lokalizacji</strong> — uruchomienie w nowym miejscu tworzy dodatkową warstwę ochrony.</li>
+        <li><strong>Nowy sprzęt z możliwością zmiany IMEI</strong>: <strong>router Mudi Ghost</strong> ma fizyczny przełącznik, który generuje losowy IMEI przy każdym użyciu.</li>
+        <li><strong>Nowa karta SIM (prepaid)</strong>: kupiona anonimowo, bez rejestracji na Twoje dane.</li>
+        <li><strong>Zmiana lokalizacji</strong>: uruchomienie w nowym miejscu tworzy dodatkową warstwę ochrony.</li>
       </ul>
 
-      <p>Co ważne, zmiana IMEI musi być połączona z wymianą karty SIM. Zmiana samego IMEI bez nowej karty SIM pozostawia lukę — operator może powiązać stare IMSI z nowym IMEI. Dopiero obie operacje razem dają pełną ochronę.</p>
+      <p>Co ważne, zmiana IMEI musi być połączona z wymianą karty SIM. Zmiana samego IMEI bez nowej karty SIM pozostawia lukę, operator może powiązać stare IMSI z nowym IMEI. Dopiero obie operacje razem dają pełną ochronę.</p>
 
       <div class="post-highlight">
-        <p><strong>Rozwiązanie sprzętowe:</strong> <strong>Mudi Ghost</strong> to router z funkcją zmiany IMEI jednym ruchem przełącznika. Każdy ruch przełącznika = nowy, losowy IMEI, wtedy kiedy go potrzebujesz. Porównanie wszystkich sposobów zmiany IMEI znajdziesz w artykule <a href="/blog/jak-zmienic-imei">Jak zmienić IMEI</a>. Dla służb i algorytmów to urządzenie widziane po raz pierwszy — bez żadnej historii, bez powiązania z poprzednią aktywnością.</p>
+        <p><strong>Rozwiązanie sprzętowe:</strong> <strong>Mudi Ghost</strong> to router z funkcją zmiany IMEI jednym ruchem przełącznika. Każdy ruch przełącznika = nowy, losowy IMEI, wtedy kiedy go potrzebujesz. Porównanie wszystkich sposobów zmiany IMEI znajdziesz w artykule <a href="/blog/jak-zmienic-imei">Jak zmienić IMEI</a>. Dla służb i algorytmów to urządzenie widziane po raz pierwszy: bez żadnej historii, bez powiązania z poprzednią aktywnością.</p>
       </div>
 
-      <p>To podejście "operacyjne" — traktowanie anonimowości jako procesu, nie produktu. Każde wyłączenie i włączenie routera = nowa tożsamość. Nie potrzebujesz specjalistycznego oprogramowania ani umiejętności hakowania. Po prostu wciskasz przełącznik.</p>
+      <p>To podejście "operacyjne": traktowanie anonimowości jako procesu, nie produktu. Każde wyłączenie i włączenie routera = nowa tożsamość. Nie potrzebujesz specjalistycznego oprogramowania ani umiejętności hakowania. Po prostu wciskasz przełącznik.</p>
 
-      <h2 id="podsumowanie">Podsumowanie — <span class="accent">Co to jest IMEI</span> i jak chronić swoją anonimowość</h2>
+      <h2 id="podsumowanie">Podsumowanie: <span class="accent">Co to jest IMEI</span> i jak chronić swoją anonimowość</h2>
 
-      <p><strong>Co to jest IMEI</strong>? To Twój <strong>cyfrowy odcisk palca</strong> w sieci komórkowej — 15-cyfrowy numer, który identyfikuje urządzenie niezależnie od tego, jakiego VPN-u używasz. Służby wykorzystują <strong>śledzenie po IMEI</strong> do budowania profilu lokalizacji i powiązania urządzenia z osobą.</p>
+      <p><strong>Co to jest IMEI</strong>? To Twój <strong>cyfrowy odcisk palca</strong> w sieci komórkowej: 15-cyfrowy numer, który identyfikuje urządzenie niezależnie od tego, jakiego VPN-u używasz. Służby wykorzystują <strong>śledzenie po IMEI</strong> do budowania profilu lokalizacji i powiązania urządzenia z osobą.</p>
 
-      <p>Podstawowa zasada OPSEC: jeśli chcesz zachować anonimowość w sieci komórkowej, musisz mieć możliwość zmiany IMEI. Samo używanie VPN to za mało — ukrywa IP, ale nie maskuje sprzętu. <strong>Zmiana IMEI</strong> w połączeniu z nową kartą SIM tworzy kompletną barierę operacyjną. <a href="/"><strong>Bezpieczeństwo cyfrowe</strong></a> to podstawa.</p>
+      <p>Podstawowa zasada OPSEC: jeśli chcesz zachować anonimowość w sieci komórkowej, musisz mieć możliwość zmiany IMEI. Samo używanie VPN to za mało, ukrywa IP, ale nie maskuje sprzętu. <strong>Zmiana IMEI</strong> w połączeniu z nową kartą SIM tworzy kompletną barierę operacyjną. <a href="/"><strong>Bezpieczeństwo cyfrowe</strong></a> to podstawa.</p>
 
-      <p><strong>Mudi Ghost</strong> upraszcza ten proces — fizyczny przełącznik nadaje nowy IMEI jednym ruchem, wtedy kiedy go potrzebujesz. Dla dziennikarzy, aktywistów i profesjonalistów wysokiego ryzyka to jedyne rozwiązanie, które daje realną ochronę.</p>
+      <p><strong>Mudi Ghost</strong> upraszcza ten proces: fizyczny przełącznik nadaje nowy IMEI jednym ruchem, wtedy kiedy go potrzebujesz. Dla dziennikarzy, aktywistów i profesjonalistów wysokiego ryzyka to jedyne rozwiązanie, które daje realną ochronę.</p>
 
       <div class="post-cta">
         <h3>Szukasz <span class="accent">Rzeczywistej Ochrony Prywatności?</span></h3>
-        <p><strong>Mudi Ghost</strong> to hardened router VPN ze zmiennym IMEI — gotowy do użycia od pierwszego włączenia. WireGuard VPN, kill switch, randomizacja MAC. </p>
+        <p><strong>Mudi Ghost</strong> to hardened router VPN ze zmiennym IMEI, gotowy do użycia od pierwszego włączenia. WireGuard VPN, kill switch, randomizacja MAC. </p>
         <a href="/cennik" class="btn">Zobacz Cennik</a>
       </div>
 
@@ -267,7 +267,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-brand">MUDI <span class="accent">GHOST</span></div>
-      <div class="footer-tagline">Advanced Privacy Firmware — Hardened Security Edition</div>
+      <div class="footer-tagline">Advanced Privacy Firmware · Hardened Security Edition</div>
       <div class="footer-email">mudi.ghost&#64;proton.me</div>
     </div>
     <nav class="footer-links">
