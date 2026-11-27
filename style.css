@@ -207,3 +207,6 @@ strong { color:var(--white); }
  line-height: 1.5;
  text-align: left !important;
 }
+/* Long words in headings must not push narrow phones sideways */
+h1, h2, h3, h4, .section-title { overflow-wrap: break-word; hyphens: auto; }
+p, li, td, th { overflow-wrap: break-word; }
